@@ -13,7 +13,7 @@ var sm # state machine
 var current_scene = Scenes.INTRO 
 var next_scene = Scenes.INTRO
 ## MUY IMPORTANTE: MISMO ORDEN QUE EN EL SERIALIZED ARRAY DE LA STATEMACHINE
-enum Scenes { INTRO, GAME, NULL}
+enum Scenes { INTRO, ARISCENE, GAME, NULL}
 
 ## sonido
 var sfx
