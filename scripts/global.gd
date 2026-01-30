@@ -26,7 +26,7 @@ var random = RandomNumberGenerator.new()
 
 ## HUESOS
 enum Bones {
-	eye_r = 0,
+	eye_r = 1,
 	eye_l,
 
 	forehead_l,
@@ -44,6 +44,8 @@ enum Bones {
 	
 	mouth
 }
+
+var BoneCount = 11
 
 func _ready() -> void:
 	pass
