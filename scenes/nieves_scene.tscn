@@ -1,3 +1,23 @@
 [gd_scene format=3 uid="uid://bq57q3tpy4r5r"]
 
+[ext_resource type="Script" uid="uid://debobb8c84pgg" path="res://scripts/CompareMasks.gd" id="1_jknla"]
+[ext_resource type="PackedScene" uid="uid://dapi17w4oqsgl" path="res://assets/models/mascaras.fbx" id="2_dyxao"]
+
 [node name="NievesScene" type="Node3D" unique_id=782185158]
+script = ExtResource("1_jknla")
+
+[node name="ClientMask" type="Node3D" parent="." unique_id=876392504]
+
+[node name="mascaras" parent="ClientMask" unique_id=1435668220 instance=ExtResource("2_dyxao")]
+
+[node name="P1Mask" type="Node3D" parent="." unique_id=1348850491]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.9217165, 0, 0)
+
+[node name="mascaras" parent="P1Mask" unique_id=949802161 instance=ExtResource("2_dyxao")]
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=1913785381]
+transform = Transform3D(1, 0, 0, 0, 0.97998035, 0.19909428, 0, -0.19909428, 0.97998035, 1.759759, 0.75337315, 7.4295187)
+current = true
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="Camera3D" unique_id=1657520693]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.206408, 0.24509525)
