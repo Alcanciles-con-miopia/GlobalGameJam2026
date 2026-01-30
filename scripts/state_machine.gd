@@ -20,7 +20,6 @@ func _ready() -> void:
 	Global.on_game_end.connect(_on_game_end)
 	
 	## PRIMER CAMBIO DE ESCENA
-<<<<<<< Updated upstream
 	Global.change_scene(Global.Scenes.GAME)
 	var thread = Thread.new()
 	thread.start(_connect_wiimotes_thread)
@@ -29,9 +28,7 @@ func _ready() -> void:
 		print_debug("WIIMOTE: Hilo inicializado.")
 	else:
 		print_debug("WIIMOTE: ERROR al inicializar el hilo.")
-=======
 	Global.change_scene(Global.Scenes.ARISCENE)
->>>>>>> Stashed changes
 	pass 
 
 func _connect_wiimotes_thread():
