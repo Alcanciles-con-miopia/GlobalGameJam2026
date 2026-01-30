@@ -1,6 +1,6 @@
-[gd_scene format=3 uid="uid://dn0w3j0shaa1r"]
+[gd_scene format=3 uid="uid://co8b72sufgqy4"]
 
-[ext_resource type="PackedScene" uid="uid://dapi17w4oqsgl" path="res://assets/models/mascaras.fbx" id="1_0vqdt"]
+[ext_resource type="PackedScene" uid="uid://dboue6235tw1q" path="res://scenes/mascara_1.tscn" id="1_0vqdt"]
 
 [node name="PaigroScene" type="Control" unique_id=427514572]
 layout_mode = 3
@@ -10,7 +10,10 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="mascaras" parent="." unique_id=1331456049 instance=ExtResource("1_0vqdt")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.0719802, 0, -2.2304964)
+[node name="Camera3D" type="Camera3D" parent="." unique_id=904385339]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3.403504)
 
-[editable path="mascaras"]
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1844624981]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2.3058538)
+
+[node name="mascara1" parent="." unique_id=1577534858 instance=ExtResource("1_0vqdt")]
