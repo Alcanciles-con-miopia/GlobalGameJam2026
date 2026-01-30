@@ -24,6 +24,27 @@ var coolDown = 0.5
 var startCoolDown = false
 var random = RandomNumberGenerator.new()
 
+## HUESOS
+enum Bones {
+	eye_r = 0,
+	eye_l,
+
+	forehead_l,
+	forehead_r,
+	
+	cheek_l,
+	cheek_r,
+	
+	chin,
+	
+	nose,
+	
+	commissure_l,
+	commissure_r,
+	
+	mouth
+}
+
 func _ready() -> void:
 	pass
 
