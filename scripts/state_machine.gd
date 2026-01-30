@@ -7,6 +7,9 @@ extends Node
 @onready var sfx: AudioStreamPlayer2D = $Sound/SFX
 @onready var sound = $Sound
 
+var wiimotes_connected = false
+var connected_wiimotes
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	## INICIALIZAR GLOBAL
@@ -28,7 +31,7 @@ func _ready() -> void:
 		print_debug("WIIMOTE: Hilo inicializado.")
 	else:
 		print_debug("WIIMOTE: ERROR al inicializar el hilo.")
-	Global.change_scene(Global.Scenes.ARISCENE)
+	#Global.change_scene(Global.Scenes.ARISCENE)
 	pass 
 
 func _connect_wiimotes_thread():
@@ -41,11 +44,23 @@ func _on_connection_complete():
 	# Hide loading screen
 	# Retrieve connected Wiimotes
 	print_debug("WIIMOTE: SUCCESS, conexión finalizada.")
-	var connected_wiimotes = GDWiimoteServer.finalize_connection()
+	connected_wiimotes = GDWiimoteServer.finalize_connection()
+	wiimotes_connected = true
+	
+	for i in connected_wiimotes:
+		i.set_ir(true)
 	## can also retrieve later on with GDWiimoteServer.get_connected_wiimotes()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
+	_wiimotion()
+	pass
+	
+func _wiimotion():
+	#if (wiimotes_connected):
+	#for i : GDWiimote in connected_wiimotes:
+		#print_debug("IR CALCULATED POSITION: ", i.get_ir_cursor_calculated_position())
+		#Input.warp_mouse(i.get_ir_cursor_calculated_position())
 	pass
 
 func _input(event):
