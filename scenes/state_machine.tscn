@@ -24,16 +24,12 @@ visible = false
 process_mode = 4
 visible = false
 
-<<<<<<< Updated upstream
-[node name="IntroScene" parent="Scenes" unique_id=1824261071 instance=ExtResource("2_a0fpy")]
-=======
 [node name="AriScene" parent="Scenes" unique_id=152709202 instance=ExtResource("5_okvjo")]
 process_mode = 4
 visible = false
 script = ExtResource("5_m6efm")
 
 [node name="IntroScene" parent="Scenes" unique_id=109836491 instance=ExtResource("2_a0fpy")]
->>>>>>> Stashed changes
 
 [node name="Fade" parent="." unique_id=2020197177 instance=ExtResource("5_yux3b")]
 
