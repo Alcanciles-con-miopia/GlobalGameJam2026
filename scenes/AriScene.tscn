@@ -1,0 +1,79 @@
+[gd_scene format=3 uid="uid://cugvtvbfh07ky"]
+
+[ext_resource type="PackedScene" uid="uid://dapi17w4oqsgl" path="res://assets/models/mascaras.fbx" id="1_gmjp2"]
+[ext_resource type="Texture2D" uid="uid://dipgvn03a5dni" path="res://assets/backgrounds/placeholderSelect.png" id="2_20wny"]
+
+[node name="AriScene" type="Node3D" unique_id=152709202]
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=1135907038]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0126776695, 0, 1.5459394)
+
+[node name="cara1" parent="." unique_id=1331456049 instance=ExtResource("1_gmjp2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.4155357, 0, -2.4709845)
+
+[node name="Armature" parent="cara1" index="0" unique_id=594430679]
+transform = Transform3D(100, 0, 0, 0, -1.1920929e-05, 99.99999, 0, -99.99999, -1.1920929e-05, -1.4288809, 0, 0)
+
+[node name="Skeleton3D" parent="cara1/Armature" index="0" unique_id=1392944452]
+bones/1/rotation = Quaternion(0.30968037, -0.3197692, -0.65235215, 0.61341864)
+bones/1/scale = Vector3(1, 1.0000001, 1)
+bones/7/rotation = Quaternion(0.30968037, -0.3197692, -0.65235215, 0.61341864)
+bones/7/scale = Vector3(1, 1.0000001, 1)
+
+[node name="ojoDch" type="BoneAttachment3D" parent="cara1/Armature/Skeleton3D" index="1" unique_id=824032332]
+transform = Transform3D(-0.05563128, 0.60227734, -0.79634607, 0.011736659, -0.79713154, -0.60369134, -0.9983823, -0.042930577, 0.03727676, 0, 0, 0)
+bone_name = "eye_l"
+bone_idx = 1
+override_pose = true
+use_external_skeleton = true
+external_skeleton = NodePath("..")
+
+[node name="ojoIzq" type="BoneAttachment3D" parent="cara1/Armature/Skeleton3D" index="2" unique_id=1249344299]
+transform = Transform3D(-0.05563128, 0.60227734, -0.79634607, 0.011736659, -0.79713154, -0.60369134, -0.9983823, -0.042930577, 0.03727676, 0, 0, 0)
+bone_name = "eye_r"
+bone_idx = 7
+override_pose = true
+use_external_skeleton = true
+external_skeleton = NodePath("..")
+
+[node name="cara2" parent="." unique_id=917217303 instance=ExtResource("1_gmjp2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.2874613, 0, -2.4709845)
+
+[node name="Armature" parent="cara2" index="0" unique_id=594430679]
+transform = Transform3D(100, 0, 0, 0, -1.1920929e-05, 99.99999, 0, -99.99999, -1.1920929e-05, -1.4288809, 0, 0)
+
+[node name="Skeleton3D" parent="cara2/Armature" index="0" unique_id=1392944452]
+bones/1/rotation = Quaternion(0.30968034, -0.3197692, -0.65235215, 0.61341864)
+bones/1/scale = Vector3(1.0000001, 1.0000002, 1)
+bones/7/rotation = Quaternion(0.30968034, -0.3197692, -0.65235215, 0.61341864)
+bones/7/scale = Vector3(1.0000001, 1.0000002, 1)
+
+[node name="ojoDch" type="BoneAttachment3D" parent="cara2/Armature/Skeleton3D" index="1" unique_id=218842739]
+transform = Transform3D(-0.0556314, 0.60227746, -0.79634607, 0.011736659, -0.79713166, -0.6036914, -0.99838233, -0.0429307, 0.03727676, 0, 0, 0)
+bone_name = "eye_l"
+bone_idx = 1
+override_pose = true
+use_external_skeleton = true
+external_skeleton = NodePath("..")
+
+[node name="ojoIzq" type="BoneAttachment3D" parent="cara2/Armature/Skeleton3D" index="2" unique_id=59073675]
+transform = Transform3D(-0.0556314, 0.60227746, -0.79634607, 0.011736659, -0.79713166, -0.6036914, -0.99838233, -0.0429307, 0.03727676, 0, 0, 0)
+bone_name = "eye_r"
+bone_idx = 7
+override_pose = true
+use_external_skeleton = true
+external_skeleton = NodePath("..")
+
+[node name="Sprite3D" type="Sprite3D" parent="." unique_id=1004621680]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.021650314, 0, -2.725752)
+texture = ExtResource("2_20wny")
+
+[node name="Label3D" type="Label3D" parent="." unique_id=1753096675]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1907353, -0.60619164)
+modulate = Color(0, 0, 0, 1)
+text = "Choose your character"
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1790639142]
+
+[editable path="cara1"]
+[editable path="cara2"]
