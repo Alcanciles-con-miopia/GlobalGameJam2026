@@ -28,7 +28,7 @@ func _ready() -> void:
 		print_debug("WIIMOTE: Hilo inicializado.")
 	else:
 		print_debug("WIIMOTE: ERROR al inicializar el hilo.")
-	Global.change_scene(Global.Scenes.ARISCENE)
+	#Global.change_scene(Global.Scenes.ARISCENE)
 	pass 
 
 func _connect_wiimotes_thread():
