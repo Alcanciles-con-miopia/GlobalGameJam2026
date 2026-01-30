@@ -21,7 +21,27 @@ func _ready() -> void:
 	
 	## PRIMER CAMBIO DE ESCENA
 	Global.change_scene(Global.Scenes.GAME)
+	var thread = Thread.new()
+	thread.start(_connect_wiimotes_thread)
+	print_debug("WIIMOTE: Intentando iniciar hilo.")
+	if (thread.is_started()):
+		print_debug("WIIMOTE: Hilo inicializado.")
+	else:
+		print_debug("WIIMOTE: ERROR al inicializar el hilo.")
 	pass 
+
+func _connect_wiimotes_thread():
+	# Initialize loading screen
+	print_debug("WIIMOTE: Intentando iniciar conexión.")
+	GDWiimoteServer.initialize_connection(true)
+	call_deferred("_on_connection_complete")
+
+func _on_connection_complete():
+	# Hide loading screen
+	# Retrieve connected Wiimotes
+	print_debug("WIIMOTE: SUCCESS, conexión finalizada.")
+	var connected_wiimotes = GDWiimoteServer.finalize_connection()
+	## can also retrieve later on with GDWiimoteServer.get_connected_wiimotes()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -30,9 +50,11 @@ func _process(delta: float) -> void:
 func _input(event):
 	var scene = Global.Scenes.NULL;
 	if event.is_action_pressed("1"):
-		scene = Global.Scenes.INTRO
+		print_debug("WIIMOTE: Se ha pulsado A.")
+		#scene = Global.Scenes.INTRO
 	if event.is_action_pressed("2"):
-		scene = Global.Scenes.GAME
+		print_debug("WIIMOTE: Se ha pulsado B.")
+		#scene = Global.Scenes.GAME
 	#if event.is_action_pressed("ui_cancel"):
 		#get_tree().quit()
 	if (scene != Global.Scenes.NULL):
