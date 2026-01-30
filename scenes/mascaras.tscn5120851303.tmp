@@ -3,9 +3,9 @@
 [ext_resource type="PackedScene" uid="uid://dapi17w4oqsgl" path="res://assets/models/mascaras.fbx" id="1_rjbpk"]
 [ext_resource type="Script" uid="uid://8lh634d3nv63" path="res://scripts/paigrorandom.gd" id="2_m0eoa"]
 
-[node name="mascaras" unique_id=1019807771 instance=ExtResource("1_rjbpk")]
+[node name="mascaras" unique_id=1099733820 instance=ExtResource("1_rjbpk")]
 
-[node name="Skeleton3D" parent="Armature" parent_id_path=PackedInt32Array(351499130) index="0" unique_id=1933396897]
+[node name="Skeleton3D" parent="Armature" parent_id_path=PackedInt32Array(48096424) index="0" unique_id=819036258]
 bones/3/rotation = Quaternion(0.15685815, 0.042271618, -0.23383817, 0.9586075)
 bones/3/scale = Vector3(1, 0.99999994, 1)
 bones/5/rotation = Quaternion(-0.19527882, 0.42897096, 0.79631376, -0.37912342)
@@ -19,4 +19,6 @@ bones/13/position = Vector3(0, -0.01324957, 0)
 bones/13/rotation = Quaternion(0.5129954, -0.48665777, -0.5129953, 0.48665774)
 bones/13/scale = Vector3(0.99999994, 1.0000001, 1.0000001)
 bones/15/rotation = Quaternion(0.49226826, -0.50761396, -0.49226823, 0.507614)
+
+[node name="Node" type="Node" parent="." index="1" unique_id=786660064]
 script = ExtResource("2_m0eoa")
