@@ -53,10 +53,14 @@ func _on_connection_complete():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	if (wiimotes_connected):
-		for i : GDWiimote in connected_wiimotes:
-			i.get_ir_cursor_calculated_position()
-	#Input.warp_mouse(Vector2(0,0))
+	_wiimotion()
+	pass
+	
+func _wiimotion():
+	#if (wiimotes_connected):
+	#for i : GDWiimote in connected_wiimotes:
+		#print_debug("IR CALCULATED POSITION: ", i.get_ir_cursor_calculated_position())
+		#Input.warp_mouse(i.get_ir_cursor_calculated_position())
 	pass
 
 func _input(event):
