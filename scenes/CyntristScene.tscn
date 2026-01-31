@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://bquypy8dsjxch"]
+
+[ext_resource type="Script" path="res://scripts/control_mapper.gd" id="1_4141x"]
+[ext_resource type="PackedScene" uid="uid://cosr6dutw8duo" path="res://scenes/mascara_3.tscn" id="2_nbhiy"]
+
+[node name="AndresScene" type="Control" unique_id=2115957811]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=236880434]
+transform = Transform3D(1, 0, 0, 0, 0.97998035, 0.19909428, 0, -0.19909428, 0.97998035, 3.9461555, 0.75337315, 7.4295187)
+current = true
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="Camera3D" unique_id=2018895487]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.206408, 0.24509525)
+
+[node name="control_mapper" type="Node3D" parent="." unique_id=264577382]
+script = ExtResource("1_4141x")
+
+[node name="ui" type="Control" parent="." unique_id=600064172]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="mascara5" parent="." unique_id=329266782 node_paths=PackedStringArray("camRef") instance=ExtResource("2_nbhiy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.963513, 2.788436, 0)
+camRef = NodePath("../Camera3D")

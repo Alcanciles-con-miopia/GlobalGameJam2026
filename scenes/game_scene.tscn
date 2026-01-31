@@ -8,9 +8,9 @@
 [ext_resource type="PackedScene" uid="uid://bpaonj5o5v8in" path="res://scenes/mascara_2.tscn" id="3_tqxxy"]
 [ext_resource type="Script" uid="uid://dlge0rwka1j3n" path="res://scripts/Countdown.gd" id="3_ycayy"]
 [ext_resource type="PackedScene" uid="uid://cosr6dutw8duo" path="res://scenes/mascara_3.tscn" id="4_5ay1a"]
-[ext_resource type="PackedScene" path="res://scenes/mascara_1_r.tscn" id="5_rurhu"]
-[ext_resource type="PackedScene" path="res://scenes/mascara_2_r.tscn" id="6_kk2rg"]
-[ext_resource type="PackedScene" path="res://scenes/mascara_3_r.tscn" id="7_kk2rg"]
+[ext_resource type="PackedScene" uid="uid://rxns32sh85ka" path="res://scenes/mascara_1_r.tscn" id="5_rurhu"]
+[ext_resource type="PackedScene" uid="uid://c8a1u52j6i6qo" path="res://scenes/mascara_2_r.tscn" id="6_kk2rg"]
+[ext_resource type="PackedScene" uid="uid://dpiepcgpy4qfh" path="res://scenes/mascara_3_r.tscn" id="7_kk2rg"]
 [ext_resource type="Script" uid="uid://cay4w1ja8ica0" path="res://scripts/ClientMaskInfo.gd" id="7_utbpp"]
 
 [node name="GameScene" type="Node3D" unique_id=1376563395]
@@ -35,19 +35,23 @@ script = ExtResource("3_bw6k5")
 
 [node name="ClientMasks" type="Node3D" parent="." unique_id=579115535]
 
-[node name="ClientMask_1" parent="ClientMasks" unique_id=1341945736 instance=ExtResource("5_rurhu")]
+[node name="ClientMask_1" parent="ClientMasks" unique_id=1341945736 node_paths=PackedStringArray("camRef") instance=ExtResource("5_rurhu")]
 transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, 0, 3.0496738, 0)
 script = ExtResource("7_utbpp")
+mask_type = &"mask_1"
+camRef = NodePath("../../Camera3D")
 
-[node name="ClientMask_2" parent="ClientMasks" unique_id=767707261 instance=ExtResource("6_kk2rg")]
+[node name="ClientMask_2" parent="ClientMasks" unique_id=767707261 node_paths=PackedStringArray("camRef") instance=ExtResource("6_kk2rg")]
 transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, 0, 3.0619707, 0)
 script = ExtResource("7_utbpp")
 mask_type = &"mask_2"
+camRef = NodePath("../../Camera3D")
 
-[node name="ClientMask_3" parent="ClientMasks" unique_id=329266782 instance=ExtResource("7_kk2rg")]
+[node name="ClientMask_3" parent="ClientMasks" unique_id=329266782 node_paths=PackedStringArray("camRef") instance=ExtResource("7_kk2rg")]
 transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 0, 3.3079128, 0)
 script = ExtResource("7_utbpp")
 mask_type = &"mask_3"
+camRef = NodePath("../../Camera3D")
 
 [node name="UI" type="CanvasLayer" parent="." unique_id=1964861725]
 

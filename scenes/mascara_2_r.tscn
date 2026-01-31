@@ -2,16 +2,18 @@
 
 [ext_resource type="PackedScene" uid="uid://do8x70y4rv6ll" path="res://assets/models/mascara2.fbx" id="1_tqsfv"]
 [ext_resource type="Script" uid="uid://8lh634d3nv63" path="res://scripts/maskRandomizer.gd" id="2_2l5vh"]
+[ext_resource type="Script" uid="uid://det5nnvshm3lv" path="res://scenes/camaraRef.gd" id="2_t5j7i"]
 [ext_resource type="Texture2D" uid="uid://cbwo5xi7ovqwk" path="res://assets/models/Mask_text.png" id="3_8wees"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_t5j7i"]
 albedo_texture = ExtResource("3_8wees")
 
 [node name="mascara2" unique_id=767707261 instance=ExtResource("1_tqsfv")]
+script = ExtResource("2_t5j7i")
 
-[node name="Skeleton3D" parent="Skeleton" parent_id_path=PackedInt32Array(509548291) index="0" unique_id=840142714]
+[node name="Skeleton3D" parent="Skeleton" parent_id_path=PackedInt32Array(949291586) index="0" unique_id=1194270468]
 script = ExtResource("2_2l5vh")
 
-[node name="mascara2" parent="Skeleton/Skeleton3D" index="0" unique_id=1485161677]
+[node name="mascara2" parent="Skeleton/Skeleton3D" index="0" unique_id=2069201270]
 transform = Transform3D(1.0000001, 0, 0, 0, 1.0000001, -1.4210855e-14, 0, 1.4210855e-14, 1.0000001, 0.00024291994, 1.3427759e-05, -0.00019226078)
 surface_material_override/0 = SubResource("StandardMaterial3D_t5j7i")

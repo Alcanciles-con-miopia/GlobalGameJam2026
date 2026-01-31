@@ -20,17 +20,17 @@ scenes = [NodePath("Scenes/IntroScene"), NodePath("Scenes/SelectMaskScene"), Nod
 process_mode = 4
 visible = false
 
+[node name="FinalScene" parent="Scenes" unique_id=1376563395 instance=ExtResource("6_yux3b")]
+visible = false
+
 [node name="GameScene" parent="Scenes" unique_id=2059163576 instance=ExtResource("4_okvjo")]
 process_mode = 4
 visible = false
 
-[node name="IntroScene" parent="Scenes" unique_id=109836491 instance=ExtResource("2_a0fpy")]
-
 [node name="SelectMaskScene" parent="Scenes" unique_id=152709202 instance=ExtResource("5_okvjo")]
 visible = false
 
-[node name="FinalScene" parent="Scenes" unique_id=1376563395 instance=ExtResource("6_yux3b")]
-visible = false
+[node name="IntroScene" parent="Scenes" unique_id=109836491 instance=ExtResource("2_a0fpy")]
 
 [node name="Fade" parent="." unique_id=2020197177 instance=ExtResource("5_yux3b")]
 
