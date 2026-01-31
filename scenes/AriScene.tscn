@@ -6,19 +6,30 @@
 [node name="AriScene" type="Node3D" unique_id=152709202]
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=1135907038]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0126776695, 0, 1.5459394)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0126776695, 0, 1.510627)
 
-[node name="cara1" parent="." unique_id=1331456049 instance=ExtResource("1_gmjp2")]
+[node name="cara1" parent="." unique_id=1552861223 instance=ExtResource("1_gmjp2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.4155357, 0, -2.4709845)
 
-[node name="Armature" parent="cara1" index="0" unique_id=594430679]
+[node name="Armature" parent="cara1" index="0" unique_id=882429748]
 transform = Transform3D(100, 0, 0, 0, -1.1920929e-05, 99.99999, 0, -99.99999, -1.1920929e-05, -1.4288809, 0, 0)
 
-[node name="Skeleton3D" parent="cara1/Armature" index="0" unique_id=1392944452]
+[node name="Skeleton3D" parent="cara1/Armature" index="0" unique_id=961022824]
 bones/1/rotation = Quaternion(0.30968037, -0.3197692, -0.65235215, 0.61341864)
 bones/1/scale = Vector3(1, 1.0000001, 1)
+bones/3/rotation = Quaternion(0.15685815, 0.042271618, -0.23383817, 0.9586075)
+bones/3/scale = Vector3(1, 0.99999994, 1)
+bones/5/rotation = Quaternion(-0.19527882, 0.42897096, 0.79631376, -0.37912342)
+bones/5/scale = Vector3(0.9999997, 0.99999994, 0.99999994)
 bones/7/rotation = Quaternion(0.30968037, -0.3197692, -0.65235215, 0.61341864)
 bones/7/scale = Vector3(1, 1.0000001, 1)
+bones/9/rotation = Quaternion(0.15685815, -0.042271618, 0.23383817, 0.9586075)
+bones/11/rotation = Quaternion(0.19527882, 0.42897096, 0.79631376, 0.37912342)
+bones/11/scale = Vector3(0.9999997, 0.99999994, 0.99999994)
+bones/13/position = Vector3(0, -0.01324957, 0)
+bones/13/rotation = Quaternion(0.5129954, -0.48665777, -0.5129953, 0.48665774)
+bones/13/scale = Vector3(0.99999994, 1.0000001, 1.0000001)
+bones/15/rotation = Quaternion(0.49226826, -0.50761396, -0.49226823, 0.507614)
 
 [node name="ojoDch" type="BoneAttachment3D" parent="cara1/Armature/Skeleton3D" index="1" unique_id=824032332]
 transform = Transform3D(-0.05563128, 0.60227734, -0.79634607, 0.011736659, -0.79713154, -0.60369134, -0.9983823, -0.042930577, 0.03727676, 0, 0, 0)
@@ -36,17 +47,28 @@ override_pose = true
 use_external_skeleton = true
 external_skeleton = NodePath("..")
 
-[node name="cara2" parent="." unique_id=917217303 instance=ExtResource("1_gmjp2")]
+[node name="cara2" parent="." unique_id=954683335 instance=ExtResource("1_gmjp2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.2874613, 0, -2.4709845)
 
-[node name="Armature" parent="cara2" index="0" unique_id=594430679]
+[node name="Armature" parent="cara2" index="0" unique_id=882429748]
 transform = Transform3D(100, 0, 0, 0, -1.1920929e-05, 99.99999, 0, -99.99999, -1.1920929e-05, -1.4288809, 0, 0)
 
-[node name="Skeleton3D" parent="cara2/Armature" index="0" unique_id=1392944452]
+[node name="Skeleton3D" parent="cara2/Armature" index="0" unique_id=961022824]
 bones/1/rotation = Quaternion(0.30968034, -0.3197692, -0.65235215, 0.61341864)
 bones/1/scale = Vector3(1.0000001, 1.0000002, 1)
+bones/3/rotation = Quaternion(0.15685815, 0.042271618, -0.23383817, 0.9586075)
+bones/3/scale = Vector3(1, 0.99999994, 1)
+bones/5/rotation = Quaternion(-0.19527882, 0.42897096, 0.79631376, -0.37912342)
+bones/5/scale = Vector3(0.9999997, 0.99999994, 0.99999994)
 bones/7/rotation = Quaternion(0.30968034, -0.3197692, -0.65235215, 0.61341864)
 bones/7/scale = Vector3(1.0000001, 1.0000002, 1)
+bones/9/rotation = Quaternion(0.15685815, -0.042271618, 0.23383817, 0.9586075)
+bones/11/rotation = Quaternion(0.19527882, 0.42897096, 0.79631376, 0.37912342)
+bones/11/scale = Vector3(0.9999997, 0.99999994, 0.99999994)
+bones/13/position = Vector3(0, -0.01324957, 0)
+bones/13/rotation = Quaternion(0.5129954, -0.48665777, -0.5129953, 0.48665774)
+bones/13/scale = Vector3(0.99999994, 1.0000001, 1.0000001)
+bones/15/rotation = Quaternion(0.49226826, -0.50761396, -0.49226823, 0.507614)
 
 [node name="ojoDch" type="BoneAttachment3D" parent="cara2/Armature/Skeleton3D" index="1" unique_id=218842739]
 transform = Transform3D(-0.0556314, 0.60227746, -0.79634607, 0.011736659, -0.79713166, -0.6036914, -0.99838233, -0.0429307, 0.03727676, 0, 0, 0)

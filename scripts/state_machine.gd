@@ -31,7 +31,7 @@ func _ready() -> void:
 		print_debug("WIIMOTE: Hilo inicializado.")
 	else:
 		print_debug("WIIMOTE: ERROR al inicializar el hilo.")
-	#Global.change_scene(Global.Scenes.ARISCENE)
+	Global.change_scene(Global.Scenes.ARISCENE)
 	pass 
 
 func _connect_wiimotes_thread():
@@ -70,7 +70,7 @@ func _input(event):
 		#scene = Global.Scenes.INTRO
 	if event.is_action_pressed("2"):
 		print_debug("WIIMOTE: Se ha pulsado B.")
-		#scene = Global.Scenes.GAME
+		scene = Global.Scenes.GAME
 	#if event.is_action_pressed("ui_cancel"):
 		#get_tree().quit()
 	if (scene != Global.Scenes.NULL):
@@ -109,6 +109,6 @@ func _update_bgm_for_scene() -> void:
 			Global.sound.play_bgm("bgmusicSample")
 		Global.Scenes.ARISCENE:
 			# sample de prueba luego se cambia por el real
-			Global.sound.play_bgm("bgmusicSample")
+			Global.sound.play_bgm("selectBGM")
 		Global.Scenes.NULL:
 			Global.sound.stop_bgm()
