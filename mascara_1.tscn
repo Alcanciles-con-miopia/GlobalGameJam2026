@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://dbpgfxktmansp"]
+
+[ext_resource type="PackedScene" uid="uid://b418j06uaqg1r" path="res://assets/models/mascara1.fbx" id="1_c0bqj"]
+[ext_resource type="Script" uid="uid://8lh634d3nv63" path="res://scripts/paigrorandom.gd" id="2_512ai"]
+
+[node name="mascara1" unique_id=1922277496 instance=ExtResource("1_c0bqj")]
+
+[node name="Skeleton3D" parent="Skeleton" parent_id_path=PackedInt32Array(1561037248) index="0" unique_id=680019965]
+bones/1/position = Vector3(2.655, -2.864, 0.002)
+bones/1/scale = Vector3(3.385, -9.905, -6.205)
+bones/11/position = Vector3(0, -8.039, 0.002)
+script = ExtResource("2_512ai")
