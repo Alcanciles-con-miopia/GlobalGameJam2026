@@ -82,6 +82,11 @@ func _compareMask() -> Array:
 	
 	print("DIFERENCIAS ", diffP1, " ", diffP2)
 	BEST_MASK = _getBestMask(diffP1,diffP2)
+	
+	# puntuaciones globales
+	Global.PLAYER1_POINTS += diffP1
+	Global.PLAYER2_POINTS += diffP2
+	
 	return [diffP1, diffP2]
 	
 func _getBestMask(diffP1: float, diffP2: float) -> String:
