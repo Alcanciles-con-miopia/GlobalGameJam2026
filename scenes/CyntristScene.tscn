@@ -12,13 +12,14 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=236880434]
-transform = Transform3D(1, 0, 0, 0, 0.97998035, 0.19909428, 0, -0.19909428, 0.97998035, 3.9461555, 0.75337315, 7.4295187)
+transform = Transform3D(1, 0, 0, 0, 0.9983528, 0.057372347, 0, -0.057372347, 0.9983528, 3.0752354, 2.395616, 2.7520585)
 current = true
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="Camera3D" unique_id=2018895487]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.206408, 0.24509525)
 
-[node name="control_mapper" parent="." unique_id=529707666 instance=ExtResource("1_nbhiy")]
+[node name="control_mapper" parent="." unique_id=529707666 node_paths=PackedStringArray("ui") instance=ExtResource("1_nbhiy")]
+ui = NodePath("../ui")
 
 [node name="ui" type="Control" parent="." unique_id=600064172]
 anchors_preset = 0
