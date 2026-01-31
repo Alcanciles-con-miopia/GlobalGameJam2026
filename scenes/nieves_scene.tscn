@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://debobb8c84pgg" path="res://scripts/CompareMasks.gd" id="1_jknla"]
 [ext_resource type="PackedScene" uid="uid://b418j06uaqg1r" path="res://assets/models/mascara1.fbx" id="2_jknla"]
-[ext_resource type="PackedScene" path="res://scenes/mascara_1.tscn" id="3_u8jfn"]
+[ext_resource type="PackedScene" uid="uid://dboue6235tw1q" path="res://scenes/mascara_1.tscn" id="3_u8jfn"]
 [ext_resource type="PackedScene" uid="uid://cosr6dutw8duo" path="res://scenes/mascara_3.tscn" id="4_aj1ub"]
 [ext_resource type="Script" uid="uid://dlge0rwka1j3n" path="res://scripts/Countdown.gd" id="5_aj1ub"]
 [ext_resource type="Script" uid="uid://p3lxw4wt8lys" path="res://scripts/ServerManager.gd" id="6_gj8ml"]
@@ -30,7 +30,8 @@ visible = false
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.264036, 0, 0)
 visible = false
 
-[node name="mascara3" parent="P2Mask" unique_id=329266782 instance=ExtResource("4_aj1ub")]
+[node name="mascara3" parent="P2Mask" unique_id=329266782 node_paths=PackedStringArray("camRef") instance=ExtResource("4_aj1ub")]
+camRef = NodePath("../../Camera3D")
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=1913785381]
 transform = Transform3D(1, 0, 0, 0, 0.97998035, 0.19909428, 0, -0.19909428, 0.97998035, 3.9461555, 0.75337315, 7.4295187)
