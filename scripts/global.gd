@@ -45,6 +45,10 @@ enum Bones {
 	mouth
 }
 
+# PUNTUACIONES
+var PLAYER1_POINTS = 0
+var PLAYER2_POINTS = 0
+
 var BoneCount = 11
 
 func _ready() -> void:

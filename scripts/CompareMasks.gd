@@ -8,19 +8,22 @@ extends Node
 
 @onready var maskClient: Skeleton3D = $ClientMask/mascara1/Skeleton/Skeleton3D
 @onready var maskP1: Skeleton3D = $P1Mask/mascara1/Skeleton/Skeleton3D
-@onready var maskP2: Skeleton3D = $P2Mask/mascara1/Skeleton/Skeleton3D
+@onready var maskP2: Skeleton3D = $P2Mask/mascara3/Skeleton/Skeleton3D
 
 var boneCount
 
 var diffP1 = 0
 var diffP2 = 0
 
+var BEST_MASK : String
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	boneCount = maskP1.get_bone_count()
 	_compareMask()
 	
-func _compareMask() -> void:
+# returns [diffP1, diffP2]
+func _compareMask() -> Array:
 	for i in range(1, Global.BoneCount + 1):
 		# key de los huesos
 		var boneKey = Global.Bones.find_key(i)
@@ -76,9 +79,19 @@ func _compareMask() -> void:
 		diffP2 += diffRotXP2
 		diffP2 += diffRotYP2
 		diffP2 += diffRotZP2
-		
-	print("DIFERENCIAS ", diffP1, " ", diffP2)
 	
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
+	print("DIFERENCIAS ", diffP1, " ", diffP2)
+	BEST_MASK = _getBestMask(diffP1,diffP2)
+	return [diffP1, diffP2]
+	
+func _getBestMask(diffP1: float, diffP2: float) -> String:
+	var m = maxf(diffP1, diffP2)
+	
+	var best : String
+	if(m == diffP1):
+		best = "P2"
+	else:
+		best = "P1"
+	
+	print("Best Mask: ", best)
+	return best
