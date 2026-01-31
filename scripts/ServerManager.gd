@@ -20,14 +20,25 @@ func CreateServer(_port: String = port):
 	checkConnection(connection.SERVER)
 	multiplayer.multiplayer_peer = peer
 	multiplayer.peer_connected.connect(player_connected)
+	multiplayer.connection_failed.connect(failed)
+	multiplayer.connected_to_server.connect(server_success)
+	multiplayer.server_disconnected.connect(server_fail)
 	player_connected(id)
 	print("HOSTEANDO...")
+	
+func failed():
+	print_debug(">>> Conexión del cliente falló.")
+func server_success():
+	print_debug(">>> Conexión a servidor conseguida.")
+func server_fail():
+	print_debug(">>> Conexion a servidor falló.")
 
 func CreateClient(_address: String = addres, _port: String = port):
 	peer.create_client(_address, _port.to_int())
 	checkConnection(connection.CLIENT)
 	multiplayer.multiplayer_peer = peer
-	player_connected(id+1)
+	for i in masks:
+		i.visible = true
 	print("CONECTADO...")
 
 func player_connected(idx: int = 1):
@@ -46,7 +57,7 @@ func player_connected(idx: int = 1):
 func checkConnection(type: connection):
 	if peer.get_connection_status() == MultiplayerPeer.CONNECTION_DISCONNECTED:
 		if type == connection.SERVER:
-			OS.alert("Error al crear el servidor","Error de red")
+			print_debug("Error al crear el servidor","Error de red")
 		else:
-			OS.alert("Error al unirse a la partida", "Error en el servidor")
+			print_debug("Error al unirse a la partida", "Error en el servidor")
 		return
