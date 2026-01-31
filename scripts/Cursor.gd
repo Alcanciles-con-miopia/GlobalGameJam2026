@@ -3,8 +3,8 @@ class_name Cursor
 
 var DeviceID := 0
 
-const MANO_ABIERTA = preload("uid://coogl6b3273bt")
-const MANO_CERRADA = preload("uid://b2fikb8bvyrd1")
+const MANO_ABIERTA = preload("res://assets/images/mano_abierta.png")
+const MANO_CERRADA = preload("res://assets/images/mano_cerrada.png")
 
 var direction : Vector2
 var vel := 2000

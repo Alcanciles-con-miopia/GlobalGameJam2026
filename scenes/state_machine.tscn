@@ -83,7 +83,3 @@ script = ExtResource("7_s46hd")
 [node name="BGM" type="AudioStreamPlayer2D" parent="Sound" unique_id=1735689702]
 
 [node name="SFX" type="AudioStreamPlayer2D" parent="Sound" unique_id=1992395803]
-
-[node name="TextureRect" type="TextureRect" parent="." unique_id=413403359]
-offset_right = 40.0
-offset_bottom = 40.0
