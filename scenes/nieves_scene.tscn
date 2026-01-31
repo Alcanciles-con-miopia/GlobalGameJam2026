@@ -3,11 +3,11 @@
 [ext_resource type="Script" uid="uid://debobb8c84pgg" path="res://scripts/CompareMasks.gd" id="1_jknla"]
 [ext_resource type="PackedScene" uid="uid://b418j06uaqg1r" path="res://assets/models/mascara1.fbx" id="2_jknla"]
 [ext_resource type="PackedScene" path="res://scenes/mascara_1.tscn" id="3_u8jfn"]
-[ext_resource type="PackedScene" path="res://scenes/mascara_3.tscn" id="4_aj1ub"]
-[ext_resource type="Script" uid="uid://dlge0rwka1j3n" path="res://scenes/Countdown.gd" id="5_aj1ub"]
+[ext_resource type="PackedScene" uid="uid://cosr6dutw8duo" path="res://scenes/mascara_3.tscn" id="4_aj1ub"]
+[ext_resource type="Script" uid="uid://dlge0rwka1j3n" path="res://scripts/Countdown.gd" id="5_aj1ub"]
 [ext_resource type="Script" uid="uid://p3lxw4wt8lys" path="res://scripts/ServerManager.gd" id="6_gj8ml"]
-[ext_resource type="Script" uid="uid://bc21bcy7knvx6" path="res://scenes/connect_button.gd" id="7_f1vfl"]
-[ext_resource type="Script" uid="uid://ymjorkuvx4pm" path="res://scenes/host_button.gd" id="8_1lpm0"]
+[ext_resource type="Script" uid="uid://bc21bcy7knvx6" path="res://scripts/connect_button.gd" id="7_f1vfl"]
+[ext_resource type="Script" uid="uid://ymjorkuvx4pm" path="res://scripts/host_button.gd" id="8_1lpm0"]
 
 [node name="NievesScene" type="Control" unique_id=375442709]
 layout_mode = 3
