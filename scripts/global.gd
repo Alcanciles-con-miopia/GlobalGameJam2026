@@ -83,3 +83,11 @@ func change_scene(next : Global.Scenes, speed = 1.0, force = true):
 
 func timer(tiempo = 1.0):
 	return get_tree().create_timer(tiempo).timeout
+
+func reset_round() -> void:
+	player1_mask_id = ""
+	player2_mask_id = ""
+
+	LAST_WINNER = ""
+
+	draggingSomething = null

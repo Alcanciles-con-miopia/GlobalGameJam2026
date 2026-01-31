@@ -1,10 +1,10 @@
 [gd_scene format=3 uid="uid://co8b72sufgqy4"]
 
-[ext_resource type="PackedScene" uid="uid://rxns32sh85ka" path="res://scenes/mascara_1_r.tscn" id="3_ky6ot"]
+[ext_resource type="PackedScene" path="res://scenes/mascara_1_r.tscn" id="3_ky6ot"]
 [ext_resource type="PackedScene" uid="uid://cosr6dutw8duo" path="res://scenes/mascara_3.tscn" id="4_0xjcg"]
-[ext_resource type="PackedScene" uid="uid://c8a1u52j6i6qo" path="res://scenes/mascara_2_r.tscn" id="4_73dh5"]
+[ext_resource type="PackedScene" path="res://scenes/mascara_2_r.tscn" id="4_73dh5"]
 [ext_resource type="Script" uid="uid://cehkexy4d47mf" path="res://scripts/raycaster.gd" id="4_ky6ot"]
-[ext_resource type="PackedScene" uid="uid://dpiepcgpy4qfh" path="res://scenes/mascara_3_r.tscn" id="5_w5bo7"]
+[ext_resource type="PackedScene" path="res://scenes/mascara_3_r.tscn" id="5_w5bo7"]
 
 [node name="PaigroScene" type="Control" unique_id=427514572]
 layout_mode = 3
@@ -39,3 +39,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.7500615, 1.9762502, -5.1211
 
 [node name="mascara4" parent="." unique_id=329266782 instance=ExtResource("5_w5bo7")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.7092223, 2.5290537, -5.121167)
+
+[editable path="mascara3"]
+[editable path="mascara1"]
+[editable path="mascara2"]
+[editable path="mascara4"]

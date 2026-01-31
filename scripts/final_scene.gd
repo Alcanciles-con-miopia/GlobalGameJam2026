@@ -44,4 +44,5 @@ func on_disable() -> void:
 	process_mode = Node.PROCESS_MODE_DISABLED
 
 func _on_ReplayButton_pressed() -> void:
+	Global.reset_round()
 	Global.change_scene(Global.Scenes.SELECTMASK)

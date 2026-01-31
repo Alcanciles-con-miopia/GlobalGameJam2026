@@ -92,17 +92,17 @@ func _process(delta: float) -> void:
 			#tween.tween_property(aviso, "modulate", Color.TRANSPARENT, 0.5)
 	#pass
 
-func _input(event):
-	var scene = Global.Scenes.NULL;
-	if event.is_action_pressed("1"):
-		scene = Global.Scenes.INTRO
-	if event.is_action_pressed("2"):
-		scene = Global.Scenes.GAME
+#func _input(event):
+	#var scene = Global.Scenes.NULL;
+	#if event.is_action_pressed("1"):
+		#scene = Global.Scenes.INTRO
+	#if event.is_action_pressed("2"):
+		#scene = Global.Scenes.GAME
 	#if event.is_action_pressed("ui_cancel"):
 		#get_tree().quit()
-	if (scene != Global.Scenes.NULL):
-		Global.change_scene(scene)
-	_wiinput(event)
+	#if (scene != Global.Scenes.NULL):
+		#Global.change_scene(scene)
+	#_wiinput(event)
 	
 func _wiinput(event):
 	instruccion += 1

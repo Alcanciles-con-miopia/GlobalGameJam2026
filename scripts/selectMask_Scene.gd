@@ -1,5 +1,7 @@
 extends Node3D
 
+const MASK_NODES := ["cara1", "cara2"]
+
 @onready var camera: Camera3D = $Camera3D
 @onready var play_button: Button = $UI/Control/Button
 @onready var label_p1: Label = $UI/Control/HBoxContainer/LabelP1
@@ -108,7 +110,13 @@ func _reset_mask(mask_node: Node3D) -> void:
 	if mat == null:
 		return
 
-	mat.albedo_color = Color(1.0, 1.0, 1.0)  
+	mat.albedo_color = Color(1.0, 1.0, 1.0)
+
+func _reset_all_masks() -> void:
+	for name in MASK_NODES:
+		var mask_node := get_node_or_null(name) as Node3D
+		if mask_node:
+			_reset_mask(mask_node)  
 
 func _highlight_mask(mask_node: Node3D, player: int) -> void:
 	var mesh := mask_node.get_node_or_null("Armature/Skeleton3D/mascaraPrueba") as MeshInstance3D
@@ -143,6 +151,16 @@ func _update_ui() -> void:
 
 	play_button.disabled = (player1_choice == "" or player2_choice == "")
 
+func _reset_selection_state() -> void:
+	player1_choice = ""
+	player2_choice = ""
+	p1_mask_node = null
+	p2_mask_node = null
+
+	_reset_all_masks()
+
+	_update_ui()
+
 func _on_Button_pressed() -> void:
 	Global.player1_mask_id = player1_choice
 	Global.player2_mask_id = player2_choice
@@ -157,6 +175,8 @@ func on_enable() -> void:
 		ui_root.visible = true
 
 	process_mode = Node.PROCESS_MODE_INHERIT
+	
+	_reset_selection_state()
 
 func on_disable() -> void:
 	if ui_root == null:
