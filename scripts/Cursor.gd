@@ -1,0 +1,37 @@
+extends TextureRect
+class_name Cursor
+
+var DeviceID := 0
+
+const MANO_ABIERTA = preload("uid://coogl6b3273bt")
+const MANO_CERRADA = preload("uid://b2fikb8bvyrd1")
+
+var direction : Vector2
+var vel := 2000
+
+func _ready() -> void:
+	texture = MANO_ABIERTA
+	vibrate(0.2)
+
+func setColor(color):
+	set_modulate(color);
+
+func vibrate(time:= 0.1):
+	Input.start_joy_vibration(DeviceID, 1, 1 ,time)
+
+func _input(event: InputEvent) -> void:
+	if event is InputEventJoypadButton and event.is_action_pressed("A") and event.device == DeviceID:
+		texture = MANO_CERRADA
+		# LANZAR RAYCAST ANDRES AQUI
+	elif event is InputEventJoypadButton and event.is_action_released("A") and event.device == DeviceID:
+		texture = MANO_ABIERTA
+
+func _physics_process(delta: float) -> void:
+	var x_ax = Input.get_joy_axis(DeviceID, JOY_AXIS_LEFT_X)
+	x_ax = x_ax if abs(x_ax) >= 0.4 else 0
+	var y_ax = Input.get_joy_axis(DeviceID, JOY_AXIS_LEFT_Y)
+	y_ax = y_ax if abs(y_ax) >= 0.4 else 0
+	direction = Vector2(x_ax if position.x < get_viewport().size.x else -x_ax, y_ax if position.y < get_viewport().size.y else -y_ax )
+	print(get_viewport().size, " || ", position, " || ", direction)
+	position += direction * vel * delta
+	#print("AA: ", DeviceID, " vector: ", direction)
