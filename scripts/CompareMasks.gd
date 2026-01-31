@@ -113,3 +113,7 @@ func _getBestMask(diffP1: float, diffP2: float) -> String:
 	
 	print("Best Mask: ", best)
 	return best
+
+
+func _on_line_edit_text_submitted(new_text: String) -> void:
+	pass # Replace with function body.

@@ -1,17 +1,17 @@
-extends Button
+extends LineEdit
 
-@onready var server_manager: Node = $"../ServerManager"
+var HostIP
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass # Replace with function body.
 
-
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
 
-func _on_pressed() -> void:
-	if Global.HostIP != -1:
-		server_manager.CreateClient(Global.HostIP)
-	
+func _on_text_submitted(new_text: String) -> void:
+	if new_text != "-1":
+		HostIP = new_text
+		Global.HostIP = HostIP
+		print(HostIP)
