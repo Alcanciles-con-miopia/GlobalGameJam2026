@@ -92,6 +92,9 @@ func play_sfx(name: String, pitch_variation: float = 0.0) -> void:
 
 	sfx.stream = sfx_tracks[name]
 	sfx.volume_db = sfx_volume_db
+	
+	if sfx.stream:
+		sfx.stream.loop = false
 
 	if pitch_variation > 0.0:
 		var base_pitch := 1.0
@@ -106,3 +109,34 @@ func play_sfx(name: String, pitch_variation: float = 0.0) -> void:
 func set_sfx_volume_db(db: float) -> void:
 	sfx_volume_db = db
 	sfx.volume_db = db
+
+#SFX específicos de máscaras (Hermenegildo / Susi)
+# player_id: 1 = Hermenegildo, 2 = Susi
+# "move" "rotate" o "scale"
+func play_mask_sfx(player_id: int, action: String) -> void:
+	var prefix := ""
+
+	var character := Global.Character.SUSI
+	if player_id == 1:
+		character = Global.player1_character
+	elif player_id == 2:
+		character = Global.player2_character
+
+	match character:
+		Global.Character.SUSI:
+			prefix = "susi"
+		Global.Character.HERMENEGILDO:
+			prefix = "herme"
+		_:
+			prefix = "herme"  # fallback
+
+	if prefix == "":
+		return
+
+	var key := "%s_%s" % [prefix, action]  # ej "susi_move", "herme_rotate"
+
+	play_sfx(key, 0.05)
+
+func stop_sfx() -> void:
+	if sfx.playing:
+		sfx.stop()

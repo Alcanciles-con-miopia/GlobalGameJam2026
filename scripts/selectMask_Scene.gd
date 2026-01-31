@@ -164,8 +164,20 @@ func _reset_selection_state() -> void:
 func _on_Button_pressed() -> void:
 	Global.player1_mask_id = player1_choice
 	Global.player2_mask_id = player2_choice
+	
+	Global.player1_character = _character_from_mask_id(player1_choice)
+	Global.player2_character = _character_from_mask_id(player2_choice)
 
 	Global.change_scene(Global.Scenes.GAME)
+
+func _character_from_mask_id(mask_id: StringName) -> Global.Character:
+	match String(mask_id):
+		"mask_1":
+			return Global.Character.SUSI
+		"mask_2":
+			return Global.Character.HERMENEGILDO
+		_:
+			return Global.Character.SUSI
 
 func on_enable() -> void:
 	if ui_root == null:

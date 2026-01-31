@@ -84,6 +84,9 @@ func on_disable() -> void:
 		p2_mask_root = null
 
 	process_mode = Node.PROCESS_MODE_DISABLED
+	
+	if Global.sound and Global.sound.has_method("stop_sfx"):
+		Global.sound.stop_sfx()
 
 func _on_CountdownTimer_timeout() -> void:
 	if comparer and comparer.has_method("finish_round"):
@@ -154,6 +157,9 @@ func _spawn_player_masks() -> void:
 	if p2_spawn:
 		p2_mask_root.global_transform = p2_spawn.global_transform
 
+	p1_mask_root.add_to_group("player1_mask")
+	p2_mask_root.add_to_group("player2_mask")
+	
 	print("GameScene: instanciadas máscaras de jugador de tipo", current_mask_type)
 	
 func _find_skeleton_in(root: Node) -> Skeleton3D:
