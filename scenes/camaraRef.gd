@@ -4,4 +4,5 @@ extends Node3D
 
 
 func getCamRef():
+	print("Toma una camara")
 	return camRef
