@@ -51,6 +51,11 @@ var draggingSomething = null # Hueso que se esta moviendo en un momento.
 var player1_mask_id: StringName = ""
 var player2_mask_id: StringName = ""
 
+enum Character { SUSI, HERMENEGILDO }
+
+var player1_character: Character = Character.SUSI
+var player2_character: Character = Character.HERMENEGILDO
+
 # PUNTUACIONES
 var PLAYER1_POINTS = 0
 var PLAYER2_POINTS = 0

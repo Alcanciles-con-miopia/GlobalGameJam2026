@@ -21,14 +21,14 @@ func _ready():
 		cam = get_tree().get_first_node_in_group("game_camera") as Camera3D
 		if cam == null:
 			print_debug("DraggableObject: no se encontró ninguna Camera3D en el grupo 'game_camera'")
-	
+
 	dif = $"../".global_position - self.global_position
 	pass
-
+	
 # Update.
 func _process(_delta):
 	pass
-	
+
 
 func raycast():
 	var spaceState = cam.get_world_3d().direct_space_state
@@ -41,8 +41,7 @@ func raycast():
 	result = result.get("collider")
 	#print(result)
 	return result
-
-
+	
 func _input(event):
 
 	# Cambiar modo (teclas)
@@ -57,7 +56,7 @@ func _input(event):
 			KEY_3:
 				mode = 3
 				print("MODO: ESCALAR")
-
+				
 	# CLICK IZQUIERDO
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT:
 		if event.pressed:
