@@ -7,7 +7,7 @@ extends Node
 #@export var main_scene: Node
 @export_category("Atrubutes")
 @export var addres: String
-@export var port: String
+@export var port: int
 @export var max_clients: int
 
 var peer = ENetMultiplayerPeer.new()
@@ -15,8 +15,8 @@ enum connection {SERVER, CLIENT}
 @export var masks: Array[Node] = [] 
 var id = 0
 
-func CreateServer(_port: String = port):
-	peer.create_server(_port.to_int(), max_clients)
+func CreateServer(_port:int = port):
+	peer.create_server(_port, max_clients)
 	checkConnection(connection.SERVER)
 	multiplayer.multiplayer_peer = peer
 	multiplayer.peer_connected.connect(player_connected)
@@ -33,8 +33,8 @@ func server_success():
 func server_fail():
 	print_debug(">>> Conexion a servidor falló.")
 
-func CreateClient(_address: String = addres, _port: String = port):
-	peer.create_client(_address, _port.to_int())
+func CreateClient(_address: String = addres, _port: int = port):
+	peer.create_client(_address, _port)
 	checkConnection(connection.CLIENT)
 	multiplayer.multiplayer_peer = peer
 	for i in masks:
