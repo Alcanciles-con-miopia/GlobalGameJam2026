@@ -30,7 +30,7 @@ func CreateClient(_address: String = addres, _port: String = port):
 	print("CONECTADO...")
 
 func player_connected(idx: int = 1):
-	print_debug("Player ", id, " conectado.")
+	print_debug("Player ", id + 1, " conectado.")
 	if id < masks.size():
 		masks[id].visible = true
 	else:
@@ -48,5 +48,4 @@ func checkConnection(type: connection):
 			OS.alert("Error al crear el servidor","Error de red")
 		else:
 			OS.alert("Error al unirse a la partida", "Error en el servidor")
-	#elif peer.get_connection_status() ==
 		return

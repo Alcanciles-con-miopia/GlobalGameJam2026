@@ -76,10 +76,11 @@ offset_bottom = 543.0
 text = "IP AQUÍ"
 script = ExtResource("8_0v85c")
 
-[node name="ServerManager" type="Node" parent="." unique_id=579120220]
+[node name="ServerManager" type="Node" parent="." unique_id=579120220 node_paths=PackedStringArray("masks")]
 script = ExtResource("6_gj8ml")
 port = "3060"
 max_clients = 3
+masks = [NodePath("../P1Mask"), NodePath("../P2Mask")]
 metadata/_custom_type_script = "uid://p3lxw4wt8lys"
 
 [node name="LineEdit" type="LineEdit" parent="." unique_id=236051605]
