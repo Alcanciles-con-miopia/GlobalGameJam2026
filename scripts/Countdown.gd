@@ -20,5 +20,5 @@ func _process(delta: float) -> void:
 	pass
 
 func _on_timeout() -> void:
-	print("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA")
+	print_debug("timer")
 	pass # Replace with function body.
