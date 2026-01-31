@@ -1,7 +1,6 @@
 [gd_scene format=3 uid="uid://co8b72sufgqy4"]
 
-[ext_resource type="PackedScene" uid="uid://dboue6235tw1q" path="res://scenes/mascara_1.tscn" id="1_0vqdt"]
-[ext_resource type="PackedScene" uid="uid://bpaonj5o5v8in" path="res://scenes/mascara_2.tscn" id="3_0xjcg"]
+[ext_resource type="PackedScene" uid="uid://c1jgin4iihkd1" path="res://assets/models/mascara3.fbx" id="3_2e8e6"]
 [ext_resource type="PackedScene" uid="uid://cosr6dutw8duo" path="res://scenes/mascara_3.tscn" id="4_0xjcg"]
 [ext_resource type="Script" uid="uid://cehkexy4d47mf" path="res://scripts/raycaster.gd" id="4_ky6ot"]
 
@@ -22,18 +21,12 @@ script = ExtResource("4_ky6ot")
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1844624981]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2.3058538)
 
-[node name="mascara1" parent="." unique_id=1577534858 instance=ExtResource("1_0vqdt")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.11495662, 0, 0)
-visible = false
-
-[node name="mascara2" parent="." unique_id=657728641 instance=ExtResource("3_0xjcg")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.060967445, 0, -0.5767679)
-visible = false
-
-[node name="mascara3" parent="." unique_id=789480340 node_paths=PackedStringArray("camRef") instance=ExtResource("4_0xjcg")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.020561695, 0.30752635, 0.40463567)
-camRef = NodePath("../Camera3D")
-
 [node name="Node3D" type="Node3D" parent="." unique_id=1995368901]
 
 [node name="RayCast3D" type="RayCast3D" parent="." unique_id=939907439]
+
+[node name="mascara4" parent="." unique_id=329266782 instance=ExtResource("3_2e8e6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.1034715, 0.89726335, 0.54031706)
+
+[node name="mascara3" parent="." unique_id=1672824994 node_paths=PackedStringArray("camRef") instance=ExtResource("4_0xjcg")]
+camRef = NodePath("../Camera3D")

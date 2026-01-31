@@ -1,18 +1,216 @@
 [gd_scene format=3 uid="uid://dboue6235tw1q"]
 
 [ext_resource type="PackedScene" uid="uid://b418j06uaqg1r" path="res://assets/models/mascara1.fbx" id="1_y1gnb"]
-[ext_resource type="Script" uid="uid://8lh634d3nv63" path="res://scripts/maskRandomizer.gd" id="2_hh58j"]
+[ext_resource type="Script" uid="uid://det5nnvshm3lv" path="res://scenes/camaraRef.gd" id="2_fsaqe"]
 [ext_resource type="Texture2D" uid="uid://cbwo5xi7ovqwk" path="res://assets/models/Mask_text.png" id="3_ae0kg"]
+[ext_resource type="Script" uid="uid://cqujx6jyosf0y" path="res://scripts/draggableObject.gd" id="4_mgn7o"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mgn7o"]
 albedo_texture = ExtResource("3_ae0kg")
 
+[sub_resource type="SphereShape3D" id="SphereShape3D_fsaqe"]
+radius = 0.0025358277
+
 [node name="mascara1" unique_id=1341945736 instance=ExtResource("1_y1gnb")]
+script = ExtResource("2_fsaqe")
 
 [node name="Skeleton3D" parent="Skeleton" parent_id_path=PackedInt32Array(244809079) index="0" unique_id=2146286846]
-bones/1/position = Vector3(0, 0.013446506, 0.0022914459)
-bones/1/scale = Vector3(1.0000004, 1, 1)
-script = ExtResource("2_hh58j")
+bones/1/position = Vector3(0, 0.010936345, 0.0022914473)
+bones/1/rotation = Quaternion(0.26385823, -0.36439973, -0.555826, 0.6990344)
+bones/1/scale = Vector3(1.0000004, 1.0000002, 1.0000001)
+bones/3/position = Vector3(0, 0.010936345, 0.0022914473)
+bones/3/rotation = Quaternion(0.13192587, 0.042800948, -0.19667007, 0.9706104)
+bones/3/scale = Vector3(0.99999994, 1, 1)
+bones/5/rotation = Quaternion(-0.19527876, 0.42897108, 0.79631364, -0.37912345)
+bones/5/scale = Vector3(0.99999976, 1, 1)
+bones/9/rotation = Quaternion(-0.5743479, 0.4124614, 0.5743481, -0.4124613)
+bones/9/scale = Vector3(1.0000001, 1.0000001, 1)
+bones/11/position = Vector3(0, 0.010936345, 0.0022914473)
+bones/11/rotation = Quaternion(0.26385823, 0.36439973, 0.555826, 0.6990344)
+bones/11/scale = Vector3(1.0000004, 1.0000002, 1.0000001)
+bones/13/position = Vector3(0, 0.010936345, 0.0022914473)
+bones/13/rotation = Quaternion(0.13192587, -0.042800948, 0.19667007, 0.9706104)
+bones/13/scale = Vector3(0.99999994, 1, 1)
+bones/15/rotation = Quaternion(0.19527876, 0.42897108, 0.79631364, 0.37912345)
+bones/15/scale = Vector3(0.99999976, 1, 1)
+bones/19/rotation = Quaternion(0.774492, 0.30215997, -0.5202309, -0.19550286)
+bones/19/scale = Vector3(1.0000001, 1.0000005, 1.0000005)
 
 [node name="mascara1" parent="Skeleton/Skeleton3D" index="0" unique_id=662016459]
 surface_material_override/0 = SubResource("StandardMaterial3D_mgn7o")
+
+[node name="EyeLAttach" type="BoneAttachment3D" parent="Skeleton/Skeleton3D" index="1" unique_id=542654956]
+transform = Transform3D(0.11654052, 0.5847834, -0.8027746, -0.21613725, -0.77397776, -0.5951833, -0.969383, 0.24287239, 0.036193687, 0, -1.1641532e-09, -0.0025101611)
+bone_name = "eye_l"
+bone_idx = 1
+override_pose = true
+
+[node name="AreaEyeL" type="Area3D" parent="Skeleton/Skeleton3D/EyeLAttach" index="0" unique_id=144133101]
+transform = Transform3D(0.9999996, 1.937151e-07, 2.9802322e-08, 4.4703484e-08, 0.9999999, 1.4901161e-07, -5.9604645e-08, 0, 0.9999999, -0.0016651758, 0.0034423608, -0.0038717536)
+input_capture_on_drag = true
+script = ExtResource("4_mgn7o")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Skeleton/Skeleton3D/EyeLAttach/AreaEyeL" index="0" unique_id=1248265163]
+transform = Transform3D(1, -2.9802322e-08, -4.4703484e-08, 4.4703484e-08, 1, 8.940697e-08, -2.9802322e-08, -1.4901161e-07, 1.0000002, 0.0003733877, 0.001081266, -0.0015416755)
+shape = SubResource("SphereShape3D_fsaqe")
+debug_color = Color(0, 0.6, 0.69803923, 1)
+
+[node name="EyeRAttach" type="BoneAttachment3D" parent="Skeleton/Skeleton3D" index="2" unique_id=549899616]
+transform = Transform3D(0.11654052, -0.5847834, 0.8027746, 0.21613725, -0.77397776, -0.5951833, 0.969383, 0.24287239, 0.036193687, 0, -1.1641532e-09, -0.0025101611)
+bone_name = "eye_r"
+bone_idx = 11
+override_pose = true
+
+[node name="AreaEyeR" type="Area3D" parent="Skeleton/Skeleton3D/EyeRAttach" index="0" unique_id=2071423804]
+transform = Transform3D(0.9999996, -2.9802322e-07, -2.9802322e-08, -4.4703484e-08, 1, 1.4901161e-07, 7.4505806e-08, 5.9604645e-08, 0.9999999, 0.0011118293, 0.0030498512, -0.0035622783)
+input_capture_on_drag = true
+script = ExtResource("4_mgn7o")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Skeleton/Skeleton3D/EyeRAttach/AreaEyeR" index="0" unique_id=1322312243]
+transform = Transform3D(1, -2.9802322e-08, -4.4703484e-08, 4.4703484e-08, 1, 8.940697e-08, -2.9802322e-08, -1.4901161e-07, 1.0000002, 0.0003733877, 0.001081266, -0.0015416755)
+shape = SubResource("SphereShape3D_fsaqe")
+debug_color = Color(0, 0.6, 0.69803923, 1)
+
+[node name="ForeheadLAttach" type="BoneAttachment3D" parent="Skeleton/Skeleton3D" index="3" unique_id=1409663868]
+transform = Transform3D(0.9189779, 0.39307314, 0.031194355, 0.13497785, -0.23926197, -0.9615271, -0.37048686, 0.88783276, -0.27293265, 0, -1.1641532e-09, -0.0025101611)
+bone_name = "forehead_l"
+bone_idx = 3
+override_pose = true
+
+[node name="AreaForeheadL" type="Area3D" parent="Skeleton/Skeleton3D/ForeheadLAttach" index="0" unique_id=1088128488]
+transform = Transform3D(0.99999994, 9.685755e-08, -5.9604645e-08, 2.6077032e-07, 0.9999998, -2.9802322e-08, 1.4901161e-08, -1.0430813e-07, 1.0000002, 0.002968158, 0.013029891, -0.0028256313)
+input_capture_on_drag = true
+script = ExtResource("4_mgn7o")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Skeleton/Skeleton3D/ForeheadLAttach/AreaForeheadL" index="0" unique_id=1385058739]
+transform = Transform3D(1, -4.8428774e-08, -4.4703484e-08, 0, 1, 8.940697e-08, 0, -1.937151e-07, 1.0000001, -1.0767719e-05, -0.001072594, -0.0010596467)
+shape = SubResource("SphereShape3D_fsaqe")
+debug_color = Color(0, 0.6, 0.69803923, 1)
+
+[node name="ForeheadRAttach" type="BoneAttachment3D" parent="Skeleton/Skeleton3D" index="4" unique_id=882394551]
+transform = Transform3D(0.9189779, -0.39307314, -0.031194355, -0.13497785, -0.23926197, -0.9615271, 0.37048686, 0.88783276, -0.27293265, 0, -1.1641532e-09, -0.0025101611)
+bone_name = "forehead_r"
+bone_idx = 13
+override_pose = true
+
+[node name="AreaForeheadR" type="Area3D" parent="Skeleton/Skeleton3D/ForeheadRAttach" index="0" unique_id=208610699]
+transform = Transform3D(1, -9.685755e-08, 4.4703484e-08, -2.5704503e-07, 0.99999976, 0, -2.9802322e-08, -7.4505806e-08, 0.9999998, -0.0021948083, 0.012427151, -0.0027842107)
+input_capture_on_drag = true
+script = ExtResource("4_mgn7o")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Skeleton/Skeleton3D/ForeheadRAttach/AreaForeheadR" index="0" unique_id=1764073252]
+transform = Transform3D(1, -2.9802322e-08, -4.4703484e-08, 4.4703484e-08, 1, 8.940697e-08, -2.9802322e-08, -1.4901161e-07, 1.0000002, 0.0003733877, 0.001081266, -0.0015416755)
+shape = SubResource("SphereShape3D_fsaqe")
+debug_color = Color(0, 0.6, 0.69803923, 1)
+
+[node name="CheekLAttach" type="BoneAttachment3D" parent="Skeleton/Skeleton3D" index="5" unique_id=969275956]
+transform = Transform3D(-0.6362631, 0.4362645, -0.6362723, -0.0142596, -0.83126044, -0.55570006, -0.77134, -0.34449846, 0.5351214, 0.003756802, 0, -0.0057604318)
+bone_name = "cheek_l"
+bone_idx = 5
+override_pose = true
+
+[node name="AreaCheekL" type="Area3D" parent="Skeleton/Skeleton3D/CheekLAttach" index="0" unique_id=1385500494]
+transform = Transform3D(0.9999997, -1.5459955e-07, 1.3411045e-07, -2.7008355e-07, 0.99999964, 0, -2.7939677e-09, 2.9802322e-08, 0.9999995, -0.00028539833, 0.008680389, 0.0026881392)
+input_capture_on_drag = true
+script = ExtResource("4_mgn7o")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Skeleton/Skeleton3D/CheekLAttach/AreaCheekL" index="0" unique_id=797826927]
+transform = Transform3D(1, -2.9802322e-08, -4.4703484e-08, 4.4703484e-08, 1, 8.940697e-08, -2.9802322e-08, -1.4901161e-07, 1.0000002, 0.0003733877, 0.001081266, -0.0015416755)
+shape = SubResource("SphereShape3D_fsaqe")
+debug_color = Color(0, 0.6, 0.69803923, 1)
+
+[node name="CheekRAttach" type="BoneAttachment3D" parent="Skeleton/Skeleton3D" index="6" unique_id=259286429]
+transform = Transform3D(-0.6362631, -0.4362645, 0.6362723, 0.0142596, -0.83126044, -0.55570006, 0.77134, -0.34449846, 0.5351214, -0.003756802, 0, -0.0057604318)
+bone_name = "cheek_r"
+bone_idx = 15
+override_pose = true
+
+[node name="AreaCheekR" type="Area3D" parent="Skeleton/Skeleton3D/CheekRAttach" index="0" unique_id=1383141225]
+transform = Transform3D(0.9999996, -8.288771e-08, 7.4505806e-08, -1.5739352e-07, 0.9999996, 2.9802322e-08, 5.4948032e-08, 2.9802322e-08, 0.9999995, -0.0001269863, 0.008378191, 0.0024279337)
+input_capture_on_drag = true
+script = ExtResource("4_mgn7o")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Skeleton/Skeleton3D/CheekRAttach/AreaCheekR" index="0" unique_id=2058219527]
+transform = Transform3D(1, -2.9802322e-08, -4.4703484e-08, 4.4703484e-08, 1, 8.940697e-08, -2.9802322e-08, -1.4901161e-07, 1.0000002, 0.0003733877, 0.001081266, -0.0015416755)
+shape = SubResource("SphereShape3D_fsaqe")
+debug_color = Color(0, 0.6, 0.69803923, 1)
+
+[node name="ChinAttach" type="BoneAttachment3D" parent="Skeleton/Skeleton3D" index="7" unique_id=397932373]
+transform = Transform3D(0, 2.3841858e-07, -1, 1, 0, 0, 0, -1, -2.3841858e-07, 0, 0, -0.011449861)
+bone_name = "chin"
+bone_idx = 17
+override_pose = true
+
+[node name="AreaChin" type="Area3D" parent="Skeleton/Skeleton3D/ChinAttach" index="0" unique_id=1741990044]
+transform = Transform3D(0.9999997, -8.28877e-08, 7.450581e-08, -1.5739353e-07, 0.9999997, 2.9802314e-08, 5.4948032e-08, 2.9802322e-08, 0.99999964, -0.00012698663, 0.0056144707, 0.0015297246)
+input_capture_on_drag = true
+script = ExtResource("4_mgn7o")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Skeleton/Skeleton3D/ChinAttach/AreaChin" index="0" unique_id=972995838]
+transform = Transform3D(1, -2.9802322e-08, -4.4703484e-08, 4.4703484e-08, 1, 8.940697e-08, -2.9802322e-08, -1.4901161e-07, 1.0000002, 0.0003733877, 0.001081266, -0.0015416755)
+shape = SubResource("SphereShape3D_fsaqe")
+debug_color = Color(0, 0.6, 0.69803923, 1)
+
+[node name="NoseAttach" type="BoneAttachment3D" parent="Skeleton/Skeleton3D" index="8" unique_id=1857393131]
+transform = Transform3D(-2.384186e-07, -2.9802326e-08, -1, 0.31950265, -0.9475854, -1.4210854e-14, -0.9475854, -0.3195027, 1.19209275e-07, 0, -9.313226e-10, -0.0038506845)
+bone_name = "nose"
+bone_idx = 9
+override_pose = true
+
+[node name="AreaNose" type="Area3D" parent="Skeleton/Skeleton3D/NoseAttach" index="0" unique_id=646087354]
+transform = Transform3D(0.9999997, -8.28877e-08, 7.450581e-08, -1.5739353e-07, 0.9999997, 2.9802314e-08, 5.4948032e-08, 2.9802322e-08, 0.99999964, -0.00012698663, 0.0056144707, 0.0015297246)
+input_capture_on_drag = true
+script = ExtResource("4_mgn7o")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Skeleton/Skeleton3D/NoseAttach/AreaNose" index="0" unique_id=648207080]
+transform = Transform3D(1, -2.9802322e-08, -4.4703484e-08, 4.4703484e-08, 1, 8.940697e-08, -2.9802322e-08, -1.4901161e-07, 1.0000002, 0.0003733877, 0.001081266, -0.0015416755)
+shape = SubResource("SphereShape3D_fsaqe")
+debug_color = Color(0, 0.6, 0.69803923, 1)
+
+[node name="CommissureLAttach" type="BoneAttachment3D" parent="Skeleton/Skeleton3D" index="9" unique_id=204054629]
+transform = Transform3D(0.27611855, 0.26462784, -0.92397594, 0.67145425, -0.7409563, -0.01155505, -0.68768305, -0.61721694, -0.38227728, 0.0018257329, 1.1283953e-09, -0.00839837)
+bone_name = "commissure_l"
+bone_idx = 19
+override_pose = true
+
+[node name="AreaCommissureL" type="Area3D" parent="Skeleton/Skeleton3D/CommissureLAttach" index="0" unique_id=28212274]
+transform = Transform3D(0.9999997, -8.28877e-08, 7.450581e-08, -1.5739353e-07, 0.9999997, 2.9802314e-08, 5.4948032e-08, 2.9802322e-08, 0.99999964, -0.00012698663, 0.0056144707, 0.0015297246)
+input_capture_on_drag = true
+script = ExtResource("4_mgn7o")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Skeleton/Skeleton3D/CommissureLAttach/AreaCommissureL" index="0" unique_id=2057520941]
+transform = Transform3D(1, -2.9802322e-08, -4.4703484e-08, 4.4703484e-08, 1, 8.940697e-08, -2.9802322e-08, -1.4901161e-07, 1.0000002, 0.0003733877, 0.001081266, -0.0015416755)
+shape = SubResource("SphereShape3D_fsaqe")
+debug_color = Color(0, 0.6, 0.69803923, 1)
+
+[node name="CommissureRAttach" type="BoneAttachment3D" parent="Skeleton/Skeleton3D" index="10" unique_id=1350409299]
+transform = Transform3D(0.27611867, -0.26462778, 0.9239758, -0.67145425, -0.74095625, -0.01155493, 0.68768305, -0.6172168, -0.3822774, -0.0018257329, 1.1283953e-09, -0.00839837)
+bone_name = "commissure_r"
+bone_idx = 21
+override_pose = true
+
+[node name="AreaCommissureR" type="Area3D" parent="Skeleton/Skeleton3D/CommissureRAttach" index="0" unique_id=798247002]
+transform = Transform3D(0.9999997, -8.28877e-08, 7.450581e-08, -1.5739353e-07, 0.9999997, 2.9802314e-08, 5.4948032e-08, 2.9802322e-08, 0.99999964, -0.00012698663, 0.0056144707, 0.0015297246)
+input_capture_on_drag = true
+script = ExtResource("4_mgn7o")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Skeleton/Skeleton3D/CommissureRAttach/AreaCommissureR" index="0" unique_id=1556097951]
+transform = Transform3D(1, -2.9802322e-08, -4.4703484e-08, 4.4703484e-08, 1, 8.940697e-08, -2.9802322e-08, -1.4901161e-07, 1.0000002, 0.0003733877, 0.001081266, -0.0015416755)
+shape = SubResource("SphereShape3D_fsaqe")
+debug_color = Color(0, 0.6, 0.69803923, 1)
+
+[node name="MouthAttach" type="BoneAttachment3D" parent="Skeleton/Skeleton3D" index="11" unique_id=429242825]
+transform = Transform3D(1.788139e-07, -2.9802314e-08, -0.99999964, 0.4673821, -0.88405496, 1.0658137e-14, -0.8840551, -0.46738186, -8.940693e-08, 0, -2.3283064e-10, -0.010183246)
+bone_name = "mouth"
+bone_idx = 7
+override_pose = true
+
+[node name="AreaMouth" type="Area3D" parent="Skeleton/Skeleton3D/MouthAttach" index="0" unique_id=363105158]
+transform = Transform3D(0.9999997, -8.28877e-08, 7.450581e-08, -1.5739353e-07, 0.9999997, 2.9802314e-08, 5.4948032e-08, 2.9802322e-08, 0.99999964, -0.00012698663, 0.0056144707, 0.0015297246)
+input_capture_on_drag = true
+script = ExtResource("4_mgn7o")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Skeleton/Skeleton3D/MouthAttach/AreaMouth" index="0" unique_id=1414181779]
+transform = Transform3D(1, -2.9802322e-08, -4.4703484e-08, 4.4703484e-08, 1, 8.940697e-08, -2.9802322e-08, -1.4901161e-07, 1.0000002, 0.0003733877, 0.001081266, -0.0015416755)
+shape = SubResource("SphereShape3D_fsaqe")
+debug_color = Color(0, 0.6, 0.69803923, 1)
