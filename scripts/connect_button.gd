@@ -12,6 +12,5 @@ func _process(delta: float) -> void:
 	pass
 
 func _on_pressed() -> void:
-	print("CONECTAR")
 	server_manager.CreateClient("127.0.0.1")
 	

@@ -32,7 +32,7 @@ func player_connected(id: int = 1):
 	#var player = Player.instantiate()
 	#player.name = str(id)
 	#main_scene.add_child(player, true)
-	print("player conectado")
+	#print("player conectado")
 
 func checkConnection(type: connection):
 	if peer.get_connection_status() == MultiplayerPeer.CONNECTION_DISCONNECTED:
