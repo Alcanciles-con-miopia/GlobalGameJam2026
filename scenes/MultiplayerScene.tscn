@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://xta2olsfilwu"]
+
+[ext_resource type="Script" uid="uid://bc21bcy7knvx6" path="res://scenes/connect_button.gd" id="1_s3y6a"]
+
+[node name="MultiplayerScene" type="Control" unique_id=1057978725]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Button" type="Button" parent="." unique_id=1323738434]
+layout_mode = 0
+offset_right = 8.0
+offset_bottom = 8.0
+scale = Vector2(12.72, 6.280001)
+text = "CONECTAR"
+script = ExtResource("1_s3y6a")
+
+[connection signal="pressed" from="Button" to="Button" method="_on_pressed"]

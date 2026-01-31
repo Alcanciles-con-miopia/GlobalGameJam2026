@@ -31,59 +31,67 @@ func _ready() -> void:
 	
 	## PRIMER CAMBIO DE ESCENA
 	Global.change_scene(Global.Scenes.GAME)
-	var thread = Thread.new()
-	thread.start(_connect_wiimotes_thread)
-	print_debug("WIIMOTE: Intentando iniciar hilo.")
-	if (thread.is_started()):
-		print_debug("WIIMOTE: Hilo inicializado.")
-	else:
-		print_debug("WIIMOTE: ERROR al inicializar el hilo.")
-	Global.change_scene(Global.Scenes.ARISCENE)
+	#Global.change_scene(Global.Scenes.ARISCENE)
+	#_wiiconnect()
 	pass 
-
-func _connect_wiimotes_thread():
-	# Initialize loading screen
-	print_debug("WIIMOTE: Intentando iniciar conexión.")
-	GDWiimoteServer.initialize_connection(true)
-	call_deferred("_on_connection_complete")
-
-func _on_connection_complete():
-	# Hide loading screen
-	# Retrieve connected Wiimotes
-	print_debug("WIIMOTE: SUCCESS, conexión finalizada.")
-	connected_wiimotes = GDWiimoteServer.finalize_connection()
-	wiimotes_connected = true
 	
-	aviso.visible = true
-	mostrar_aviso = true
-	aviso_texto.text = tr("WIIMOTE_FEEDBACK_SUCCESS") + " " + str(connected_wiimotes.size())
-	
-	for i in connected_wiimotes:
-		i.set_ir(true)
+#func _wiiconnect():
+	#var thread = Thread.new()
+	#thread.start(_connect_wiimotes_thread)
+	#print_debug("WIIMOTE: Intentando iniciar hilo.")
+	#if (thread.is_started()):
+		#print_debug("WIIMOTE: Hilo inicializado.")
+	#else:
+		#print_debug("WIIMOTE: ERROR al inicializar el hilo.")
+
+#func _connect_wiimotes_thread():
+	## Initialize loading screen
+	#print_debug("WIIMOTE: Intentando iniciar conexión.")
+	#GDWiimoteServer.initialize_connection(false)
+	#call_deferred("_on_connection_complete")
+
+#func _on_connection_complete():
+	## Hide loading screen
+	## Retrieve connected Wiimotes
+	#print_debug("WIIMOTE: SUCCESS, conexión finalizada.")
+	#connected_wiimotes = GDWiimoteServer.finalize_connection()
+	#wiimotes_connected = true
+	#
+	#aviso.visible = true
+	#mostrar_aviso = true
+	#aviso_texto.text = tr("WIIMOTE_FEEDBACK_SUCCESS") + " " + str(connected_wiimotes.size())
+	#
+	#for i in connected_wiimotes:
+		#i.set_ir(true)
 	## can also retrieve later on with GDWiimoteServer.get_connected_wiimotes()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	_wiimotion()
-	_warning()
+	#_wiimotion()
+	#_warning()
 	pass
 	
-func _wiimotion():
+#func _wiimotion():
 	#if (wiimotes_connected):
-	#for i : GDWiimote in connected_wiimotes:
-		#print_debug("IR CALCULATED POSITION: ", i.get_ir_cursor_calculated_position())
-		#Input.warp_mouse(i.get_ir_cursor_calculated_position())
-	pass
-	
-func _warning():
-	if mostrar_aviso:
-		counter += 1
-		if counter >= 400:
-			mostrar_aviso = false
-			counter = 0
-			var tween = create_tween()
-			tween.tween_property(aviso, "modulate", Color.TRANSPARENT, 0.5)
-	pass
+		##for i : GDWiimote in connected_wiimotes:
+			###print_debug("IR CALCULATED POSITION: ", i.get_ir_cursor_calculated_position())
+			##print_debug("SMOOTHED ORIENTATION: ", i.get_smoothed_orientation())
+			###Input.warp_mouse(i.get_ir_cursor_calculated_position())
+		#for i in range(connected_wiimotes.size()):
+			##print_debug("IR CALCULATED POSITION: ", i.get_ir_cursor_calculated_position())
+			#print_debug("WIIMOTE ", i + 1, " SMOOTHED ORIENTATION: ", connected_wiimotes[i].get_smoothed_orientation())
+			##Input.warp_mouse(i.get_ir_cursor_calculated_position())
+	#pass
+	#
+#func _warning():
+	#if mostrar_aviso:
+		#counter += 1
+		#if counter >= 400:
+			#mostrar_aviso = false
+			#counter = 0
+			#var tween = create_tween()
+			#tween.tween_property(aviso, "modulate", Color.TRANSPARENT, 0.5)
+	#pass
 
 func _input(event):
 	var scene = Global.Scenes.NULL;
