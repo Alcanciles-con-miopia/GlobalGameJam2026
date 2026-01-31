@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://cosr6dutw8duo"]
 
 [ext_resource type="PackedScene" uid="uid://c1jgin4iihkd1" path="res://assets/models/mascara3.fbx" id="1_8nifo"]
+[ext_resource type="Script" uid="uid://det5nnvshm3lv" path="res://scenes/camaraRef.gd" id="2_b0hta"]
 [ext_resource type="Texture2D" uid="uid://cbwo5xi7ovqwk" path="res://assets/models/Mask_text.png" id="3_v5umj"]
 [ext_resource type="Script" uid="uid://cqujx6jyosf0y" path="res://scripts/draggableObject.gd" id="4_b0hta"]
 
@@ -11,6 +12,7 @@ albedo_texture = ExtResource("3_v5umj")
 radius = 0.0025358277
 
 [node name="mascara3" unique_id=329266782 instance=ExtResource("1_8nifo")]
+script = ExtResource("2_b0hta")
 
 [node name="Skeleton3D" parent="Skeleton" parent_id_path=PackedInt32Array(2064147254) index="0" unique_id=1632936588]
 bones/1/position = Vector3(0.0049462463, 0.010695064, 0.0022914473)

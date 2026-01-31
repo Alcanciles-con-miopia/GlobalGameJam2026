@@ -30,8 +30,9 @@ visible = false
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.060967445, 0, -0.5767679)
 visible = false
 
-[node name="mascara3" parent="." unique_id=789480340 instance=ExtResource("4_0xjcg")]
+[node name="mascara3" parent="." unique_id=789480340 node_paths=PackedStringArray("camRef") instance=ExtResource("4_0xjcg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.020561695, 0.30752635, 0.40463567)
+camRef = NodePath("../Camera3D")
 
 [node name="Node3D" type="Node3D" parent="." unique_id=1995368901]
 

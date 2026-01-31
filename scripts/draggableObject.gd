@@ -1,11 +1,10 @@
 extends Node
 
-@export var cam = null
-
+var cam:Camera3D
 
 # Start.
 func _ready():
-	cam = $"../../../../../Camera3D"
+	cam = $"../../../..".getCamRef()
 	print(cam)
 	pass
 
