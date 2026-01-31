@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://bn5cwk045bu4d"]
 
 [ext_resource type="PackedScene" uid="uid://dapi17w4oqsgl" path="res://assets/models/mascaras.fbx" id="1_rjbpk"]
-[ext_resource type="Script" uid="uid://8lh634d3nv63" path="res://scripts/paigrorandom.gd" id="2_m0eoa"]
+[ext_resource type="Script" uid="uid://8lh634d3nv63" path="res://scripts/maskRandomizer.gd" id="2_m0eoa"]
 
 [node name="mascaras" unique_id=1019807771 instance=ExtResource("1_rjbpk")]
 

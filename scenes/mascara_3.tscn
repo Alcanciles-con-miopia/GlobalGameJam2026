@@ -1,16 +1,54 @@
 [gd_scene format=3 uid="uid://cosr6dutw8duo"]
 
 [ext_resource type="PackedScene" uid="uid://c1jgin4iihkd1" path="res://assets/models/mascara3.fbx" id="1_8nifo"]
-[ext_resource type="Script" uid="uid://8lh634d3nv63" path="res://scripts/paigrorandom.gd" id="2_t8tpc"]
+[ext_resource type="Script" uid="uid://8lh634d3nv63" path="res://scripts/maskRandomizer.gd" id="2_t8tpc"]
 [ext_resource type="Texture2D" uid="uid://cbwo5xi7ovqwk" path="res://assets/models/Mask_text.png" id="3_v5umj"]
+[ext_resource type="Script" uid="uid://cqujx6jyosf0y" path="res://scripts/draggableObject.gd" id="4_b0hta"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_b0hta"]
 albedo_texture = ExtResource("3_v5umj")
 
+[sub_resource type="SphereShape3D" id="SphereShape3D_b0hta"]
+radius = 0.0025358277
+
 [node name="mascara3" unique_id=329266782 instance=ExtResource("1_8nifo")]
 
 [node name="Skeleton3D" parent="Skeleton" parent_id_path=PackedInt32Array(2064147254) index="0" unique_id=1632936588]
+bones/1/position = Vector3(0.004867089, 0.01087188, 0.0022914473)
+bones/1/scale = Vector3(1.0000005, 1.0000002, 1.0000002)
+bones/11/position = Vector3(-0.004912901, 0.0108846305, 0.0022914473)
+bones/11/scale = Vector3(1.0000005, 1.0000002, 1.0000002)
 script = ExtResource("2_t8tpc")
 
 [node name="mascara3" parent="Skeleton/Skeleton3D" index="0" unique_id=1264949166]
 surface_material_override/0 = SubResource("StandardMaterial3D_b0hta")
+
+[node name="EyeLAttach" type="BoneAttachment3D" parent="Skeleton/Skeleton3D" index="1" unique_id=1393854557]
+transform = Transform3D(0.11654053, 0.5847834, -0.80277467, -0.21613728, -0.7739778, -0.5951834, -0.9693831, 0.24287242, 0.03619369, 0.004867089, -1.1564685e-09, -0.0025746261)
+bone_name = "eye_l"
+bone_idx = 1
+override_pose = true
+
+[node name="AreaEyeL" type="Area3D" parent="Skeleton/Skeleton3D/EyeLAttach" index="0" unique_id=790675314]
+input_capture_on_drag = true
+script = ExtResource("4_b0hta")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Skeleton/Skeleton3D/EyeLAttach/AreaEyeL" index="0" unique_id=1060491610]
+transform = Transform3D(1, -2.9802322e-08, -4.4703484e-08, 4.4703484e-08, 1, 8.940697e-08, -2.9802322e-08, -1.4901161e-07, 1.0000002, 0.0003733877, 0.001081266, -0.0015416755)
+shape = SubResource("SphereShape3D_b0hta")
+debug_color = Color(0, 0.6, 0.69803923, 1)
+
+[node name="EyeRAttach" type="BoneAttachment3D" parent="Skeleton/Skeleton3D" index="2" unique_id=1778382059]
+transform = Transform3D(0.11654053, -0.5847834, 0.80277467, 0.21613728, -0.7739778, -0.5951834, 0.9693831, 0.24287242, 0.03619369, -0.004912901, -1.1579885e-09, -0.0025618756)
+bone_name = "eye_r"
+bone_idx = 11
+override_pose = true
+
+[node name="AreaEyeR" type="Area3D" parent="Skeleton/Skeleton3D/EyeRAttach" index="0" unique_id=1975993628]
+input_capture_on_drag = true
+script = ExtResource("4_b0hta")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Skeleton/Skeleton3D/EyeRAttach/AreaEyeR" index="0" unique_id=266599157]
+transform = Transform3D(1, -2.9802322e-08, -4.4703484e-08, 4.4703484e-08, 1, 8.940697e-08, -2.9802322e-08, -1.4901161e-07, 1.0000002, 0.0003733877, 0.001081266, -0.0015416755)
+shape = SubResource("SphereShape3D_b0hta")
+debug_color = Color(0, 0.6, 0.69803923, 1)
