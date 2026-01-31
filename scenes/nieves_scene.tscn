@@ -67,9 +67,7 @@ offset_bottom = 683.0
 text = "HOSTEAR"
 script = ExtResource("8_1lpm0")
 
-<<<<<<< Updated upstream
 [node name="ServerManager" type="Node" parent="." unique_id=579120220 node_paths=PackedStringArray("masks")]
-=======
 [node name="Label" type="Label" parent="." unique_id=573046361]
 layout_mode = 0
 offset_left = 78.0
@@ -80,7 +78,6 @@ text = "IP AQUÍ"
 script = ExtResource("8_0v85c")
 
 [node name="ServerManager" type="Node" parent="." unique_id=579120220]
->>>>>>> Stashed changes
 script = ExtResource("6_gj8ml")
 port = "3060"
 max_clients = 2
