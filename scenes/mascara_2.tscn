@@ -128,7 +128,7 @@ shape = SubResource("SphereShape3D_86iu0")
 debug_color = Color(0, 0.6, 0.69803923, 1)
 
 [node name="Sprite3D" type="Sprite3D" parent="Skeleton/Skeleton3D/ForeheadRAttach/AreaForeheadR/CollisionShape3D" index="0" unique_id=685688335]
-transform = Transform3D(0.0020000003, 2.910383e-11, -2.910383e-11, 1.5279511e-10, 0.0020000003, 0, 0, 0, 0.0020000003, 0.0012019725, 0.0021306174, 0.008562363)
+transform = Transform3D(0.0020000006, -2.1827873e-11, -5.820766e-11, 2.910383e-10, 0.0020000006, -2.910383e-11, 0, 2.910383e-11, 0.0020000003, 0.0007112804, 0.00095472485, 0.008923849)
 billboard = 2
 alpha_cut = 2
 texture = ExtResource("5_86iu0")
