@@ -68,7 +68,7 @@ left_click={
 
 [internationalization]
 
-locale/translations=PackedStringArray("res://localization/Example/mi_proyecto_translations.en.translation", "res://localization/Example/mi_proyecto_translations.es.translation")
+locale/translations=PackedStringArray("res://localization/feedback.en.translation", "res://localization/feedback.es.translation")
 
 [rendering]
 

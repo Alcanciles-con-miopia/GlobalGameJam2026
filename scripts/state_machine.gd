@@ -7,9 +7,13 @@ extends Node
 @onready var sfx: AudioStreamPlayer2D = $Sound/SFX
 @onready var sound = $Sound
 
+@onready var aviso = $AvisoLayer/Aviso
+@onready var aviso_texto = $AvisoLayer/Aviso/VBoxContainer/Label
 var wiimotes_connected = false
 var agarre = false
 var connected_wiimotes
+var mostrar_aviso = false
+var counter = 0
 
 var instruccion = 0
 
@@ -50,6 +54,10 @@ func _on_connection_complete():
 	connected_wiimotes = GDWiimoteServer.finalize_connection()
 	wiimotes_connected = true
 	
+	aviso.visible = true
+	mostrar_aviso = true
+	aviso_texto.text = tr("WIIMOTE_FEEDBACK_SUCCESS") + " " + str(connected_wiimotes.size())
+	
 	for i in connected_wiimotes:
 		i.set_ir(true)
 	## can also retrieve later on with GDWiimoteServer.get_connected_wiimotes()
@@ -57,6 +65,7 @@ func _on_connection_complete():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	_wiimotion()
+	_warning()
 	pass
 	
 func _wiimotion():
@@ -66,7 +75,15 @@ func _wiimotion():
 		#Input.warp_mouse(i.get_ir_cursor_calculated_position())
 	pass
 	
-	
+func _warning():
+	if mostrar_aviso:
+		counter += 1
+		if counter >= 400:
+			mostrar_aviso = false
+			counter = 0
+			var tween = create_tween()
+			tween.tween_property(aviso, "modulate", Color.TRANSPARENT, 0.5)
+	pass
 
 func _input(event):
 	var scene = Global.Scenes.NULL;

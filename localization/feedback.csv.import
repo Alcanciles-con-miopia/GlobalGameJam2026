@@ -1,0 +1,19 @@
+[remap]
+
+importer="csv_translation"
+type="Translation"
+uid="uid://pp33g33sxguo"
+
+[deps]
+
+files=["res://localization/feedback.en.translation", "res://localization/feedback.es.translation"]
+
+source_file="res://localization/feedback.csv"
+dest_files=["res://localization/feedback.en.translation", "res://localization/feedback.es.translation"]
+
+[params]
+
+compress=1
+delimiter=0
+unescape_keys=false
+unescape_translations=true
