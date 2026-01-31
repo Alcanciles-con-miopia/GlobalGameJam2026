@@ -5,7 +5,6 @@
 [ext_resource type="PackedScene" uid="uid://2fn8su01j5da" path="res://scenes/intro_scene.tscn" id="2_a0fpy"]
 [ext_resource type="PackedScene" uid="uid://dhwq84dhhtp70" path="res://scenes/null_scene.tscn" id="3_s46hd"]
 [ext_resource type="PackedScene" uid="uid://cpbv42xhe4um5" path="res://scenes/game_scene.tscn" id="4_okvjo"]
-[ext_resource type="Script" uid="uid://bbgtmesirbbbv" path="res://scripts/ari_scene.gd" id="5_m6efm"]
 [ext_resource type="PackedScene" uid="uid://cugvtvbfh07ky" path="res://scenes/AriScene.tscn" id="5_okvjo"]
 [ext_resource type="PackedScene" uid="uid://bsth51shqxg7x" path="res://objects/canvas/fade.tscn" id="5_yux3b"]
 [ext_resource type="Script" uid="uid://cdy06es2yfjyw" path="res://scripts/sound_manager.gd" id="7_s46hd"]
@@ -28,7 +27,6 @@ visible = false
 
 [node name="AriScene" parent="Scenes" unique_id=152709202 instance=ExtResource("5_okvjo")]
 visible = false
-script = ExtResource("5_m6efm")
 
 [node name="Fade" parent="." unique_id=2020197177 instance=ExtResource("5_yux3b")]
 
