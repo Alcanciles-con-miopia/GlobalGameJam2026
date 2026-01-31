@@ -276,7 +276,7 @@ input_capture_on_drag = true
 script = ExtResource("4_mgn7o")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Skeleton/Skeleton3D/MouthAttach/AreaMouth" index="0" unique_id=1414181779]
-transform = Transform3D(1, -2.9802322e-08, -4.4703484e-08, 4.4703484e-08, 1, 8.940697e-08, -2.9802322e-08, -1.4901161e-07, 1.0000002, 0.0003733877, 0.001081266, -0.0015416755)
+transform = Transform3D(1, -5.9604645e-08, -4.4703505e-08, 5.9604645e-08, 1, 8.940697e-08, -2.980233e-08, -1.4901163e-07, 1.0000002, -0.00044486206, 0.0026289877, -0.0015416758)
 shape = SubResource("SphereShape3D_fsaqe")
 debug_color = Color(0, 0.6, 0.69803923, 1)
 
