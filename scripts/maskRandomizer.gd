@@ -1,7 +1,9 @@
 extends Node
 
+
 var skel # Esqueleto de la mascara.
 
+# Rangos de valores (simetricos) para randomizar la posicion (x), rotacion (y) y escala (z).
 # Rango para los ojos
 @export var eyesRange:Vector3 = Vector3(0.005, 0.05, 0.5)
 # Rango para las frente.
@@ -20,14 +22,9 @@ var skel # Esqueleto de la mascara.
 
 # Start.
 func _ready():
-	skel = self
+	skel = self # Guardamos el esqueleto.
 	
-	for i in range(1, Global.BoneCount + 1):
-		var bone = Global.Bones.find_key(i)
-		print(bone)
-		var boneId = skel.find_bone(bone)
-		print(boneId)
-		
+	# Llamamos al randomizador con cada hueso.
 	randomizeBone("eye_l", eyesRange.x, eyesRange.y, eyesRange.z)
 	randomizeBone("eye_r", eyesRange.x, eyesRange.y, eyesRange.z)
 	randomizeBone("forehead_l", foreheadsRange.x, foreheadsRange.y, foreheadsRange.z)
@@ -44,8 +41,8 @@ func _ready():
 func _process(delta):
 	pass
 
+# Dado el nombre de un hueso y valores de rango siemtricos randomiza la posicion, rotacion y escala de un hueso.
 func randomizeBone(boneName, positionRange, rotationRange, scaleRange):
-	print("Giro de ", boneName)
 	var boneID = skel.find_bone(boneName) #Coger el id del hueso dado su nombre.
 	
 	var trans = skel.get_bone_pose(boneID) # Coger el transform del hueso.

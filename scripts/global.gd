@@ -44,6 +44,13 @@ enum Bones {
 	
 	mouth
 }
+var draggingSomething = null
+#DEFORMACION DE LA CARA.
+# False=mascara mirando hacia delante.
+# True=mascara girada.
+var maskRotated: bool = false
+
+
 
 # PUNTUACIONES
 var PLAYER1_POINTS = 0
