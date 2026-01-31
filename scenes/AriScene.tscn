@@ -1,9 +1,11 @@
 [gd_scene format=3 uid="uid://cugvtvbfh07ky"]
 
 [ext_resource type="PackedScene" uid="uid://dapi17w4oqsgl" path="res://assets/models/mascaras.fbx" id="1_gmjp2"]
+[ext_resource type="Script" uid="uid://bbgtmesirbbbv" path="res://scripts/ari_scene.gd" id="1_ikgdf"]
 [ext_resource type="Texture2D" uid="uid://dipgvn03a5dni" path="res://assets/backgrounds/placeholderSelect.png" id="2_20wny"]
 
 [node name="AriScene" type="Node3D" unique_id=152709202]
+script = ExtResource("1_ikgdf")
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=1135907038]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0126776695, 0, 1.510627)
