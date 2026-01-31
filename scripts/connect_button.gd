@@ -12,6 +12,6 @@ func _process(delta: float) -> void:
 	pass
 
 func _on_pressed() -> void:
-	if Global.HostIP != -1:
-		server_manager.CreateClient(Global.HostIP)
+	if Global.HostIP != "-1":
+		server_manager.CreateClient(str(Global.HostIP))
 	
