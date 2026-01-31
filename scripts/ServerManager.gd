@@ -13,7 +13,7 @@ extends Node
 var peer = ENetMultiplayerPeer.new()
 enum connection {SERVER, CLIENT}
 @export var masks: Array[Node] = [] 
-var nextPlayer = 0
+var id = 0
 
 func CreateServer(_port: String = port):
 	peer.create_server(_port.to_int(), max_clients)
@@ -29,13 +29,13 @@ func CreateClient(_address: String = addres, _port: String = port):
 	multiplayer.multiplayer_peer = peer
 	print("CONECTADO...")
 
-func player_connected(id: int = 1):
+func player_connected(idx: int = 1):
 	print_debug("Player ", id, " conectado.")
-	#if id < masks.size():
-		#masks[id].visible = true
-	#else:
-		#print_debug("PLAYER ID OUT OF BOUNDS: ", id)
-	#nextPlayer += 1
+	if id < masks.size():
+		masks[id].visible = true
+	else:
+		print_debug("PLAYER ID OUT OF BOUNDS: ", id)
+	id += 1
 	#var player = Player.instantiate()
 	#player.name = str(id)
 	#main_scene.add_child(player, true)
@@ -48,4 +48,5 @@ func checkConnection(type: connection):
 			OS.alert("Error al crear el servidor","Error de red")
 		else:
 			OS.alert("Error al unirse a la partida", "Error en el servidor")
+	#elif peer.get_connection_status() ==
 		return
