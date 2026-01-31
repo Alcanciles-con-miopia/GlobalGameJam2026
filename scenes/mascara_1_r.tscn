@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://rxns32sh85ka"]
+
+[ext_resource type="PackedScene" uid="uid://b418j06uaqg1r" path="res://assets/models/mascara1.fbx" id="1_6opqy"]
+[ext_resource type="Script" uid="uid://8lh634d3nv63" path="res://scripts/maskRandomizer.gd" id="2_rskml"]
+[ext_resource type="Texture2D" uid="uid://cbwo5xi7ovqwk" path="res://assets/models/Mask_text.png" id="2_xxv86"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rskml"]
+albedo_texture = ExtResource("2_xxv86")
+
+[node name="mascara1" unique_id=1341945736 instance=ExtResource("1_6opqy")]
+
+[node name="Skeleton3D" parent="Skeleton" parent_id_path=PackedInt32Array(244809079) index="0" unique_id=2146286846]
+script = ExtResource("2_rskml")
+
+[node name="mascara1" parent="Skeleton/Skeleton3D" index="0" unique_id=662016459]
+surface_material_override/0 = SubResource("StandardMaterial3D_rskml")
