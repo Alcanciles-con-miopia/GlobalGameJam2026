@@ -44,11 +44,8 @@ enum Bones {
 	
 	mouth
 }
-var draggingSomething = null
-#DEFORMACION DE LA CARA.
-# False=mascara mirando hacia delante.
-# True=mascara girada.
-var maskRotated: bool = false
+# DRAGG
+var draggingSomething = null # Hueso que se esta moviendo en un momento.
 
 
 
