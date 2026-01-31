@@ -3,8 +3,12 @@ extends Node
 var cam: Camera3D = null
 var dif
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 const RAY_LENGTH = 100000.0
 
+=======
+var owner_player: int = 0  # 1 = Hermenegildo, 2 = Susi
+>>>>>>> Stashed changes
 =======
 var owner_player: int = 0  # 1 = Hermenegildo, 2 = Susi
 >>>>>>> Stashed changes
@@ -12,12 +16,15 @@ var mode: int = 1
 var scaleChange: float = 1.0
 var last_sfx_time: float = 0.0
 const SFX_COOLDOWN := 0.08
+<<<<<<< Updated upstream
 
 var dragging := false
 var drag_start_mouse := Vector2.ZERO
 var drag_start_transform: Transform3D
 
 var owned_by_player = 0 
+=======
+>>>>>>> Stashed changes
 
 # Start.
 func _ready():
@@ -32,6 +39,19 @@ func _ready():
 	dif = $"../".global_position - self.global_position
 	pass
 =======
+	var n: Node = self
+	while n != null:
+		if n.is_in_group("player1_mask"):
+			owner_player = 1
+			break
+		elif n.is_in_group("player2_mask"):
+			owner_player = 2
+			break
+		n = n.get_parent()
+
+	if owner_player == 0:
+		push_warning("DraggableObject: no se ha encontrado jugador (ni player1_mask ni player2_mask)")
+	
 	var n: Node = self
 	while n != null:
 		if n.is_in_group("player1_mask"):
@@ -260,4 +280,7 @@ func _handle_mouse_drag(mouse_delta: Vector2):
 		Global.draggingSomething = null
 	
 	 
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
