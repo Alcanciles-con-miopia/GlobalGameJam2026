@@ -29,6 +29,7 @@ func CreateClient(_address: String = addres, _port: String = port):
 	print("CONECTADO...")
 	
 func player_connected(id: int = 1):
+	print_debug("Player ", id, " conectado.")
 	pass
 	#var player = Player.instantiate()
 	#player.name = str(id)
