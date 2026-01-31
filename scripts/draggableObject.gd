@@ -55,29 +55,33 @@ func _input(event):
 			Global.draggingSomething = collider
 			print("Arrastrando:", Global.draggingSomething)
 			
-	if (Global.draggingSomething == self and Global.draggingSomething != null):
-		if event is InputEventKey and event.pressed :
-			if event.keycode == KEY_A:
-				if mode == 1:
-					$"../".global_position += Vector3(-0.1, 0.0, 0.0)
-				elif mode == 2:
-					$"../".transform = $"../".transform.rotated(Vector3(0.0, 1.0, 0.0), -0.1)
-			elif event.keycode == KEY_D:
-				if mode == 1:
-					$"../".global_position += Vector3(0.1, 0.0, 0.0)
-				elif mode == 2:
-					$"../".transform = $"../".transform.rotated(Vector3(0.0, 1.0, 0.0), 0.1)
-			elif event.keycode == KEY_W:
-				if mode == 1:
-					$"../".global_position += Vector3(0.0, 0.1, 0.0)
-				elif mode == 3:
-					$"../".transform = $"../".transform.scaled(Vector3(1.1, 1.1, 1.1))
-			elif event.keycode == KEY_S:
-				if mode == 1:
-					$"../".global_position += Vector3(0.0, -0.1, 0.0)
-				elif mode == 3:
-					$"../".transform = $"../".transform.scaled(Vector3(0.9, 0.9, 0.9))
-			pass
+	if Global.draggingSomething == self and Global.draggingSomething != null:
+		if event is InputEventKey and event.pressed:
+			var parent_node := $"../" as Node3D
+			if parent_node == null:
+				return
+				
+			match event.keycode:
+				KEY_A:
+					if mode == 1:
+						parent_node.global_position += Vector3(-0.1, 0.0, 0.0)
+					elif mode == 2:
+						parent_node.transform = parent_node.transform.rotated(Vector3(0.0, 1.0, 0.0), -0.1)
+				KEY_D:
+					if mode == 1:
+						parent_node.global_position += Vector3(0.1, 0.0, 0.0)
+					elif mode == 2:
+						parent_node.transform = parent_node.transform.rotated(Vector3(0.0, 1.0, 0.0), 0.1)
+				KEY_W:
+					if mode == 1:
+						parent_node.global_position += Vector3(0.0, 0.1, 0.0)
+					elif mode == 3:
+						parent_node.transform = parent_node.transform.scaled(Vector3(1.1, 1.1, 1.1))
+				KEY_S:
+					if mode == 1:
+						parent_node.global_position += Vector3(0.0, -0.1, 0.0)
+					elif mode == 3:
+						parent_node.transform = parent_node.transform.scaled(Vector3(0.9, 0.9, 0.9))
 	
 	# Quitar el click.
 	if Input.is_action_pressed("right_click") and Global.draggingSomething != self:
