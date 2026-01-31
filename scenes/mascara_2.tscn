@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://bpaonj5o5v8in"]
+
+[ext_resource type="PackedScene" uid="uid://do8x70y4rv6ll" path="res://assets/models/mascara2.fbx" id="1_6x40j"]
+[ext_resource type="Script" uid="uid://8lh634d3nv63" path="res://scripts/paigrorandom.gd" id="2_0c24m"]
+
+[node name="mascara2" unique_id=657728641 instance=ExtResource("1_6x40j")]
+
+[node name="Skeleton3D" parent="Skeleton" parent_id_path=PackedInt32Array(65159791) index="0" unique_id=1740950308]
+script = ExtResource("2_0c24m")

@@ -3,6 +3,7 @@ extends Node
 var boneID
 var skel
 
+# Start.
 func _ready():
 	skel = self
 	
@@ -12,35 +13,28 @@ func _ready():
 		boneID = skel.find_bone(bone)
 		print(boneID)
 		
-	randomizeEye_L("eye_l")
+	randomizeBone("eye_l", 0.005, 0.05, 0.5)
+	randomizeBone("eye_r", 0.005, 0.05, 0.5)
+	randomizeBone("forehead_l", 0.005, 0.05, 0.5)
+	randomizeBone("forehead_r", 0.005, 0.05, 0.5)
+	randomizeBone("cheek_l", 0.005, 0.05, 0.5)
+	randomizeBone("cheek_r", 0.005, 0.05, 0.5)
+	randomizeBone("chin", 0.005, 0.05, 0.5)
+	randomizeBone("nose", 0.005, 0.05, 0.5)
+	randomizeBone("commissure_l", 0.005, 0.05, 0.5)
+	randomizeBone("commissure_r", 0.005, 0.05, 0.5)
+	randomizeBone("mouth", 0.005, 0.05, 0.5)
 
+# Update.
 func _process(delta):
-	boneID= 17
-	var t = skel.get_bone_pose(boneID)
-	t = t.rotated(Vector3(0.0, 1.0, 0.0), 0.1 * delta)
-	skel.set_bone_pose(boneID, t)
 	pass
 
-func randomizeEye_L(boneName):
+func randomizeBone(boneName, positionRange, rotationRange, scaleRange):
+	print("Giro de ", boneName)
 	boneID = skel.find_bone(boneName)
 	var trans = skel.get_bone_pose(boneID)
-	trans = trans.rotated(Vector3(1.0, 1.0, 0.0), 500)
-	pass
-func randomizeEye_R(boneName):
-	pass
-func randomizeForeheadL_(boneName):
-	pass
-func randomizeForehead_R(boneName):
-	pass
-func randomizeCheek_L(boneName):
-	pass
-func randomizeCheekR(boneName):
-	pass
-func randomizeChin(boneName):
-	pass
-func randomizeComissure_L(boneName):
-	pass
-func randomizeComissure_R(boneName):
-	pass
-func randomizeMouth(boneName):
+	trans = trans.translated(Vector3(randf_range(-positionRange, positionRange), randf_range(-positionRange, positionRange), 0.0))
+	trans = trans.rotated(Vector3(0.0, 0.0, 1.0), randf_range(-rotationRange, rotationRange)) #PAIGRO AQUI CAMBIAR POR CTE
+	trans = trans.scaled(Vector3(randf_range(1 - scaleRange, 1 + scaleRange), 1.0, 1.0))
+	skel.set_bone_pose(boneID, trans)
 	pass

@@ -1,8 +1,7 @@
 [gd_scene format=3 uid="uid://co8b72sufgqy4"]
 
 [ext_resource type="PackedScene" uid="uid://dboue6235tw1q" path="res://scenes/mascara_1.tscn" id="1_0vqdt"]
-[ext_resource type="PackedScene" uid="uid://bpaonj5o5v8in" path="res://scenes/mascara_2.tscn" id="3_0xjcg"]
-[ext_resource type="PackedScene" uid="uid://cosr6dutw8duo" path="res://scenes/mascara_3.tscn" id="4_0xjcg"]
+[ext_resource type="PackedScene" uid="uid://do8x70y4rv6ll" path="res://assets/models/mascara2.fbx" id="2_wc4kv"]
 
 [node name="PaigroScene" type="Control" unique_id=427514572]
 layout_mode = 3
@@ -20,11 +19,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2.3058538)
 
 [node name="mascara1" parent="." unique_id=1577534858 instance=ExtResource("1_0vqdt")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.11495662, 0, 0)
-visible = false
 
-[node name="mascara2" parent="." unique_id=657728641 instance=ExtResource("3_0xjcg")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.060967445, 0, -0.5767679)
-
-[node name="mascara3" parent="." unique_id=397448203 instance=ExtResource("4_0xjcg")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.020561695, 0.30752635, 0.40463567)
-visible = false
+[node name="mascara2" parent="." unique_id=1390651175 instance=ExtResource("2_wc4kv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.0801544, 0, 0.014084101)
