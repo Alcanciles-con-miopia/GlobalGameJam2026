@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://bquypy8dsjxch"]
 
-[ext_resource type="Script" path="res://scripts/control_mapper.gd" id="1_4141x"]
+[ext_resource type="PackedScene" uid="uid://cbfhh8nar1l8l" path="res://scenes/control_mapper.tscn" id="1_nbhiy"]
 [ext_resource type="PackedScene" uid="uid://cosr6dutw8duo" path="res://scenes/mascara_3.tscn" id="2_nbhiy"]
 
 [node name="AndresScene" type="Control" unique_id=2115957811]
@@ -18,8 +18,7 @@ current = true
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="Camera3D" unique_id=2018895487]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.206408, 0.24509525)
 
-[node name="control_mapper" type="Node3D" parent="." unique_id=264577382]
-script = ExtResource("1_4141x")
+[node name="control_mapper" parent="." unique_id=529707666 instance=ExtResource("1_nbhiy")]
 
 [node name="ui" type="Control" parent="." unique_id=600064172]
 anchors_preset = 0

@@ -1,7 +1,8 @@
 extends Node3D
 class_name ControlMapper
 
-@onready var ui: Control = $"../ui"
+#@onready var ui: Control = $"../ui"
+@export var ui : Control
 
 var cursors := {}
 

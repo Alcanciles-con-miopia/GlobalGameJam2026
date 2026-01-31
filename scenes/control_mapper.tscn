@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://cbfhh8nar1l8l"]
+
+[ext_resource type="Script" path="res://scripts/control_mapper.gd" id="1_3rkl6"]
+
+[node name="control_mapper" type="Node3D" unique_id=529707666]
+script = ExtResource("1_3rkl6")
