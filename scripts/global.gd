@@ -13,7 +13,7 @@ var sm # state machine
 var current_scene = Scenes.INTRO 
 var next_scene = Scenes.INTRO
 ## MUY IMPORTANTE: MISMO ORDEN QUE EN EL SERIALIZED ARRAY DE LA STATEMACHINE
-enum Scenes { INTRO, SELECTMASK, GAME, NULL}
+enum Scenes { INTRO, SELECTMASK, GAME, FINALSCENE, NULL}
 
 ## sonido
 var sfx
@@ -56,6 +56,8 @@ var PLAYER1_POINTS = 0
 var PLAYER2_POINTS = 0
 
 var BoneCount = 11
+
+var LAST_WINNER: String = ""
 
 # MULTIPLAYER
 var HostIP = -1 # -1 para gestion de errores

@@ -2,6 +2,8 @@
 
 [ext_resource type="Script" uid="uid://b1t1q20iiwg56" path="res://scripts/game_scene.gd" id="1_w5aja"]
 [ext_resource type="PackedScene" uid="uid://ddu4o7i0bx55w" path="res://assets/models/marco.fbx" id="2_onqr8"]
+[ext_resource type="Script" uid="uid://debobb8c84pgg" path="res://scripts/CompareMasks.gd" id="3_bw6k5"]
+[ext_resource type="Script" uid="uid://dlge0rwka1j3n" path="res://scripts/Countdown.gd" id="3_ycayy"]
 
 [node name="GameScene" type="Node3D" unique_id=1376563395]
 script = ExtResource("1_w5aja")
@@ -14,4 +16,54 @@ size = 6.909
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=784478348]
 
 [node name="marco" parent="." unique_id=415101566 instance=ExtResource("2_onqr8")]
-transform = Transform3D(1.1445842, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1782966, -3.8205395)
+transform = Transform3D(1.1614767, 0, 0, 0, 1.0436472, 0, 0, 0, 1, 0, 1.1782966, -3.8205395)
+
+[node name="CompareMasks" type="Node3D" parent="." unique_id=546272659]
+script = ExtResource("3_bw6k5")
+
+[node name="UI" type="CanvasLayer" parent="." unique_id=1964861725]
+
+[node name="Control" type="Control" parent="UI" unique_id=779402202]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ClientLabel" type="Label" parent="UI/Control" unique_id=1912689931]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -20.0
+offset_top = -110.0
+offset_right = 20.0
+offset_bottom = -87.0
+grow_horizontal = 2
+grow_vertical = 0
+scale = Vector2(2, 2)
+pivot_offset = Vector2(20, 11.5)
+horizontal_alignment = 1
+
+[node name="CountdownTimer" type="Timer" parent="UI/Control" unique_id=1413625433]
+wait_time = 10.0
+one_shot = true
+script = ExtResource("3_ycayy")
+
+[node name="Label" type="Label" parent="UI/Control/CountdownTimer" unique_id=2039240837]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.0
+offset_top = 90.0
+offset_right = 20.0
+offset_bottom = 113.0
+grow_horizontal = 2
+scale = Vector2(2, 2)
+pivot_offset = Vector2(20, 11.5)
+horizontal_alignment = 2
+
+[connection signal="timeout" from="UI/Control/CountdownTimer" to="." method="_on_CountdownTimer_timeout"]

@@ -1,26 +1,33 @@
 extends Node
 
-#var maskClient # cliente
-#var maskP1 # jugador 1
-#var maskP2 # jugador 2
-
-# @onready var : Skeleton3D = $Armature/mascaras/Armature/Skeleton3D
-
-@onready var maskClient: Skeleton3D = $ClientMask/mascara1/Skeleton/Skeleton3D
-@onready var maskP1: Skeleton3D = $P1Mask/mascara1/Skeleton/Skeleton3D
-@onready var maskP2: Skeleton3D = $P2Mask/mascara3/Skeleton/Skeleton3D
+@onready var maskClient: Skeleton3D = get_node_or_null("ClientMask/mascara1/Skeleton/Skeleton3D")
+@onready var maskP1: Skeleton3D = get_node_or_null("P1Mask/mascara1/Skeleton/Skeleton3D")
+@onready var maskP2: Skeleton3D = get_node_or_null("P2Mask/mascara3/Skeleton/Skeleton3D")
 
 var boneCount
 
-var diffP1 = 0
-var diffP2 = 0
+var diffP1: float = 0.0
+var diffP2: float = 0.0
+var BEST_MASK : String = ""  # "P1", "P2" o "TIE"
 
-var BEST_MASK : String
+func finish_round() -> void:
+	# esto es pa ahora q no tenemos modelos todavia dice empate y a tomar por culo
+	if maskClient == null or maskP1 == null or maskP2 == null:
+		Global.LAST_WINNER = "TIE"
+		Global.change_scene(Global.Scenes.FINALSCENE)
+		return
 
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	boneCount = maskP1.get_bone_count()
+	diffP1 = 0.0
+	diffP2 = 0.0
+
 	_compareMask()
+
+	Global.LAST_WINNER = BEST_MASK
+
+	Global.PLAYER1_POINTS += diffP1
+	Global.PLAYER2_POINTS += diffP2
+
+	Global.change_scene(Global.Scenes.FINALSCENE)
 	
 # returns [diffP1, diffP2]
 func _compareMask() -> Array:
@@ -51,21 +58,17 @@ func _compareMask() -> Array:
 		
 		# -- diferencias P1
 		# - dif pos
-		var diffPosP1
-		diffPosP1 = (posClient - posP1).length()
+		var diffPosP1 = (posClient - posP1).length()
 		diffP1 += diffPosP1
-		# - dif scale
-		var diffScaleP1
-		diffScaleP1 = (scaleClient - scaleP1).length()
-		diffP1 += diffScaleP1
-		# - dif rot
-		var diffRotXP1
-		var diffRotYP1
-		var diffRotZP1
 		
-		diffRotXP1 = (rotClient.x - rotP1.x).length()
-		diffRotYP1 = (rotClient.y - rotP1.y).length()
-		diffRotZP1 = (rotClient.z - rotP1.z).length()
+		# - dif scale
+		var diffScaleP1 = (scaleClient - scaleP1).length()
+		diffP1 += diffScaleP1
+		
+		# - dif rot
+		var diffRotXP1 = (rotClient.x - rotP1.x).length()
+		var diffRotYP1 = (rotClient.y - rotP1.y).length()
+		var diffRotZP1 = (rotClient.z - rotP1.z).length()
 		
 		diffP1 += diffRotXP1
 		diffP1 += diffRotYP1
@@ -73,21 +76,17 @@ func _compareMask() -> Array:
 		
 		# -- diferencias P2
 		# - dif pos
-		var diffPosP2
-		diffPosP2 = (posClient - posP2).length()
+		var diffPosP2 = (posClient - posP2).length()
 		diffP2 += diffPosP2
-		# - dif scale
-		var diffScaleP2
-		diffScaleP2 = (scaleClient - scaleP2).length()
-		diffP2 += diffScaleP2
-		# - dif rot
-		var diffRotXP2
-		var diffRotYP2
-		var diffRotZP2
 		
-		diffRotXP2 = (rotClient.x - rotP2.x).length()
-		diffRotYP2 = (rotClient.y - rotP2.y).length()
-		diffRotZP2 = (rotClient.z - rotP2.z).length()
+		# - dif scale
+		var diffScaleP2 = (scaleClient - scaleP2).length()
+		diffP2 += diffScaleP2
+		
+		# - dif rot
+		var diffRotXP2 = (rotClient.x - rotP2.x).length()
+		var diffRotYP2 = (rotClient.y - rotP2.y).length()
+		var diffRotZP2 = (rotClient.z - rotP2.z).length()
 		
 		diffP2 += diffRotXP2
 		diffP2 += diffRotYP2
@@ -108,12 +107,10 @@ func _getBestMask(diffP1: float, diffP2: float) -> String:
 	var best : String
 	if(m == diffP1):
 		best = "P2"
-	else:
+	elif m == diffP2:
 		best = "P1"
+	else:
+		best = "TIE"
 	
 	print("Best Mask: ", best)
 	return best
-
-
-func _on_line_edit_text_submitted(new_text: String) -> void:
-	pass # Replace with function body.
