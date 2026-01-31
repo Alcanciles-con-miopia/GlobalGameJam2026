@@ -67,7 +67,6 @@ offset_bottom = 683.0
 text = "HOSTEAR"
 script = ExtResource("8_1lpm0")
 
-[node name="ServerManager" type="Node" parent="." unique_id=579120220 node_paths=PackedStringArray("masks")]
 [node name="Label" type="Label" parent="." unique_id=573046361]
 layout_mode = 0
 offset_left = 78.0
