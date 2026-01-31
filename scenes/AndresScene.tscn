@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://bcjlwf5srvgp2"]
 
-[ext_resource type="Script" uid="uid://b2pga06q1lvt3" path="res://scenes/joycon_controller.gd" id="1_afjjx"]
+[ext_resource type="Script" uid="uid://b1qxuk1xdfqo2" path="res://scripts/control_mapper.gd" id="1_afjjx"]
 
 [node name="AndresScene" type="Control" unique_id=2115957811]
 layout_mode = 3
@@ -17,8 +17,9 @@ current = true
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="Camera3D" unique_id=2018895487]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.206408, 0.24509525)
 
-[node name="control_mapper" type="Node3D" parent="." unique_id=264577382]
+[node name="control_mapper" type="Node3D" parent="." unique_id=264577382 node_paths=PackedStringArray("ui")]
 script = ExtResource("1_afjjx")
+ui = NodePath("../ui")
 
 [node name="ui" type="Control" parent="." unique_id=600064172]
 anchors_preset = 0

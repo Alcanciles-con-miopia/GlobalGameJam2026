@@ -4,34 +4,44 @@ class_name ControlMapper
 #@onready var ui: Control = $"../ui"
 @export var ui : Control
 
-var cursors := {}
+var cursors : Array = [null, null]
 
 func _ready() -> void:
 	Input.joy_connection_changed.connect(_connection_changed)
 
 func _input(event: InputEvent) -> void:
-	if (event is InputEventJoypadMotion or event is InputEventJoypadButton) and event.device not in cursors:
-		print("INPUT")
-		_add_pad(event.device)
+	if (event is InputEventJoypadMotion or event is InputEventJoypadButton):
+		var objid = -1
+		for id in range(len(cursors)):
+			if not cursors[id] or cursors[id].DeviceID == -1: 
+				objid = id
+				continue
+			if event.device == cursors[id].DeviceID:
+				objid = -1 
+				break
+		if objid != -1:
+			_add_pad(event.device, objid)
 
 func _connection_changed(deviceid := -1, connected := false):
-	if deviceid not in cursors and len(cursors) < 2 and connected:
-		_add_pad(deviceid)
-	else:
-		_remove_pad(deviceid)
+	for id in range(len(cursors)):
+		if not cursors[id] or cursors[id].DeviceID != -1: continue
+		if deviceid != cursors[id].DeviceID and connected:
+			_add_pad(deviceid, id)
+		elif deviceid == cursors[id].DeviceID and not connected:
+			_remove_pad(deviceid, id)
 
-func _add_pad(deviceid:=-1):
+func _add_pad(deviceid:=-1, id = -1):
 	if deviceid != -1:
 		print("ANYADE MANDO: ", deviceid)
-		cursors[deviceid] = Cursor.new()
-		cursors[deviceid].DeviceID = deviceid
-		cursors[deviceid].setColor(Color.BLUE if len(cursors) ==1 else Color.RED)
-		ui.add_child(cursors[deviceid])
+		cursors[id] = Cursor.new()
+		cursors[id].DeviceID = deviceid
+		cursors[id].setColor(Color.BLUE if id == 0 else Color.RED)
+		ui.add_child(cursors[id])
 
-func _remove_pad(deviceid:=-1):
+func _remove_pad(deviceid:=-1, id = -1):
 	if deviceid != -1 and deviceid in cursors:
 		print("QUITA MANDO")
-		var dev = cursors[deviceid]
+		var dev = cursors[id]
 		dev.vibrate(0.5)
 		dev.queue_free()
-		cursors.erase(deviceid)
+		cursors.erase(id)
