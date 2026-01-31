@@ -19,7 +19,7 @@ func CreateServer(_port: String = port):
 	peer.create_server(_port.to_int(), max_clients)
 	checkConnection(connection.SERVER)
 	multiplayer.multiplayer_peer = peer
-	multiplayer.peer_connected.connect(player_connected.bind(nextPlayer))
+	multiplayer.peer_connected.connect(player_connected)
 	player_connected(0)
 	print("HOSTEANDO...")
 
