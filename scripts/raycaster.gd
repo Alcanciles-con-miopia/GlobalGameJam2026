@@ -7,19 +7,8 @@ func _ready():
 	cam = self
 	pass
 
-#func _input(event):
-	#if event is InputEventMouseButton and event.pressed and event.button_index == 1:
-		#var from = cam.project_ray_origin(event.position)
-		#var to = from + cam.project_ray_normal(event.position) * RAY_LENGTH
-		#_send_raycast(from, to)
-		
-
-# https://docs.godotengine.org/en/stable/tutorials/physics/ray-casting.html#collision-mask
-
-#func _send_raycast(from, to):
-	#var space_state = get_world_3d().direct_space_state
-	#var query = PhysicsRayQueryParameters3D.create(from, to)
-	#var result = space_state.intersect_ray(query)
+func _process(delta):
+	raycast()
 
 func raycast():
 	var spaceState= get_world_3d().direct_space_state

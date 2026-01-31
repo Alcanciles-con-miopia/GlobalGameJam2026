@@ -2,12 +2,14 @@
 
 [ext_resource type="PackedScene" uid="uid://do8x70y4rv6ll" path="res://assets/models/mascara2.fbx" id="1_6x40j"]
 [ext_resource type="Script" uid="uid://8lh634d3nv63" path="res://scripts/maskRandomizer.gd" id="2_0c24m"]
+[ext_resource type="Script" uid="uid://det5nnvshm3lv" path="res://scenes/camaraRef.gd" id="2_mvabm"]
 [ext_resource type="Texture2D" uid="uid://cbwo5xi7ovqwk" path="res://assets/models/Mask_text.png" id="3_nslo6"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mvabm"]
 albedo_texture = ExtResource("3_nslo6")
 
 [node name="mascara2" unique_id=767707261 instance=ExtResource("1_6x40j")]
+script = ExtResource("2_mvabm")
 
 [node name="Skeleton3D" parent="Skeleton" parent_id_path=PackedInt32Array(509548291) index="0" unique_id=840142714]
 script = ExtResource("2_0c24m")
