@@ -20,11 +20,13 @@ func CreateServer(_port: String = port):
 	multiplayer.multiplayer_peer = peer
 	multiplayer.peer_connected.connect(player_connected)
 	player_connected()
+	print("HOSTEANDO...")
 
 func CreateClient(_address: String = addres, _port: String = port):
 	peer.create_client(_address, _port.to_int())
 	checkConnection(connection.CLIENT)
 	multiplayer.multiplayer_peer = peer
+	print("CONECTADO...")
 	
 func player_connected(id: int = 1):
 	#var player = Player.instantiate()

@@ -65,7 +65,7 @@ script = ExtResource("8_1lpm0")
 
 [node name="ServerManager" type="Node" parent="." unique_id=579120220]
 script = ExtResource("6_gj8ml")
-port = "3050"
+port = "3060"
 max_clients = 2
 metadata/_custom_type_script = "uid://p3lxw4wt8lys"
 
