@@ -13,13 +13,14 @@ extends Node
 var peer = ENetMultiplayerPeer.new()
 enum connection {SERVER, CLIENT}
 @export var masks: Array[Node] = [] 
+var nextPlayer = 0
 
 func CreateServer(_port: String = port):
 	peer.create_server(_port.to_int(), max_clients)
 	checkConnection(connection.SERVER)
 	multiplayer.multiplayer_peer = peer
-	multiplayer.peer_connected.connect(player_connected)
-	player_connected()
+	multiplayer.peer_connected.connect(player_connected.bind(nextPlayer))
+	player_connected(0)
 	print("HOSTEANDO...")
 
 func CreateClient(_address: String = addres, _port: String = port):
@@ -27,11 +28,14 @@ func CreateClient(_address: String = addres, _port: String = port):
 	checkConnection(connection.CLIENT)
 	multiplayer.multiplayer_peer = peer
 	print("CONECTADO...")
-	
+
 func player_connected(id: int = 1):
 	print_debug("Player ", id, " conectado.")
-	masks[id-1].visible = true
-	pass
+	#if id < masks.size():
+		#masks[id].visible = true
+	#else:
+		#print_debug("PLAYER ID OUT OF BOUNDS: ", id)
+	#nextPlayer += 1
 	#var player = Player.instantiate()
 	#player.name = str(id)
 	#main_scene.add_child(player, true)
