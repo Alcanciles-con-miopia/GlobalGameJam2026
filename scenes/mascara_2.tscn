@@ -3,6 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://do8x70y4rv6ll" path="res://assets/models/mascara2.fbx" id="1_6x40j"]
 [ext_resource type="Script" uid="uid://det5nnvshm3lv" path="res://scenes/camaraRef.gd" id="2_mvabm"]
 [ext_resource type="Texture2D" uid="uid://cbwo5xi7ovqwk" path="res://assets/models/Mask_text.png" id="3_nslo6"]
+[ext_resource type="Texture2D" uid="uid://do7n8gbesoeic" path="res://assets/images/gizmo.png" id="5_86iu0"]
 [ext_resource type="Script" uid="uid://cqujx6jyosf0y" path="res://scripts/draggableObject.gd" id="5_aagiw"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mvabm"]
@@ -14,7 +15,7 @@ radius = 0.0025358277
 [node name="mascara2" unique_id=767707261 instance=ExtResource("1_6x40j")]
 script = ExtResource("2_mvabm")
 
-[node name="Skeleton3D" parent="Skeleton" parent_id_path=PackedInt32Array(509548291) index="0" unique_id=840142714]
+[node name="Skeleton3D" parent="Skeleton" parent_id_path=PackedInt32Array(949291586) index="0" unique_id=1194270468]
 bones/1/position = Vector3(0, 0.010936345, 0.0022914473)
 bones/1/rotation = Quaternion(0.26385823, -0.36439973, -0.555826, 0.6990344)
 bones/1/scale = Vector3(1.0000004, 1.0000002, 1.0000001)
@@ -41,7 +42,7 @@ bones/19/scale = Vector3(1.0000001, 1.0000004, 1.0000004)
 bones/21/rotation = Quaternion(0.774492, -0.30215997, 0.5202308, -0.19550286)
 bones/21/scale = Vector3(1.0000001, 1.0000004, 1.0000004)
 
-[node name="mascara2" parent="Skeleton/Skeleton3D" index="0" unique_id=1485161677]
+[node name="mascara2" parent="Skeleton/Skeleton3D" index="0" unique_id=2069201270]
 surface_material_override/0 = SubResource("StandardMaterial3D_mvabm")
 
 [node name="EyeLAttach" type="BoneAttachment3D" parent="Skeleton/Skeleton3D" index="1" unique_id=1901292938]
@@ -60,6 +61,12 @@ transform = Transform3D(1, -2.9802322e-08, -4.4703484e-08, 4.4703484e-08, 1, 8.9
 shape = SubResource("SphereShape3D_86iu0")
 debug_color = Color(0, 0.6, 0.69803923, 1)
 
+[node name="Sprite3D" type="Sprite3D" parent="Skeleton/Skeleton3D/EyeLAttach/AreaEyeL/CollisionShape3D" index="0" unique_id=877976464]
+transform = Transform3D(0.0020000003, -2.910383e-11, 0, 0, 0.0020000003, -1.7462298e-10, 0, 5.820766e-11, 0.002, 0.0023858168, 0.008543503, 0.006569894)
+billboard = 2
+alpha_cut = 2
+texture = ExtResource("5_86iu0")
+
 [node name="EyeRAttach" type="BoneAttachment3D" parent="Skeleton/Skeleton3D" index="2" unique_id=705455151]
 transform = Transform3D(0.11654052, -0.5847834, 0.8027746, 0.21613725, -0.77397776, -0.5951833, 0.969383, 0.24287239, 0.036193687, 0, -1.1641532e-09, -0.0025101611)
 bone_name = "eye_r"
@@ -75,6 +82,12 @@ script = ExtResource("5_aagiw")
 transform = Transform3D(1, -2.9802322e-08, -4.4703484e-08, 4.4703484e-08, 1, 8.940697e-08, -2.9802322e-08, -1.4901161e-07, 1.0000002, 0.0003733877, 0.001081266, -0.0015416755)
 shape = SubResource("SphereShape3D_86iu0")
 debug_color = Color(0, 0.6, 0.69803923, 1)
+
+[node name="Sprite3D" type="Sprite3D" parent="Skeleton/Skeleton3D/EyeRAttach/AreaEyeR/CollisionShape3D" index="0" unique_id=897558953]
+transform = Transform3D(0.002, 0, 0, -2.910383e-11, 0.002, -1.1641532e-10, -2.910383e-11, 1.1641532e-10, 0.002, -0.00248606, 0.008902474, 0.0068459404)
+billboard = 2
+alpha_cut = 2
+texture = ExtResource("5_86iu0")
 
 [node name="ForeheadLAttach" type="BoneAttachment3D" parent="Skeleton/Skeleton3D" index="3" unique_id=1769560865]
 transform = Transform3D(0.9189779, 0.39307314, 0.031194355, 0.13497785, -0.23926197, -0.9615271, -0.37048686, 0.88783276, -0.27293265, 0, -1.1641532e-09, -0.0025101611)
@@ -92,6 +105,12 @@ transform = Transform3D(1, -4.8428774e-08, -4.4703484e-08, 0, 1, 8.940697e-08, 0
 shape = SubResource("SphereShape3D_86iu0")
 debug_color = Color(0, 0.6, 0.69803923, 1)
 
+[node name="Sprite3D" type="Sprite3D" parent="Skeleton/Skeleton3D/ForeheadLAttach/AreaForeheadL/CollisionShape3D" index="0" unique_id=1209338081]
+transform = Transform3D(0.002, 7.275958e-12, 0, 7.275958e-12, 0.002, 0, 2.910383e-11, -2.910383e-11, 0.0019999999, -0.0011894503, 0.002108423, 0.0084731635)
+billboard = 2
+alpha_cut = 2
+texture = ExtResource("5_86iu0")
+
 [node name="ForeheadRAttach" type="BoneAttachment3D" parent="Skeleton/Skeleton3D" index="4" unique_id=2116943865]
 transform = Transform3D(0.9189779, -0.39307314, -0.031194355, -0.13497785, -0.23926197, -0.9615271, 0.37048686, 0.88783276, -0.27293265, 0, -1.1641532e-09, -0.0025101611)
 bone_name = "forehead_r"
@@ -107,6 +126,12 @@ script = ExtResource("5_aagiw")
 transform = Transform3D(1, -2.9802322e-08, -4.4703484e-08, 4.4703484e-08, 1, 8.940697e-08, -2.9802322e-08, -1.4901161e-07, 1.0000002, 0.0003733877, 0.001081266, -0.0015416755)
 shape = SubResource("SphereShape3D_86iu0")
 debug_color = Color(0, 0.6, 0.69803923, 1)
+
+[node name="Sprite3D" type="Sprite3D" parent="Skeleton/Skeleton3D/ForeheadRAttach/AreaForeheadR/CollisionShape3D" index="0" unique_id=685688335]
+transform = Transform3D(0.0020000003, 2.910383e-11, -2.910383e-11, 1.5279511e-10, 0.0020000003, 0, 0, 0, 0.0020000003, 0.0012019725, 0.0021306174, 0.008562363)
+billboard = 2
+alpha_cut = 2
+texture = ExtResource("5_86iu0")
 
 [node name="CheekLAttach" type="BoneAttachment3D" parent="Skeleton/Skeleton3D" index="5" unique_id=111938823]
 transform = Transform3D(-0.6362631, 0.4362645, -0.6362723, -0.0142596, -0.83126044, -0.55570006, -0.77134, -0.34449846, 0.5351214, 0.003756802, 0, -0.0057604318)
@@ -124,6 +149,12 @@ transform = Transform3D(1, -2.9802322e-08, -4.4703484e-08, 4.4703484e-08, 1, 8.9
 shape = SubResource("SphereShape3D_86iu0")
 debug_color = Color(0, 0.6, 0.69803923, 1)
 
+[node name="Sprite3D" type="Sprite3D" parent="Skeleton/Skeleton3D/CheekLAttach/AreaCheekL/CollisionShape3D" index="0" unique_id=610167123]
+transform = Transform3D(0.002, 0, 0, 0, 0.002, 0, 0, 0, 0.002, 0, 0, 0)
+billboard = 2
+alpha_cut = 2
+texture = ExtResource("5_86iu0")
+
 [node name="CheekRAttach" type="BoneAttachment3D" parent="Skeleton/Skeleton3D" index="6" unique_id=2038512201]
 transform = Transform3D(-0.6362631, -0.4362645, 0.6362723, 0.0142596, -0.83126044, -0.55570006, 0.77134, -0.34449846, 0.5351214, -0.003756802, 0, -0.0057604318)
 bone_name = "cheek_r"
@@ -139,6 +170,12 @@ script = ExtResource("5_aagiw")
 transform = Transform3D(1, -2.9802322e-08, -4.4703484e-08, 4.4703484e-08, 1, 8.940697e-08, -2.9802322e-08, -1.4901161e-07, 1.0000002, 0.0003733877, 0.001081266, -0.0015416755)
 shape = SubResource("SphereShape3D_86iu0")
 debug_color = Color(0, 0.6, 0.69803923, 1)
+
+[node name="Sprite3D" type="Sprite3D" parent="Skeleton/Skeleton3D/CheekRAttach/AreaCheekR/CollisionShape3D" index="0" unique_id=33224624]
+transform = Transform3D(0.002, 0, 0, 0, 0.002, 0, 0, 0, 0.002, 0, 0, 0)
+billboard = 2
+alpha_cut = 2
+texture = ExtResource("5_86iu0")
 
 [node name="ChinAttach" type="BoneAttachment3D" parent="Skeleton/Skeleton3D" index="7" unique_id=1708970435]
 transform = Transform3D(0, 2.3841858e-07, -1, 1, 0, 0, 0, -1, -2.3841858e-07, 0, 0, -0.011449861)
@@ -156,6 +193,12 @@ transform = Transform3D(1, -2.9802322e-08, -4.4703484e-08, 4.4703484e-08, 1, 8.9
 shape = SubResource("SphereShape3D_86iu0")
 debug_color = Color(0, 0.6, 0.69803923, 1)
 
+[node name="Sprite3D" type="Sprite3D" parent="Skeleton/Skeleton3D/ChinAttach/AreaChin/CollisionShape3D" index="0" unique_id=594922475]
+transform = Transform3D(0.002, 0, 0, 0, 0.002, 0, 0, 0, 0.002, 0, 0, 0)
+billboard = 2
+alpha_cut = 2
+texture = ExtResource("5_86iu0")
+
 [node name="NoseAttach" type="BoneAttachment3D" parent="Skeleton/Skeleton3D" index="8" unique_id=1590682281]
 transform = Transform3D(0, 0, -1, 0.31950268, -0.9475853, 0, -0.9475853, -0.31950268, 0, 0, -9.313226e-10, -0.0038506836)
 bone_name = "nose"
@@ -171,6 +214,12 @@ script = ExtResource("5_aagiw")
 transform = Transform3D(1, -2.9802322e-08, -4.4703484e-08, 4.4703484e-08, 1, 8.940697e-08, -2.9802322e-08, -1.4901161e-07, 1.0000002, 0.0003733877, 0.001081266, -0.0015416755)
 shape = SubResource("SphereShape3D_86iu0")
 debug_color = Color(0, 0.6, 0.69803923, 1)
+
+[node name="Sprite3D" type="Sprite3D" parent="Skeleton/Skeleton3D/NoseAttach/AreaNose/CollisionShape3D" index="0" unique_id=1913382968]
+transform = Transform3D(0.002, 0, 0, 0, 0.002, 0, 0, 0, 0.002, 0, 0, 0)
+billboard = 2
+alpha_cut = 2
+texture = ExtResource("5_86iu0")
 
 [node name="CommissureLAttach" type="BoneAttachment3D" parent="Skeleton/Skeleton3D" index="9" unique_id=1096389653]
 transform = Transform3D(0.27611867, 0.26462778, -0.9239758, 0.67145425, -0.74095625, -0.01155493, -0.68768305, -0.6172168, -0.3822774, 0.0018257329, 1.1283953e-09, -0.00839837)
@@ -188,6 +237,12 @@ transform = Transform3D(1, -2.9802322e-08, -4.4703484e-08, 4.4703484e-08, 1, 8.9
 shape = SubResource("SphereShape3D_86iu0")
 debug_color = Color(0, 0.6, 0.69803923, 1)
 
+[node name="Sprite3D" type="Sprite3D" parent="Skeleton/Skeleton3D/CommissureLAttach/AreaCommissureL/CollisionShape3D" index="0" unique_id=2095180430]
+transform = Transform3D(0.002, 0, 0, 0, 0.002, 0, 0, 0, 0.002, 0, 0, 0)
+billboard = 2
+alpha_cut = 2
+texture = ExtResource("5_86iu0")
+
 [node name="CommissureRAttach" type="BoneAttachment3D" parent="Skeleton/Skeleton3D" index="10" unique_id=1862022985]
 transform = Transform3D(0.27611867, -0.26462778, 0.9239758, -0.67145425, -0.74095625, -0.01155493, 0.68768305, -0.6172168, -0.3822774, -0.0018257329, 1.1283953e-09, -0.00839837)
 bone_name = "commissure_r"
@@ -204,6 +259,12 @@ transform = Transform3D(1, -2.9802322e-08, -4.4703484e-08, 4.4703484e-08, 1, 8.9
 shape = SubResource("SphereShape3D_86iu0")
 debug_color = Color(0, 0.6, 0.69803923, 1)
 
+[node name="Sprite3D" type="Sprite3D" parent="Skeleton/Skeleton3D/CommissureRAttach/AreaCommissureR/CollisionShape3D" index="0" unique_id=1603320778]
+transform = Transform3D(0.002, 0, 0, 0, 0.002, 0, 0, 0, 0.002, 0, 0, 0)
+billboard = 2
+alpha_cut = 2
+texture = ExtResource("5_86iu0")
+
 [node name="MouthAttach" type="BoneAttachment3D" parent="Skeleton/Skeleton3D" index="11" unique_id=601961207]
 transform = Transform3D(1.7881392e-07, 1.1920926e-07, -0.99999964, 0.46738186, -0.88405514, 2.8421698e-14, -0.8840553, -0.4673819, -2.3841847e-07, 0, -2.3283064e-10, -0.010183246)
 bone_name = "mouth"
@@ -219,3 +280,9 @@ script = ExtResource("5_aagiw")
 transform = Transform3D(1, -2.9802322e-08, -4.4703484e-08, 4.4703484e-08, 1, 8.940697e-08, -2.9802322e-08, -1.4901161e-07, 1.0000002, 0.0003733877, 0.001081266, -0.0015416755)
 shape = SubResource("SphereShape3D_86iu0")
 debug_color = Color(0, 0.6, 0.69803923, 1)
+
+[node name="Sprite3D" type="Sprite3D" parent="Skeleton/Skeleton3D/MouthAttach/AreaMouth/CollisionShape3D" index="0" unique_id=415091096]
+transform = Transform3D(0.002, 0, 0, 0, 0.002, 0, 0, 0, 0.002, 0, 0, 0)
+billboard = 2
+alpha_cut = 2
+texture = ExtResource("5_86iu0")
