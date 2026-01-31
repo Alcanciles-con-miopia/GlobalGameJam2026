@@ -5,8 +5,13 @@
 [ext_resource type="PackedScene" path="res://scenes/mascara_1.tscn" id="3_u8jfn"]
 [ext_resource type="PackedScene" path="res://scenes/mascara_3.tscn" id="4_aj1ub"]
 [ext_resource type="Script" uid="uid://dlge0rwka1j3n" path="res://scenes/Countdown.gd" id="5_aj1ub"]
+[ext_resource type="Script" uid="uid://p3lxw4wt8lys" path="res://scripts/ServerManager.gd" id="6_gj8ml"]
+[ext_resource type="Script" uid="uid://bc21bcy7knvx6" path="res://scenes/connect_button.gd" id="7_f1vfl"]
+[ext_resource type="Script" uid="uid://ymjorkuvx4pm" path="res://scenes/host_button.gd" id="8_1lpm0"]
 
-[node name="NievesScene" type="Node3D" unique_id=782185158]
+[node name="NievesScene" type="Control" unique_id=375442709]
+layout_mode = 3
+anchors_preset = 0
 script = ExtResource("1_jknla")
 
 [node name="ClientMask" type="Node3D" parent="." unique_id=876392504]
@@ -40,4 +45,30 @@ offset_right = 464.0
 offset_bottom = 191.0
 text = "SOY UN TIMER"
 
+[node name="Connect" type="Button" parent="." unique_id=1991246300]
+layout_mode = 0
+offset_left = 423.0
+offset_top = 578.0
+offset_right = 705.0
+offset_bottom = 685.0
+text = "CONECTARSE"
+script = ExtResource("7_f1vfl")
+
+[node name="Host" type="Button" parent="." unique_id=101568572]
+layout_mode = 0
+offset_left = 57.0
+offset_top = 576.0
+offset_right = 339.0
+offset_bottom = 683.0
+text = "HOSTEAR"
+script = ExtResource("8_1lpm0")
+
+[node name="ServerManager" type="Node" parent="." unique_id=579120220]
+script = ExtResource("6_gj8ml")
+port = "3050"
+max_clients = 2
+metadata/_custom_type_script = "uid://p3lxw4wt8lys"
+
 [connection signal="timeout" from="Timer" to="Timer" method="_on_timeout"]
+[connection signal="pressed" from="Connect" to="Connect" method="_on_pressed"]
+[connection signal="pressed" from="Host" to="Host" method="_on_pressed"]
