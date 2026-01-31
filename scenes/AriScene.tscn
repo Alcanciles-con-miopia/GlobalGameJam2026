@@ -9,6 +9,8 @@ script = ExtResource("1_ikgdf")
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=1135907038]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0126776695, 0, 1.510627)
+projection = 1
+size = 6.909
 
 [node name="cara1" parent="." unique_id=1552861223 instance=ExtResource("1_gmjp2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.4155357, 0, -2.4709845)
