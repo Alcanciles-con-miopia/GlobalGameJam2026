@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://b418j06uaqg1r" path="res://assets/models/mascara1.fbx" id="2_jknla"]
 [ext_resource type="PackedScene" uid="uid://dboue6235tw1q" path="res://scenes/mascara_1.tscn" id="3_u8jfn"]
 [ext_resource type="PackedScene" uid="uid://cosr6dutw8duo" path="res://scenes/mascara_3.tscn" id="4_aj1ub"]
-[ext_resource type="Script" path="res://scripts/raycaster.gd" id="5_4yqxh"]
+[ext_resource type="Script" uid="uid://cehkexy4d47mf" path="res://scripts/raycaster.gd" id="5_4yqxh"]
 [ext_resource type="Script" uid="uid://dlge0rwka1j3n" path="res://scripts/Countdown.gd" id="5_aj1ub"]
 [ext_resource type="Script" uid="uid://p3lxw4wt8lys" path="res://scripts/ServerManager.gd" id="6_gj8ml"]
 [ext_resource type="Script" uid="uid://bc21bcy7knvx6" path="res://scripts/connect_button.gd" id="7_f1vfl"]

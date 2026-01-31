@@ -56,7 +56,7 @@ var PLAYER2_POINTS = 0
 var BoneCount = 11
 
 # MULTIPLAYER
-var HostIP = -1 # -1 para gestion de errores
+var HostIP = "-1" # -1 para gestion de errores
 
 func _ready() -> void:
 	pass
