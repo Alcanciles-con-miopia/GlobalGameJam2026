@@ -1,7 +1,22 @@
 extends Node
 
-var boneID
-var skel
+var skel # Esqueleto de la mascara.
+
+# Rango para los ojos
+@export var eyesRange:Vector3 = Vector3(0.005, 0.05, 0.5)
+# Rango para las frente.
+@export var foreheadsRange:Vector3 = Vector3(0.005, 0.05, 0.5)
+# Rango para las mejillas.
+@export var cheeksRange:Vector3 = Vector3(0.005, 0.05, 0.5)
+# Rango para el menton.
+@export var chinRange:Vector3 = Vector3(0.005, 0.05, 0.5)
+# Rango para la nariz.
+@export var noseRange:Vector3 = Vector3(0.005, 0.05, 0.5)
+# Rango para las comisuras.
+@export var commissuresRange:Vector3 = Vector3(0.005, 0.05, 0.5)
+# Rango para la boca.
+@export var mouthRange:Vector3 = Vector3(0.005, 0.05, 0.5)
+
 
 # Start.
 func _ready():
@@ -10,20 +25,20 @@ func _ready():
 	for i in range(1, Global.BoneCount + 1):
 		var bone = Global.Bones.find_key(i)
 		print(bone)
-		boneID = skel.find_bone(bone)
-		print(boneID)
+		var boneId = skel.find_bone(bone)
+		print(boneId)
 		
-	randomizeBone("eye_l", 0.005, 0.05, 0.5)
-	randomizeBone("eye_r", 0.005, 0.05, 0.5)
-	randomizeBone("forehead_l", 0.005, 0.05, 0.5)
-	randomizeBone("forehead_r", 0.005, 0.05, 0.5)
-	randomizeBone("cheek_l", 0.005, 0.05, 0.5)
-	randomizeBone("cheek_r", 0.005, 0.05, 0.5)
-	randomizeBone("chin", 0.005, 0.05, 0.5)
-	randomizeBone("nose", 0.005, 0.05, 0.5)
-	randomizeBone("commissure_l", 0.005, 0.05, 0.5)
-	randomizeBone("commissure_r", 0.005, 0.05, 0.5)
-	randomizeBone("mouth", 0.005, 0.05, 0.5)
+	randomizeBone("eye_l", eyesRange.x, eyesRange.y, eyesRange.z)
+	randomizeBone("eye_r", eyesRange.x, eyesRange.y, eyesRange.z)
+	randomizeBone("forehead_l", foreheadsRange.x, foreheadsRange.y, foreheadsRange.z)
+	randomizeBone("forehead_r", foreheadsRange.x, foreheadsRange.y, foreheadsRange.z)
+	randomizeBone("cheek_l", cheeksRange.x, cheeksRange.y, cheeksRange.z)
+	randomizeBone("cheek_r", cheeksRange.x, cheeksRange.y, cheeksRange.z)
+	randomizeBone("chin", chinRange.x, chinRange.y, chinRange.z)
+	randomizeBone("nose", noseRange.x, noseRange.y, noseRange.z)
+	randomizeBone("commissure_l", commissuresRange.x, commissuresRange.y, commissuresRange.z)
+	randomizeBone("commissure_r", commissuresRange.x, commissuresRange.y, commissuresRange.z)
+	randomizeBone("mouth", mouthRange.x, mouthRange.y, mouthRange.z)
 
 # Update.
 func _process(delta):
@@ -31,10 +46,13 @@ func _process(delta):
 
 func randomizeBone(boneName, positionRange, rotationRange, scaleRange):
 	print("Giro de ", boneName)
-	boneID = skel.find_bone(boneName)
-	var trans = skel.get_bone_pose(boneID)
+	var boneID = skel.find_bone(boneName) #Coger el id del hueso dado su nombre.
+	
+	var trans = skel.get_bone_pose(boneID) # Coger el transform del hueso.
+	
 	trans = trans.translated(Vector3(randf_range(-positionRange, positionRange), randf_range(-positionRange, positionRange), 0.0))
-	trans = trans.rotated(Vector3(0.0, 0.0, 1.0), randf_range(-rotationRange, rotationRange)) #PAIGRO AQUI CAMBIAR POR CTE
+	trans = trans.rotated(Vector3(0.0, 0.0, 1.0), randf_range(-rotationRange, rotationRange))
 	trans = trans.scaled(Vector3(randf_range(1 - scaleRange, 1 + scaleRange), 1.0, 1.0))
-	skel.set_bone_pose(boneID, trans)
+	
+	skel.set_bone_pose(boneID, trans) # Settear el transform cambiado al hueso.
 	pass
