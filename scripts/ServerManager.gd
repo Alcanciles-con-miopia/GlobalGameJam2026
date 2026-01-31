@@ -12,7 +12,7 @@ extends Node
 
 var peer = ENetMultiplayerPeer.new()
 enum connection {SERVER, CLIENT}
-
+@export var masks: Array[Node] = [] 
 
 func CreateServer(_port: String = port):
 	peer.create_server(_port.to_int(), max_clients)
@@ -30,6 +30,7 @@ func CreateClient(_address: String = addres, _port: String = port):
 	
 func player_connected(id: int = 1):
 	print_debug("Player ", id, " conectado.")
+	masks[id-1].visible = true
 	pass
 	#var player = Player.instantiate()
 	#player.name = str(id)
