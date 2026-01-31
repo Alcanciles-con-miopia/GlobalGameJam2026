@@ -1,32 +1,41 @@
 [gd_scene format=3 uid="uid://cugvtvbfh07ky"]
 
 [ext_resource type="PackedScene" uid="uid://dapi17w4oqsgl" path="res://assets/models/mascaras.fbx" id="1_gmjp2"]
-[ext_resource type="Script" uid="uid://bbgtmesirbbbv" path="res://scripts/ari_scene.gd" id="1_ikgdf"]
-[ext_resource type="Texture2D" uid="uid://dipgvn03a5dni" path="res://assets/backgrounds/placeholderSelect.png" id="2_20wny"]
+[ext_resource type="Script" uid="uid://g6ko2qn080gq" path="res://scripts/selectMask_Scene.gd" id="3_72k5u"]
+[ext_resource type="PackedScene" uid="uid://ddu4o7i0bx55w" path="res://assets/models/marco.fbx" id="3_ljs87"]
+[ext_resource type="Script" uid="uid://bhrjbe7fwso4o" path="res://scripts/mask_selectable.gd" id="3_t3dyg"]
+[ext_resource type="Texture2D" uid="uid://dj27l4tawfujf" path="res://assets/ui/mariscosrecio.png" id="5_t3dyg"]
 
-[node name="AriScene" type="Node3D" unique_id=152709202]
-script = ExtResource("1_ikgdf")
+[sub_resource type="BoxShape3D" id="BoxShape3D_t3dyg"]
+size = Vector3(2.915039, 3.5263062, 1)
+
+[node name="SelectMaskScene" type="Node3D" unique_id=152709202]
+script = ExtResource("3_72k5u")
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=1135907038]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0126776695, 0, 1.510627)
 projection = 1
 size = 6.909
 
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1790639142]
+
 [node name="cara1" parent="." unique_id=1552861223 instance=ExtResource("1_gmjp2")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.4155357, 0, -2.4709845)
+transform = Transform3D(0.84493756, 0, 0, 0, 0.8837036, 0, 0, 0, 1, -1.8457849, 0.57366467, -2.4709845)
+script = ExtResource("3_t3dyg")
+mask_id = &"Hermenegildo"
 
 [node name="Armature" parent="cara1" index="0" unique_id=882429748]
 transform = Transform3D(100, 0, 0, 0, -1.1920929e-05, 99.99999, 0, -99.99999, -1.1920929e-05, -1.4288809, 0, 0)
 
 [node name="Skeleton3D" parent="cara1/Armature" index="0" unique_id=961022824]
-bones/1/rotation = Quaternion(0.30968037, -0.3197692, -0.65235215, 0.61341864)
-bones/1/scale = Vector3(1, 1.0000001, 1)
+bones/1/rotation = Quaternion(0.3096804, -0.3197692, -0.65235215, 0.61341864)
+bones/1/scale = Vector3(0.99999994, 0.9999999, 0.9999999)
 bones/3/rotation = Quaternion(0.15685815, 0.042271618, -0.23383817, 0.9586075)
 bones/3/scale = Vector3(1, 0.99999994, 1)
 bones/5/rotation = Quaternion(-0.19527882, 0.42897096, 0.79631376, -0.37912342)
 bones/5/scale = Vector3(0.9999997, 0.99999994, 0.99999994)
-bones/7/rotation = Quaternion(0.30968037, -0.3197692, -0.65235215, 0.61341864)
-bones/7/scale = Vector3(1, 1.0000001, 1)
+bones/7/rotation = Quaternion(0.3096804, -0.3197692, -0.65235215, 0.61341864)
+bones/7/scale = Vector3(0.99999994, 0.9999999, 0.9999999)
 bones/9/rotation = Quaternion(0.15685815, -0.042271618, 0.23383817, 0.9586075)
 bones/11/rotation = Quaternion(0.19527882, 0.42897096, 0.79631376, 0.37912342)
 bones/11/scale = Vector3(0.9999997, 0.99999994, 0.99999994)
@@ -51,21 +60,29 @@ override_pose = true
 use_external_skeleton = true
 external_skeleton = NodePath("..")
 
+[node name="HitBox" type="StaticBody3D" parent="cara1" unique_id=1086168223]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="cara1/HitBox" unique_id=746456655]
+transform = Transform3D(0.99999994, 0, 0, 0, 0.99999994, 0, 0, 0, 1, -1.4184594, -0.35018906, 0.9859185)
+shape = SubResource("BoxShape3D_t3dyg")
+
 [node name="cara2" parent="." unique_id=954683335 instance=ExtResource("1_gmjp2")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.2874613, 0, -2.4709845)
+transform = Transform3D(0.8354266, 0, 0, 0, 0.9085699, 0, 0, 0, 1, 4.269534, 0.60951877, -2.4709845)
+script = ExtResource("3_t3dyg")
+mask_id = &"Susi"
 
 [node name="Armature" parent="cara2" index="0" unique_id=882429748]
 transform = Transform3D(100, 0, 0, 0, -1.1920929e-05, 99.99999, 0, -99.99999, -1.1920929e-05, -1.4288809, 0, 0)
 
 [node name="Skeleton3D" parent="cara2/Armature" index="0" unique_id=961022824]
-bones/1/rotation = Quaternion(0.30968034, -0.3197692, -0.65235215, 0.61341864)
-bones/1/scale = Vector3(1.0000001, 1.0000002, 1)
+bones/1/rotation = Quaternion(0.3096803, -0.3197692, -0.65235215, 0.61341864)
+bones/1/scale = Vector3(1, 1.0000001, 0.99999994)
 bones/3/rotation = Quaternion(0.15685815, 0.042271618, -0.23383817, 0.9586075)
 bones/3/scale = Vector3(1, 0.99999994, 1)
 bones/5/rotation = Quaternion(-0.19527882, 0.42897096, 0.79631376, -0.37912342)
 bones/5/scale = Vector3(0.9999997, 0.99999994, 0.99999994)
-bones/7/rotation = Quaternion(0.30968034, -0.3197692, -0.65235215, 0.61341864)
-bones/7/scale = Vector3(1.0000001, 1.0000002, 1)
+bones/7/rotation = Quaternion(0.3096803, -0.3197692, -0.65235215, 0.61341864)
+bones/7/scale = Vector3(1, 1.0000001, 0.99999994)
 bones/9/rotation = Quaternion(0.15685815, -0.042271618, 0.23383817, 0.9586075)
 bones/11/rotation = Quaternion(0.19527882, 0.42897096, 0.79631376, 0.37912342)
 bones/11/scale = Vector3(0.9999997, 0.99999994, 0.99999994)
@@ -90,16 +107,70 @@ override_pose = true
 use_external_skeleton = true
 external_skeleton = NodePath("..")
 
-[node name="Sprite3D" type="Sprite3D" parent="." unique_id=1004621680]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.021650314, 0, -2.725752)
-texture = ExtResource("2_20wny")
+[node name="HitBox" type="StaticBody3D" parent="cara2" unique_id=1799277520]
 
-[node name="Label3D" type="Label3D" parent="." unique_id=1753096675]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1907353, -0.60619164)
+[node name="CollisionShape3D" type="CollisionShape3D" parent="cara2/HitBox" unique_id=1994395547]
+transform = Transform3D(0.9999998, 0, 0, 0, 0.9999997, 0, 0, 0, 1, -1.4184594, -0.35018912, 0.9859195)
+shape = SubResource("BoxShape3D_t3dyg")
+
+[node name="marco" parent="." unique_id=415101566 instance=ExtResource("3_ljs87")]
+transform = Transform3D(1.1552981, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3764677, -4.027996)
+
+[node name="UI" type="CanvasLayer" parent="." unique_id=343692524]
+
+[node name="Control" type="Control" parent="UI" unique_id=912099632]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Label" type="Label" parent="UI/Control" unique_id=652351075]
 modulate = Color(0, 0, 0, 1)
-text = "Choose your character"
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.919
+anchor_right = 0.5
+anchor_bottom = 0.919
+offset_left = -218.0
+offset_top = -11.679993
+offset_right = 218.0
+offset_bottom = 11.320007
+grow_horizontal = 2
+grow_vertical = 0
+text = "CLICK  DERECHO: PLAYER 1 / CLICK IZQUIERDO: PLAYER 2"
 
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1790639142]
+[node name="HBoxContainer" type="HBoxContainer" parent="UI/Control" unique_id=433093098]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="LabelP1" type="Label" parent="UI/Control/HBoxContainer" unique_id=1900755771]
+layout_mode = 2
+
+[node name="LabelP2" type="Label" parent="UI/Control/HBoxContainer" unique_id=1624335164]
+layout_mode = 2
+
+[node name="Button" type="Button" parent="UI/Control" unique_id=1180974405]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.49300003
+anchor_top = 0.231
+anchor_right = 0.49300003
+anchor_bottom = 0.231
+offset_left = -57.04004
+offset_top = -21.320007
+offset_right = 1566.96
+offset_bottom = 1876.6799
+grow_horizontal = 2
+scale = Vector2(0.07, 0.07)
+icon = ExtResource("5_t3dyg")
+icon_alignment = 1
+
+[connection signal="pressed" from="UI/Control/Button" to="." method="_on_Button_pressed"]
 
 [editable path="cara1"]
 [editable path="cara2"]

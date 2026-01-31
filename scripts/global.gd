@@ -13,7 +13,7 @@ var sm # state machine
 var current_scene = Scenes.INTRO 
 var next_scene = Scenes.INTRO
 ## MUY IMPORTANTE: MISMO ORDEN QUE EN EL SERIALIZED ARRAY DE LA STATEMACHINE
-enum Scenes { INTRO, ARISCENE, GAME, NULL}
+enum Scenes { INTRO, SELECTMASK, GAME, NULL}
 
 ## sonido
 var sfx
@@ -47,7 +47,9 @@ enum Bones {
 # DRAGG
 var draggingSomething = null # Hueso que se esta moviendo en un momento.
 
-
+#SELECTMASK
+var player1_mask_id: StringName = ""
+var player2_mask_id: StringName = ""
 
 # PUNTUACIONES
 var PLAYER1_POINTS = 0
