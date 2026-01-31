@@ -8,7 +8,10 @@ extends Node
 @onready var sound = $Sound
 
 var wiimotes_connected = false
+var agarre = false
 var connected_wiimotes
+
+var instruccion = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -62,19 +65,35 @@ func _wiimotion():
 		#print_debug("IR CALCULATED POSITION: ", i.get_ir_cursor_calculated_position())
 		#Input.warp_mouse(i.get_ir_cursor_calculated_position())
 	pass
+	
+	
 
 func _input(event):
 	var scene = Global.Scenes.NULL;
 	if event.is_action_pressed("1"):
-		print_debug("WIIMOTE: Se ha pulsado A.")
-		#scene = Global.Scenes.INTRO
+		scene = Global.Scenes.INTRO
 	if event.is_action_pressed("2"):
-		print_debug("WIIMOTE: Se ha pulsado B.")
 		scene = Global.Scenes.GAME
 	#if event.is_action_pressed("ui_cancel"):
 		#get_tree().quit()
 	if (scene != Global.Scenes.NULL):
 		Global.change_scene(scene)
+	_wiinput(event)
+	
+func _wiinput(event):
+	instruccion += 1
+	if Input.is_action_just_released("A") or Input.is_action_just_released("B"):
+		agarre = false
+	if Input.is_action_pressed("A") and Input.is_action_pressed("B"):
+		if not agarre: 
+			print_debug("WIIMOTE: ", instruccion, " Se ha pulsado A+B.")
+			agarre = true
+	else: 
+		if event.is_action_pressed("A") and not agarre:
+			print_debug("WIIMOTE: ", instruccion, " Se ha pulsado A.")
+		if event.is_action_pressed("B") and not agarre:
+			print_debug("WIIMOTE: ", instruccion, " Se ha pulsado B.")
+		
 
 func _on_game_end():
 	pass

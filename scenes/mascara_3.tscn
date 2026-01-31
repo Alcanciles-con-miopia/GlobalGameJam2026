@@ -2,8 +2,15 @@
 
 [ext_resource type="PackedScene" uid="uid://c1jgin4iihkd1" path="res://assets/models/mascara3.fbx" id="1_8nifo"]
 [ext_resource type="Script" uid="uid://8lh634d3nv63" path="res://scripts/paigrorandom.gd" id="2_t8tpc"]
+[ext_resource type="Texture2D" uid="uid://cbwo5xi7ovqwk" path="res://assets/models/Mask_text.png" id="3_v5umj"]
 
-[node name="mascara3" unique_id=789480340 instance=ExtResource("1_8nifo")]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_b0hta"]
+albedo_texture = ExtResource("3_v5umj")
 
-[node name="Skeleton3D" parent="Skeleton" parent_id_path=PackedInt32Array(405854015) index="0" unique_id=406184649]
+[node name="mascara3" unique_id=329266782 instance=ExtResource("1_8nifo")]
+
+[node name="Skeleton3D" parent="Skeleton" parent_id_path=PackedInt32Array(2064147254) index="0" unique_id=1632936588]
 script = ExtResource("2_t8tpc")
+
+[node name="mascara3" parent="Skeleton/Skeleton3D" index="0" unique_id=1264949166]
+surface_material_override/0 = SubResource("StandardMaterial3D_b0hta")

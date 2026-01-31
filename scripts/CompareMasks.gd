@@ -43,12 +43,21 @@ func _compareMask() -> Array:
 		var rotClient = maskClient.get_bone_pose(idClient).basis
 		var rotP1 = maskP1.get_bone_pose(idP1).basis
 		var rotP2 = maskP2.get_bone_pose(idP2).basis
+
+		# -- escalas
+		var scaleClient = maskClient.get_bone_pose(idClient).basis.get_scale()
+		var scaleP1 = maskP1.get_bone_pose(idP1).basis.get_scale()
+		var scaleP2 = maskP2.get_bone_pose(idP2).basis.get_scale()
 		
 		# -- diferencias P1
 		# - dif pos
 		var diffPosP1
 		diffPosP1 = (posClient - posP1).length()
 		diffP1 += diffPosP1
+		# - dif scale
+		var diffScaleP1
+		diffScaleP1 = (scaleClient - scaleP1).length()
+		diffP1 += diffScaleP1
 		# - dif rot
 		var diffRotXP1
 		var diffRotYP1
@@ -67,6 +76,10 @@ func _compareMask() -> Array:
 		var diffPosP2
 		diffPosP2 = (posClient - posP2).length()
 		diffP2 += diffPosP2
+		# - dif scale
+		var diffScaleP2
+		diffScaleP2 = (scaleClient - scaleP2).length()
+		diffP2 += diffScaleP2
 		# - dif rot
 		var diffRotXP2
 		var diffRotYP2

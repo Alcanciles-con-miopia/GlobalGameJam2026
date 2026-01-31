@@ -25,6 +25,6 @@ visible = false
 [node name="mascara2" parent="." unique_id=657728641 instance=ExtResource("3_0xjcg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.060967445, 0, -0.5767679)
 
-[node name="mascara3" parent="." unique_id=397448203 instance=ExtResource("4_0xjcg")]
+[node name="mascara3" parent="." unique_id=789480340 instance=ExtResource("4_0xjcg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.020561695, 0.30752635, 0.40463567)
 visible = false
