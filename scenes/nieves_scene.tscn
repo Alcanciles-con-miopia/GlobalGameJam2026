@@ -4,23 +4,24 @@
 [ext_resource type="PackedScene" uid="uid://b418j06uaqg1r" path="res://assets/models/mascara1.fbx" id="2_jknla"]
 [ext_resource type="PackedScene" path="res://scenes/mascara_1.tscn" id="3_u8jfn"]
 [ext_resource type="PackedScene" path="res://scenes/mascara_3.tscn" id="4_aj1ub"]
+[ext_resource type="Script" uid="uid://dlge0rwka1j3n" path="res://scenes/Countdown.gd" id="5_aj1ub"]
 
 [node name="NievesScene" type="Node3D" unique_id=782185158]
 script = ExtResource("1_jknla")
 
 [node name="ClientMask" type="Node3D" parent="." unique_id=876392504]
 
-[node name="mascara1" parent="ClientMask" unique_id=1922277496 instance=ExtResource("2_jknla")]
+[node name="mascara1" parent="ClientMask" unique_id=722662416 instance=ExtResource("2_jknla")]
 
 [node name="P1Mask" type="Node3D" parent="." unique_id=1348850491]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.9217165, 0, 0)
 
-[node name="mascara1" parent="P1Mask" unique_id=1577534858 instance=ExtResource("3_u8jfn")]
+[node name="mascara1" parent="P1Mask" unique_id=1341945736 instance=ExtResource("3_u8jfn")]
 
 [node name="P2Mask" type="Node3D" parent="." unique_id=212849679]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.264036, 0, 0)
 
-[node name="mascara3" parent="P2Mask" unique_id=789480340 instance=ExtResource("4_aj1ub")]
+[node name="mascara3" parent="P2Mask" unique_id=329266782 instance=ExtResource("4_aj1ub")]
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=1913785381]
 transform = Transform3D(1, 0, 0, 0, 0.97998035, 0.19909428, 0, -0.19909428, 0.97998035, 3.9461555, 0.75337315, 7.4295187)
@@ -28,3 +29,15 @@ current = true
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="Camera3D" unique_id=1657520693]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.206408, 0.24509525)
+
+[node name="Timer" type="Timer" parent="." unique_id=200193299]
+wait_time = 10.333
+autostart = true
+script = ExtResource("5_aj1ub")
+
+[node name="Label" type="Label" parent="Timer" unique_id=1066318141]
+offset_right = 464.0
+offset_bottom = 191.0
+text = "SOY UN TIMER"
+
+[connection signal="timeout" from="Timer" to="Timer" method="_on_timeout"]
