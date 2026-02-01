@@ -3,11 +3,13 @@
 [ext_resource type="PackedScene" uid="uid://dapi17w4oqsgl" path="res://assets/models/mascaras.fbx" id="1_gmjp2"]
 [ext_resource type="Script" uid="uid://g6ko2qn080gq" path="res://scripts/selectMask_Scene.gd" id="3_72k5u"]
 [ext_resource type="PackedScene" uid="uid://ddu4o7i0bx55w" path="res://assets/models/marco.fbx" id="3_ljs87"]
-[ext_resource type="Script" path="res://scripts/mask_selectable.gd" id="3_t3dyg"]
+[ext_resource type="Script" uid="uid://bhrjbe7fwso4o" path="res://scripts/mask_selectable.gd" id="3_t3dyg"]
 [ext_resource type="Texture2D" uid="uid://dj27l4tawfujf" path="res://assets/ui/mariscosrecio.png" id="5_t3dyg"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_t3dyg"]
 size = Vector3(2.915039, 3.5263062, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_lrb8b"]
 
 [node name="SelectMaskScene" type="Node3D" unique_id=152709202]
 script = ExtResource("3_72k5u")
@@ -169,6 +171,14 @@ grow_horizontal = 2
 scale = Vector2(0.07, 0.07)
 icon = ExtResource("5_t3dyg")
 icon_alignment = 1
+
+[node name="Sprite3D" type="Sprite3D" parent="." unique_id=1494169577]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Sprite3D" unique_id=473000083]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Sprite3D/StaticBody3D" unique_id=1193048204]
+transform = Transform3D(2.6970143, 0, 0, 0, 2.3069134, 0, 0, 0, 1, 0, 1.5622104, 0)
+shape = SubResource("BoxShape3D_lrb8b")
 
 [connection signal="pressed" from="UI/Control/Button" to="." method="_on_Button_pressed"]
 

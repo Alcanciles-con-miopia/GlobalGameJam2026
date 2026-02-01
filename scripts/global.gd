@@ -59,6 +59,9 @@ enum Character { SUSI, HERMENEGILDO }
 var player1_character: Character = Character.SUSI
 var player2_character: Character = Character.HERMENEGILDO
 
+var HERMENEGILDO_PLAYER: int = -1
+var SUSI_PLAYER: int = -1
+
 # PUNTUACIONES
 var PLAYER1_POINTS = 0
 var PLAYER2_POINTS = 0
