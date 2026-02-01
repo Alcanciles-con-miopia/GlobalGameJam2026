@@ -32,6 +32,7 @@ visible = false
 [node name="SelectMaskScene" parent="Scenes" unique_id=152709202 instance=ExtResource("5_okvjo")]
 process_mode = 4
 visible = false
+contro_time = 40000
 
 [node name="IntroScene" parent="Scenes" unique_id=109836491 instance=ExtResource("2_a0fpy")]
 
@@ -52,32 +53,6 @@ ui = NodePath("..")
 
 [node name="AvisoLayer" type="CanvasLayer" parent="." unique_id=1497070559]
 layer = 2
-
-[node name="Aviso" type="Control" parent="AvisoLayer" unique_id=1652309820]
-visible = false
-visibility_layer = 2
-layout_mode = 3
-anchors_preset = 0
-offset_left = 4.0
-offset_right = 161.0
-offset_bottom = 26.0
-
-[node name="VBoxContainer" type="VBoxContainer" parent="AvisoLayer/Aviso" unique_id=592873600]
-layout_mode = 0
-offset_right = 191.0
-offset_bottom = 62.0
-
-[node name="ColorRect" type="ColorRect" parent="AvisoLayer/Aviso/VBoxContainer" unique_id=63405753]
-show_behind_parent = true
-layout_mode = 2
-color = Color(0.050980393, 0.050980393, 0.050980393, 0.6666667)
-
-[node name="Label" type="Label" parent="AvisoLayer/Aviso/VBoxContainer" unique_id=742041699]
-layout_mode = 2
-theme_override_colors/font_color = Color(1, 0.85882354, 0.20392157, 1)
-theme_override_font_sizes/font_size = 22
-text = "FEEDBACK"
-vertical_alignment = 1
 
 [node name="Sound" type="Node" parent="." unique_id=841228563]
 script = ExtResource("7_s46hd")

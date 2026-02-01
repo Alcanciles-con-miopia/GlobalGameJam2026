@@ -7,8 +7,6 @@ extends Node
 @onready var sfx: AudioStreamPlayer2D = $Sound/SFX
 @onready var sound = $Sound
 
-@onready var aviso = $AvisoLayer/Aviso
-@onready var aviso_texto = $AvisoLayer/Aviso/VBoxContainer/Label
 var wiimotes_connected = false
 var agarre = false
 var connected_wiimotes
