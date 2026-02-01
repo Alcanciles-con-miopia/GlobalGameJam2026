@@ -11,6 +11,7 @@ var dragging := false
 var drag_start_mouse := Vector2.ZERO
 var drag_start_transform: Transform3D
 
+var current_bone = null
 var owned_by_player = 0 
 
 # Start.
@@ -23,9 +24,7 @@ func _ready():
 			print_debug("DraggableObject: no se encontró ninguna Camera3D en el grupo 'game_camera'")
 	dif = $"../".global_position - self.global_position
 	
-	#Global.on_cursor_click.connect(_cursor_click)
-	var err = Global.on_cursor_click.connect(_cursor_click)
-	print("Signal connect result:", err)
+	Global.on_cursor_click.connect(_cursor_click)
 	pass
 	
 # Update.
@@ -97,12 +96,6 @@ func _input(event):
 	# ARRASTRAR RATÓN
 	if event is InputEventMouseMotion and dragging and Global.draggingSomething == self:
 		_handle_mouse_drag(event.relative)
-
-	# CLICK DERECHO
-	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_RIGHT and event.pressed:
-		if Global.draggingSomething == self:
-			Global.draggingSomething = null
-			dragging = false
 
 
 func _handle_mouse_drag(mouse_delta: Vector2):
