@@ -2,20 +2,16 @@
 
 [ext_resource type="PackedScene" uid="uid://b418j06uaqg1r" path="res://assets/models/mascara1.fbx" id="1_y1gnb"]
 [ext_resource type="Script" uid="uid://det5nnvshm3lv" path="res://scenes/camaraRef.gd" id="2_fsaqe"]
-[ext_resource type="Texture2D" uid="uid://byu3yase8iqqc" path="res://assets/models/textura.png" id="3_fsaqe"]
 [ext_resource type="Script" uid="uid://cqujx6jyosf0y" path="res://scripts/draggableObject.gd" id="4_mgn7o"]
 [ext_resource type="Texture2D" uid="uid://do7n8gbesoeic" path="res://assets/images/gizmo.png" id="5_fsaqe"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mgn7o"]
-albedo_texture = ExtResource("3_fsaqe")
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_fsaqe"]
 radius = 0.0025358277
 
-[node name="mascara1" unique_id=1341945736 instance=ExtResource("1_y1gnb")]
+[node name="mascara1" unique_id=429396610 instance=ExtResource("1_y1gnb")]
 script = ExtResource("2_fsaqe")
 
-[node name="Skeleton3D" parent="Skeleton" parent_id_path=PackedInt32Array(1686821945) index="0" unique_id=394209086]
+[node name="Skeleton3D" parent="Skeleton" parent_id_path=PackedInt32Array(633238476) index="0" unique_id=1537432759]
 bones/1/position = Vector3(0, 0.010936345, 0.0022914473)
 bones/1/rotation = Quaternion(0.26385823, -0.36439973, -0.555826, 0.6990344)
 bones/1/scale = Vector3(1.0000004, 1.0000002, 1.0000001)
@@ -41,10 +37,7 @@ bones/19/scale = Vector3(1.0000001, 1.0000005, 1.0000005)
 bones/21/rotation = Quaternion(0.774492, -0.30215997, 0.5202308, -0.19550286)
 bones/21/scale = Vector3(1.0000001, 1.0000004, 1.0000004)
 
-[node name="mascara1" parent="Skeleton/Skeleton3D" index="0" unique_id=1028549423]
-surface_material_override/0 = SubResource("StandardMaterial3D_mgn7o")
-
-[node name="EyeLAttach" type="BoneAttachment3D" parent="Skeleton/Skeleton3D" index="1" unique_id=542654956]
+[node name="EyeLAttach" type="BoneAttachment3D" parent="Skeleton/Skeleton3D" index="0" unique_id=542654956]
 transform = Transform3D(0.11654052, 0.5847834, -0.8027746, -0.21613725, -0.77397776, -0.5951833, -0.969383, 0.24287239, 0.036193687, 0, -1.1641532e-09, -0.0025101611)
 bone_name = "eye_l"
 bone_idx = 1
@@ -66,7 +59,7 @@ billboard = 2
 alpha_cut = 2
 texture = ExtResource("5_fsaqe")
 
-[node name="EyeRAttach" type="BoneAttachment3D" parent="Skeleton/Skeleton3D" index="2" unique_id=549899616]
+[node name="EyeRAttach" type="BoneAttachment3D" parent="Skeleton/Skeleton3D" index="1" unique_id=549899616]
 transform = Transform3D(0.11654052, -0.5847834, 0.8027746, 0.21613725, -0.77397776, -0.5951833, 0.969383, 0.24287239, 0.036193687, 0, -1.1641532e-09, -0.0025101611)
 bone_name = "eye_r"
 bone_idx = 11
@@ -88,7 +81,7 @@ billboard = 2
 alpha_cut = 2
 texture = ExtResource("5_fsaqe")
 
-[node name="ForeheadLAttach" type="BoneAttachment3D" parent="Skeleton/Skeleton3D" index="3" unique_id=1409663868]
+[node name="ForeheadLAttach" type="BoneAttachment3D" parent="Skeleton/Skeleton3D" index="2" unique_id=1409663868]
 transform = Transform3D(0.9189779, 0.39307314, 0.031194355, 0.13497785, -0.23926197, -0.9615271, -0.37048686, 0.88783276, -0.27293265, 0, -1.1641532e-09, -0.0025101611)
 bone_name = "forehead_l"
 bone_idx = 3
@@ -110,7 +103,7 @@ billboard = 2
 alpha_cut = 2
 texture = ExtResource("5_fsaqe")
 
-[node name="ForeheadRAttach" type="BoneAttachment3D" parent="Skeleton/Skeleton3D" index="4" unique_id=882394551]
+[node name="ForeheadRAttach" type="BoneAttachment3D" parent="Skeleton/Skeleton3D" index="3" unique_id=882394551]
 transform = Transform3D(0.9189779, -0.39307314, -0.031194355, -0.13497785, -0.23926197, -0.9615271, 0.37048686, 0.88783276, -0.27293265, 0, -1.1641532e-09, -0.0025101611)
 bone_name = "forehead_r"
 bone_idx = 13
@@ -132,7 +125,7 @@ billboard = 2
 alpha_cut = 2
 texture = ExtResource("5_fsaqe")
 
-[node name="CheekLAttach" type="BoneAttachment3D" parent="Skeleton/Skeleton3D" index="5" unique_id=969275956]
+[node name="CheekLAttach" type="BoneAttachment3D" parent="Skeleton/Skeleton3D" index="4" unique_id=969275956]
 transform = Transform3D(-0.6362631, 0.4362645, -0.6362723, -0.0142596, -0.83126044, -0.55570006, -0.77134, -0.34449846, 0.5351214, 0.003756802, 0, -0.0057604318)
 bone_name = "cheek_l"
 bone_idx = 5
@@ -154,7 +147,7 @@ billboard = 2
 alpha_cut = 2
 texture = ExtResource("5_fsaqe")
 
-[node name="CheekRAttach" type="BoneAttachment3D" parent="Skeleton/Skeleton3D" index="6" unique_id=259286429]
+[node name="CheekRAttach" type="BoneAttachment3D" parent="Skeleton/Skeleton3D" index="5" unique_id=259286429]
 transform = Transform3D(-0.6362631, -0.4362645, 0.6362723, 0.0142596, -0.83126044, -0.55570006, 0.77134, -0.34449846, 0.5351214, -0.003756802, 0, -0.0057604318)
 bone_name = "cheek_r"
 bone_idx = 15
@@ -176,7 +169,7 @@ billboard = 2
 alpha_cut = 2
 texture = ExtResource("5_fsaqe")
 
-[node name="ChinAttach" type="BoneAttachment3D" parent="Skeleton/Skeleton3D" index="7" unique_id=397932373]
+[node name="ChinAttach" type="BoneAttachment3D" parent="Skeleton/Skeleton3D" index="6" unique_id=397932373]
 transform = Transform3D(0, 2.3841858e-07, -1, 1, 0, 0, 0, -1, -2.3841858e-07, 0, 0, -0.011449861)
 bone_name = "chin"
 bone_idx = 17
@@ -198,7 +191,7 @@ billboard = 2
 alpha_cut = 2
 texture = ExtResource("5_fsaqe")
 
-[node name="NoseAttach" type="BoneAttachment3D" parent="Skeleton/Skeleton3D" index="8" unique_id=1857393131]
+[node name="NoseAttach" type="BoneAttachment3D" parent="Skeleton/Skeleton3D" index="7" unique_id=1857393131]
 transform = Transform3D(-2.384186e-07, -2.9802326e-08, -1, 0.31950265, -0.9475854, -1.4210854e-14, -0.9475854, -0.3195027, 1.19209275e-07, 0, -9.313226e-10, -0.0038506845)
 bone_name = "nose"
 bone_idx = 9
@@ -220,7 +213,7 @@ billboard = 2
 alpha_cut = 2
 texture = ExtResource("5_fsaqe")
 
-[node name="CommissureLAttach" type="BoneAttachment3D" parent="Skeleton/Skeleton3D" index="9" unique_id=204054629]
+[node name="CommissureLAttach" type="BoneAttachment3D" parent="Skeleton/Skeleton3D" index="8" unique_id=204054629]
 transform = Transform3D(0.27611855, 0.26462784, -0.92397594, 0.67145425, -0.7409563, -0.01155505, -0.68768305, -0.61721694, -0.38227728, 0.0018257329, 1.1283953e-09, -0.00839837)
 bone_name = "commissure_l"
 bone_idx = 19
@@ -242,7 +235,7 @@ billboard = 2
 alpha_cut = 2
 texture = ExtResource("5_fsaqe")
 
-[node name="CommissureRAttach" type="BoneAttachment3D" parent="Skeleton/Skeleton3D" index="10" unique_id=1350409299]
+[node name="CommissureRAttach" type="BoneAttachment3D" parent="Skeleton/Skeleton3D" index="9" unique_id=1350409299]
 transform = Transform3D(0.27611867, -0.26462778, 0.9239758, -0.67145425, -0.74095625, -0.01155493, 0.68768305, -0.6172168, -0.3822774, -0.0018257329, 1.1283953e-09, -0.00839837)
 bone_name = "commissure_r"
 bone_idx = 21
@@ -264,7 +257,7 @@ billboard = 2
 alpha_cut = 2
 texture = ExtResource("5_fsaqe")
 
-[node name="MouthAttach" type="BoneAttachment3D" parent="Skeleton/Skeleton3D" index="11" unique_id=429242825]
+[node name="MouthAttach" type="BoneAttachment3D" parent="Skeleton/Skeleton3D" index="10" unique_id=429242825]
 transform = Transform3D(1.788139e-07, -2.9802314e-08, -0.99999964, 0.4673821, -0.88405496, 1.0658137e-14, -0.8840551, -0.46738186, -8.940693e-08, 0, -2.3283064e-10, -0.010183246)
 bone_name = "mouth"
 bone_idx = 7
