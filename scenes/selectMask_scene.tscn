@@ -13,7 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://dsxa18b2j2k77" path="res://assets/images/cortinas.png" id="8_obepn"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_t3dyg"]
-size = Vector3(2.915039, 3.5263062, 1)
+size = Vector3(5.536621, 7.144865, 1)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_5loaa"]
 atlas = ExtResource("4_awjr2")
@@ -185,7 +185,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"idle",
-"speed": 4.0
+"speed": 8.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -235,7 +235,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"selec",
-"speed": 8.0
+"speed": 16.0
 }]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2c41t"]
@@ -408,7 +408,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"idle",
-"speed": 4.0
+"speed": 8.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -458,7 +458,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"selec",
-"speed": 8.0
+"speed": 16.0
 }]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_lrb8b"]
@@ -521,13 +521,13 @@ external_skeleton = NodePath("..")
 [node name="HitBox" type="StaticBody3D" parent="cara1" unique_id=1086168223]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="cara1/HitBox" unique_id=746456655]
-transform = Transform3D(0.99999994, 0, 0, 0, 0.99999994, 0, 0, 0, 1, -1.4184594, -0.35018906, 0.9859185)
+transform = Transform3D(0.99999976, 0, 0, 0, 0.9999997, 0, 0, 0, 1, -0.8347194, -0.9911351, 0.9859185)
 shape = SubResource("BoxShape3D_t3dyg")
 
 [node name="Pj" type="AnimatedSprite3D" parent="cara1" unique_id=1493597041]
 transform = Transform3D(1.05, 0, 0, 0, 1.05, 0, 0, 0, 1.05, 1.7844951, -0.4224765, 0)
 sprite_frames = SubResource("SpriteFrames_obepn")
-animation = &"idle"
+animation = &"selec"
 
 [node name="cara2" parent="." unique_id=954683335 instance=ExtResource("1_gmjp2")]
 transform = Transform3D(0.8354266, 0, 0, 0, 0.9085699, 0, 0, 0, 1, 4.269534, 0.60951877, -2.4709845)
@@ -576,7 +576,7 @@ external_skeleton = NodePath("..")
 [node name="HitBox" type="StaticBody3D" parent="cara2" unique_id=1799277520]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="cara2/HitBox" unique_id=1994395547]
-transform = Transform3D(0.9999998, 0, 0, 0, 0.9999997, 0, 0, 0, 1, -1.4184594, -0.35018912, 0.9859195)
+transform = Transform3D(0.9999998, 0, 0, 0, 0.9999997, 0, 0, 0, 1, -2.1455097, -0.730894, 0.9859195)
 shape = SubResource("BoxShape3D_t3dyg")
 
 [node name="Pj" type="AnimatedSprite3D" parent="cara2" unique_id=1927558231]

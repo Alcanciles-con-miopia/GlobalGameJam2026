@@ -35,14 +35,14 @@ func on_enable() -> void:
 	match Global.LAST_WINNER:
 		"SUSI":
 			print_debug("SUSI")
-			text = "¡Ha ganado SUSI!"
+			text = "¡Ha ganado SUSI (J" + str(Global.SUSI_PLAYER) + ")!"
 			winSound = "win_susi"
 			herm.play("perder")
 			susi.play("ganar")
 			loseSound = "lose_hermi"
 		"HERMENEGILDO":
 			print_debug("HERM")
-			text = "¡Ha ganado HERMENEGILDO!"
+			text = "¡Ha ganado HERMENEGILDO (J" + str(Global.HERMENEGILDO_PLAYER) + ")!"
 			winSound = "win_hermi"
 			herm.play("ganar")
 			susi.play("perder")
@@ -71,6 +71,6 @@ func on_disable() -> void:
 
 func _on_ReplayButton_pressed() -> void:
 	Global.reset_round()
-	
+	Global.sound.set_sfx_volume_db(5.0)
 	Global.sound.play_sfx("button_click")
 	Global.change_scene(Global.Scenes.SELECTMASK)

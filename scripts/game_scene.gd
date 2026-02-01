@@ -35,7 +35,8 @@ func on_enable() -> void:
 
 	if ui_root:
 		ui_root.visible = true
-		
+	
+	$UI.visible = true
 	process_mode = Node.PROCESS_MODE_INHERIT
 	
 	var p1_mask := Global.player1_mask_id
@@ -63,6 +64,11 @@ func on_enable() -> void:
 		comparer.setup(client_skel, p1_skel, p2_skel)
 
 	countdown_timer.start()
+	
+	# tweens de entrada
+	$ClientMasks/ClientMask_1.enter()
+	$ClientMasks/ClientMask_2.enter()
+	$ClientMasks/ClientMask_3.enter()
 
 func on_disable() -> void:
 	if ui_root == null:
@@ -70,6 +76,8 @@ func on_disable() -> void:
 
 	if ui_root:
 		ui_root.visible = false
+	
+	$UI.visible = false
 	
 	if timer_label:
 		timer_label.visible = false
@@ -94,7 +102,6 @@ func _on_CountdownTimer_timeout() -> void:
 	else:
 		Global.LAST_WINNER = "TIE"
 		Global.change_scene(Global.Scenes.FINALSCENE)
-		
 
 func _pick_random_client_mask() -> void:
 	# ClientMasks por ahora tiene 3 hijos: ClientMask_1/2/3 (si eso ya escalamos)
@@ -103,6 +110,7 @@ func _pick_random_client_mask() -> void:
 		push_error("GameScene: no hay máscaras dentro de ClientMasks")
 		return
 
+	
 	# Ocultar todas
 	for m in masks:
 		if m is Node3D:

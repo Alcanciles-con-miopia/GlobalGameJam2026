@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://c1qnb6ha78qxw" path="res://scenes/mascara_3_r.tscn" id="7_kk2rg"]
 [ext_resource type="Script" uid="uid://cay4w1ja8ica0" path="res://scripts/ClientMaskInfo.gd" id="7_utbpp"]
 [ext_resource type="Texture2D" uid="uid://g6yhep6oc61u" path="res://assets/images/marcoArriba.png" id="12_5ay1a"]
+[ext_resource type="FontFile" uid="uid://b0g21t6xxd722" path="res://assets/font/Barrio-Regular.ttf" id="12_ldkr4"]
 [ext_resource type="Texture2D" uid="uid://csck8cqejkvc4" path="res://assets/images/marcoBajo.png" id="13_ldkr4"]
 [ext_resource type="Texture2D" uid="uid://dsxa18b2j2k77" path="res://assets/images/cortinas.png" id="14_liy57"]
 
@@ -25,6 +26,7 @@ player_mask_scene_3 = ExtResource("4_5ay1a")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.5)
 projection = 1
 size = 6.909
+near = 0.009
 script = ExtResource("2_y3j0m")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=784478348]
@@ -70,18 +72,18 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -20.0
-offset_top = -110.0
-offset_right = 20.0
-offset_bottom = -87.0
+offset_left = -206.0
+offset_top = -46.0
+offset_right = 219.0
+offset_bottom = -14.0
 grow_horizontal = 2
 grow_vertical = 0
-scale = Vector2(2, 2)
-pivot_offset = Vector2(20, 11.5)
+theme_override_fonts/font = ExtResource("12_ldkr4")
+theme_override_font_sizes/font_size = 28
 horizontal_alignment = 1
 
 [node name="CountdownTimer" type="Timer" parent="UI/Control" unique_id=1413625433]
-wait_time = 5.0
+wait_time = 30.0
 one_shot = true
 script = ExtResource("3_ycayy")
 
@@ -89,14 +91,18 @@ script = ExtResource("3_ycayy")
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -20.0
-offset_top = 90.0
-offset_right = 20.0
-offset_bottom = 113.0
+offset_left = -176.0
+offset_top = 567.0
+offset_right = -20.0
+offset_bottom = 640.0
 grow_horizontal = 2
 scale = Vector2(2, 2)
 pivot_offset = Vector2(20, 11.5)
-horizontal_alignment = 2
+theme_override_colors/font_color = Color(0.827451, 0.14901961, 0.09803922, 1)
+theme_override_fonts/font = ExtResource("12_ldkr4")
+theme_override_font_sizes/font_size = 52
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="P1Spawn" type="Node3D" parent="." unique_id=264766612]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.996, 1, -2)
