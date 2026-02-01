@@ -8,6 +8,7 @@ signal on_enable(scene)
 signal on_disable(scene)
 signal on_game_end()
 signal on_cursor_click(event, cursor_pos, device_id)
+signal on_cursor_move(cursor_pos, device_id)
 
 #signal cursor_pressed(cursor_pos, device_id)
 #signal cursor_released(device_id)

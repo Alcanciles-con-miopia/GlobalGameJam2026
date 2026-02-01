@@ -39,6 +39,8 @@ func _add_pad(deviceid:=-1, id = -1):
 		cursors[id].DeviceID = deviceid
 		cursors[id].setColor(Color.BLUE if id == 0 else Color.RED)
 		ui.add_child(cursors[id])
+		Global.cursors = cursors
+		
 
 func _remove_pad(deviceid:=-1, id = -1):
 	if deviceid != -1 and deviceid in cursors:
@@ -47,3 +49,5 @@ func _remove_pad(deviceid:=-1, id = -1):
 		dev.vibrate(0.5)
 		dev.queue_free()
 		cursors.erase(id)
+		Global.cursors = cursors
+		

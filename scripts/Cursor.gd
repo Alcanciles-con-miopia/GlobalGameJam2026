@@ -31,6 +31,12 @@ func _input(event: InputEvent) -> void:
 
 	elif event is InputEventJoypadButton and event.is_action_released("A") and event.device == DeviceID:
 		texture = MANO_ABIERTA
+		
+	#elif event is InputEventJoypadMotion and event.device == DeviceID:
+
+		
+	#if event is InputEventJoypadMotion:
+		#print_debug(Global.cursors[event.device])
 
 func _physics_process(delta: float) -> void:
 	if DeviceID == -1: return
@@ -38,7 +44,13 @@ func _physics_process(delta: float) -> void:
 	x_ax = x_ax if abs(x_ax) >= 0.4 else 0
 	var y_ax = Input.get_joy_axis(DeviceID, JOY_AXIS_LEFT_Y)
 	y_ax = y_ax if abs(y_ax) >= 0.4 else 0
-	direction = Vector2(x_ax if position.x < get_viewport().size.x else -x_ax, y_ax if position.y < get_viewport().size.y else -y_ax )
-	#print(get_viewport().size, " || ", position, " || ", direction)
-	position += direction * vel * delta
+	direction = Vector2(x_ax, y_ax)
+	var newpos = position + direction * vel * delta
+	newpos.x = min(get_viewport().size.x, newpos.x)
+	newpos.x = max(0, newpos.x)
+	newpos.y = min(get_viewport().size.y, newpos.y)
+	newpos.y = max(0, newpos.y)
+	position = newpos
+	Global.on_cursor_move.emit(position, DeviceID)
+	#print_debug(Global.cursors[0])
 	#print("AA: ", DeviceID, " vector: ", direction)

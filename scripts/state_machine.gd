@@ -92,10 +92,10 @@ func _process(delta: float) -> void:
 			#tween.tween_property(aviso, "modulate", Color.TRANSPARENT, 0.5)
 	#pass
 
-#func _input(event):
-	#var scene = Global.Scenes.NULL;
-	#if event.is_action_pressed("1"):
-		#scene = Global.Scenes.INTRO
+func _input(event):
+	var scene = Global.Scenes.NULL;
+	if event.is_action_pressed("1"):
+		scene = Global.Scenes.FINALSCENE
 	#if event.is_action_pressed("2"):
 		#scene = Global.Scenes.GAME
 	#if event.is_action_pressed("ui_cancel"):
