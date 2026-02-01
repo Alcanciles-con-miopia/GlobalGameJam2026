@@ -352,6 +352,12 @@ func on_enable() -> void:
 
 	process_mode = Node.PROCESS_MODE_INHERIT
 	
+	Global.HERMENEGILDO_PLAYER = -1
+	Global.SUSI_PLAYER = -1
+	susi.stop()
+	herm.stop()
+	jugar_spr3d.modulate = Color(0xffffffff)
+	
 	_reset_selection_state()
 
 func on_disable() -> void:
