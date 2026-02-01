@@ -80,10 +80,13 @@ grow_horizontal = 2
 grow_vertical = 0
 scale = Vector2(2, 2)
 pivot_offset = Vector2(20, 11.5)
+theme_override_colors/font_color = Color(0.827451, 0.14901961, 0.09803922, 1)
+theme_override_fonts/font = ExtResource("12_ldkr4")
+theme_override_font_sizes/font_size = 16
 horizontal_alignment = 1
 
 [node name="CountdownTimer" type="Timer" parent="UI/Control" unique_id=1413625433]
-wait_time = 5.0
+wait_time = 30.0
 one_shot = true
 script = ExtResource("3_ycayy")
 
@@ -99,9 +102,8 @@ grow_horizontal = 2
 scale = Vector2(2, 2)
 pivot_offset = Vector2(20, 11.5)
 theme_override_colors/font_color = Color(0.827451, 0.14901961, 0.09803922, 1)
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 0)
 theme_override_fonts/font = ExtResource("12_ldkr4")
-theme_override_font_sizes/font_size = 64
+theme_override_font_sizes/font_size = 52
 horizontal_alignment = 1
 vertical_alignment = 1
 
