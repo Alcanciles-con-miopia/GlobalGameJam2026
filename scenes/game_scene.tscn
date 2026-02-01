@@ -81,7 +81,7 @@ pivot_offset = Vector2(20, 11.5)
 horizontal_alignment = 1
 
 [node name="CountdownTimer" type="Timer" parent="UI/Control" unique_id=1413625433]
-wait_time = 30.0
+wait_time = 5.0
 one_shot = true
 script = ExtResource("3_ycayy")
 
