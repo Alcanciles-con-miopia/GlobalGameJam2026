@@ -26,8 +26,6 @@ func _input(event: InputEvent) -> void:
 		texture = MANO_CERRADA
 		# LANZAR RAYCAST ANDRES AQUI
 		#print_debug("CURSOR CLICK")
-		Global.sound.set_sfx_volume_db(30)
-		Global.sound.play_sfx("click_grab")
 		Global.on_cursor_click.emit(event, position + Vector2(20, 20), DeviceID)
 		#Global.on_cursor_click.emit()
 

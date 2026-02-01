@@ -10,6 +10,11 @@ const MASK_NODES := ["cara1", "cara2"]
 @onready var herm : AnimatedSprite3D = $cara1/Pj
 @onready var susi : AnimatedSprite3D = $cara2/Pj
 
+@onready var aviso = $UI/Aviso
+var mostrar_aviso : bool = true
+var counter = 0
+@export var contro_time : int
+
 var ui_root: Control = null
 
 var player1_choice: StringName = ""
@@ -40,6 +45,12 @@ func _input(event: InputEvent) -> void:
 	if not event.is_action_pressed("A"):
 		return
 		
+	if mostrar_aviso:
+		mostrar_aviso = false
+		counter = 0
+		var tween = create_tween()
+		tween.tween_property(aviso, "modulate", Color.TRANSPARENT, 0.5)
+	
 	# P1
 	if Global.cursors.size() > 0 and Global.cursors[0] and event.device == Global.cursors[0].DeviceID:
 		_handle_mask_click(1, Global.cursors[0].position)
@@ -315,7 +326,6 @@ func _on_Button_pressed() -> void:
 	Global.player1_character = _character_from_mask_id(player1_choice)
 	Global.player2_character = _character_from_mask_id(player2_choice)
 	
-	Global.sound.set_sfx_volume_db(50)
 	Global.sound.play_sfx("button_click")
 	
 	Global.change_scene(Global.Scenes.GAME)
@@ -335,6 +345,9 @@ func on_enable() -> void:
 	
 	if ui_root:
 		ui_root.visible = true
+		
+	aviso.visible = true
+	mostrar_aviso = true
 
 	process_mode = Node.PROCESS_MODE_INHERIT
 	
@@ -349,3 +362,13 @@ func on_disable() -> void:
 
 	visible = false
 	process_mode = Node.PROCESS_MODE_DISABLED
+
+
+func _process(delta: float) -> void:
+	if mostrar_aviso:
+		counter += 1
+		if counter >= contro_time:
+			mostrar_aviso = false
+			counter = 0
+			var tween = create_tween()
+			tween.tween_property(aviso, "modulate", Color.TRANSPARENT, 0.5)

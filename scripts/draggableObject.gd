@@ -62,8 +62,6 @@ func _cursor_click(e, cursor_pos, device_id):
 			if collider == self:
 				Global.draggingSomething = self
 				dragging = true
-				Global.sound.set_sfx_volume_db(30)
-				Global.sound.play_sfx("susi_scale", true)
 				drag_start_mouse = cursor_pos
 				drag_start_transform = $"../".global_transform
 				print("Arrastrando:", self)

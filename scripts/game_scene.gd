@@ -47,12 +47,6 @@ func on_enable() -> void:
 	# Elige una máscara de cliente aleatoria de las 3 q hay
 	_pick_random_client_mask()
 
-	if(current_mask_type == "mask_1"):
-		Global.sound.play_bgm("fino_bgm")
-	elif (current_mask_type == "mask_2"):
-		Global.sound.play_bgm("alien_bgm")
-	else:
-		Global.sound.play_bgm("enano_bgm")
 	# Instancia dos máscaras base del mismo tipo para P1 y P2
 	_spawn_player_masks()
 	
