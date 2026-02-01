@@ -3,11 +3,13 @@ class_name ControlMapper
 
 #@onready var ui: Control = $"../ui"
 @export var ui : Control
+@export var selectScene : Node
 
 var cursors : Array = [null, null]
 
 func _ready() -> void:
 	Input.joy_connection_changed.connect(_connection_changed)
+	selectScene.cursors = cursors
 
 func _input(event: InputEvent) -> void:
 	if (event is InputEventJoypadMotion or event is InputEventJoypadButton):

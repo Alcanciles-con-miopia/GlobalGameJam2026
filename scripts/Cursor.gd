@@ -1,7 +1,7 @@
 extends TextureRect
 class_name Cursor
 
-var DeviceID := 0
+var DeviceID := -1
 
 const MANO_ABIERTA = preload("res://assets/images/mano_abierta.png")
 const MANO_CERRADA = preload("res://assets/images/mano_cerrada.png")
@@ -17,6 +17,7 @@ func setColor(color):
 	set_modulate(color);
 
 func vibrate(time:= 0.1):
+	if DeviceID == -1: return
 	Input.start_joy_vibration(DeviceID, 1, 1 ,time)
 
 func _input(event: InputEvent) -> void:
@@ -27,6 +28,7 @@ func _input(event: InputEvent) -> void:
 		texture = MANO_ABIERTA
 
 func _physics_process(delta: float) -> void:
+	if DeviceID == -1: return
 	var x_ax = Input.get_joy_axis(DeviceID, JOY_AXIS_LEFT_X)
 	x_ax = x_ax if abs(x_ax) >= 0.4 else 0
 	var y_ax = Input.get_joy_axis(DeviceID, JOY_AXIS_LEFT_Y)
