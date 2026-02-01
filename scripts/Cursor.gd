@@ -32,11 +32,12 @@ func _input(event: InputEvent) -> void:
 	elif event is InputEventJoypadButton and event.is_action_released("A") and event.device == DeviceID:
 		texture = MANO_ABIERTA
 		
-	#elif event is InputEventJoypadMotion and event.device == DeviceID:
-
-		
-	#if event is InputEventJoypadMotion:
-		#print_debug(Global.cursors[event.device])
+	#if event is InputEventJoypadMotion and event.is_action("right_trigger") and event.device == DeviceID:
+		#vel += vel_factor
+		#print("vel factor")
+	#elif event is InputEventJoypadMotion and event.is_action("left_trigger") and event.device == DeviceID:
+		#vel -= vel_factor
+		#print("vel factor")
 
 func _physics_process(delta: float) -> void:
 	if DeviceID == -1: return
@@ -45,7 +46,12 @@ func _physics_process(delta: float) -> void:
 	var y_ax = Input.get_joy_axis(DeviceID, JOY_AXIS_LEFT_Y)
 	y_ax = y_ax if abs(y_ax) >= 0.4 else 0
 	direction = Vector2(x_ax, y_ax)
-	var newpos = position + direction * vel * delta
+	var vectorMovible = direction * vel * delta
+	print("SSSSSSSSSS", x_ax, ",", y_ax)
+	vectorMovible.x = vectorMovible.x/4 if abs(x_ax) < 0.7 else (vectorMovible.x/2 if abs(x_ax)<0.95 else vectorMovible.x)
+	vectorMovible.y = vectorMovible.y/4 if abs(y_ax) < 0.7 else (vectorMovible.y/2 if abs(y_ax)<0.95 else vectorMovible.y)
+	print("EEEEEEEEE", vectorMovible)
+	var newpos = position + vectorMovible 
 	newpos.x = min(get_viewport().size.x, newpos.x)
 	newpos.x = max(0, newpos.x)
 	newpos.y = min(get_viewport().size.y, newpos.y)
