@@ -59,13 +59,24 @@ func _handle_mask_click(player: int, mouse_pos: Vector2) -> void:
 
 	_select_mask(player, mask_node, mask_id)
 
-func _select_mask(player: int, mask_node: Node3D, mask_id: StringName) -> void:
+func _select_mask(player: int, mask_node: Node3D, mask_id: String) -> void:
 	if player == 1:
 		# 1) Si ya tenía esta máscara la deseleccionas
 		if p1_mask_node == mask_node:
 			_reset_mask(mask_node)
 			p1_mask_node = null
 			player1_choice = ""
+						
+			# si el player de hermenegildo ya era player
+			if Global.HERMENEGILDO_PLAYER == player:
+				Global.HERMENEGILDO_PLAYER = -1
+				pass
+				
+			# si el player de susi ya era player
+			if Global.HERMENEGILDO_PLAYER == player:
+				Global.SUSI_PLAYER = -1
+				pass
+			
 		else:
 			# 2) Si la tiene el jugador 2 no deja cogerla
 			if p2_mask_node == mask_node:
@@ -74,28 +85,82 @@ func _select_mask(player: int, mask_node: Node3D, mask_id: StringName) -> void:
 			# 3) Si tenía otra máscara la resetea
 			if p1_mask_node != null:
 				_reset_mask(p1_mask_node)
+				
+				# si el player de hermenegildo ya era player
+				if Global.HERMENEGILDO_PLAYER == player:
+					Global.HERMENEGILDO_PLAYER = -1
+					pass
+					
+				# si el player de susi ya era player
+				if Global.HERMENEGILDO_PLAYER == player:
+					Global.SUSI_PLAYER = -1
+					pass
 
 			# 4) Asigna la nueva
 			p1_mask_node = mask_node
 			player1_choice = mask_id
 			_highlight_mask(mask_node, 1)
+			
+			# si quiero seleccionar a Hermenegildo
+			if mask_id == "Hermenegildo":
+				Global.HERMENEGILDO_PLAYER = player
+				pass
+				
+			# si quiero seleccionar a Susi
+			if mask_id == "Susi":
+				Global.SUSI_PLAYER = player
+				pass
 
 	else: # lo mismo pal jugador 2
 		if p2_mask_node == mask_node:
 			_reset_mask(mask_node)
 			p2_mask_node = null
 			player2_choice = ""
+			
+			# si el player de hermenegildo ya era player
+			if Global.HERMENEGILDO_PLAYER == player:
+				Global.HERMENEGILDO_PLAYER = -1
+				pass
+				
+			# si el player de susi ya era player
+			if Global.HERMENEGILDO_PLAYER == player:
+				Global.SUSI_PLAYER = -1
+				pass
+			
 		else:
 			if p1_mask_node == mask_node:
 				return
 
 			if p2_mask_node != null:
 				_reset_mask(p2_mask_node)
+				
+				# si el player de hermenegildo ya era player
+				if Global.HERMENEGILDO_PLAYER == player:
+					Global.HERMENEGILDO_PLAYER = -1
+					pass
+					
+				# si el player de susi ya era player
+				if Global.HERMENEGILDO_PLAYER == player:
+					Global.SUSI_PLAYER = -1
+					pass
 
 			p2_mask_node = mask_node
 			player2_choice = mask_id
 			_highlight_mask(mask_node, 2)
+			
+			# si quiero seleccionar a Hermenegildo
+			if mask_id == "Hermenegildo":
+				Global.HERMENEGILDO_PLAYER = player
+				pass
+				
+			# si quiero seleccionar a Susi
+			if mask_id == "Susi":
+				Global.SUSI_PLAYER = player
+				pass
 
+	print("Jugador de HERMENEGILDO: ", Global.HERMENEGILDO_PLAYER)
+	print("Jugador de SUSI: ", Global.SUSI_PLAYER)
+	
 	_update_ui()
 
 func _reset_mask(mask_node: Node3D) -> void:
