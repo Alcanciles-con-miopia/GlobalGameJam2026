@@ -145,14 +145,10 @@ func _on_fade_end() -> void: #justo antes del fadeout, la idea es que esto sea u
 func _update_bgm_for_scene() -> void:
 	match Global.current_scene:
 		Global.Scenes.INTRO:
-			# Global.sound.play_bgm("intro_theme")
 			Global.sound.stop_bgm()
-		Global.Scenes.GAME:
-			# sample de prueba luego se cambia por el real
-			# Global.sound.play_bgm("bgmusicSample")
+		Global.Scenes.FINALSCENE:
 			Global.sound.stop_bgm()
 		Global.Scenes.SELECTMASK:
-			# sample de prueba luego se cambia por el real
 			Global.sound.play_bgm("selectBGM")
 		Global.Scenes.NULL:
 			Global.sound.stop_bgm()

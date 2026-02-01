@@ -44,7 +44,10 @@ func on_enable() -> void:
 			text = "Fin de la ronda"
 
 	result_label.text = text
+	Global.sound.set_sfx_volume_db(50)
 	Global.sound.play_sfx(winSound)
+	Global.sound.set_sfx_volume_db(50)
+	await get_tree().create_timer(1.5).timeout
 	Global.sound.play_sfx(loseSound)
 
 func on_disable() -> void:
