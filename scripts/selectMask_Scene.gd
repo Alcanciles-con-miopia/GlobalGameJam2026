@@ -27,10 +27,21 @@ func _ready() -> void:
 	
 
 func _input(event: InputEvent) -> void:
-	if event is InputEventJoypadButton and event.is_action_pressed("A") and (Global.cursors[0] and event.device == Global.cursors[0].DeviceID):
+	if not (event is InputEventJoypadButton):
+		return
+
+	if not event.is_action_pressed("A"):
+		return
+		
+	# P1
+	if Global.cursors.size() > 0 and Global.cursors[0] and event.device == Global.cursors[0].DeviceID:
 		_handle_mask_click(1, Global.cursors[0].position)
-	elif event is InputEventJoypadButton and event.is_action_pressed("A") and (Global.cursors[1] and event.device == Global.cursors[1].DeviceID):
+		return
+
+	# P2
+	if Global.cursors.size() > 1 and Global.cursors[1] and event.device == Global.cursors[1].DeviceID:
 		_handle_mask_click(2, Global.cursors[1].position)
+		return
 
 func _handle_mask_click(player: int, mouse_pos: Vector2) -> void:
 	var from: Vector3 = camera.project_ray_origin(mouse_pos)
@@ -46,18 +57,20 @@ func _handle_mask_click(player: int, mouse_pos: Vector2) -> void:
 	var collider := result["collider"] as Node
 	if collider == null:
 		return
-	
+		
+	if collider.is_in_group("play_button_3d") \
+	or (collider.get_parent() and collider.get_parent().is_in_group("play_button_3d")):
+		_on_Button_pressed()  
+		return
 	
 	var mask_node := collider.get_parent() as Node3D
 	if mask_node == null:
 		return
 	
 	if not is_instance_of(mask_node, SelectableMask):
-		_on_Button_pressed()
 		return
 
 	var mask_id: StringName = mask_node.mask_id
-
 	_select_mask(player, mask_node, mask_id)
 
 func _select_mask(player: int, mask_node: Node3D, mask_id: String) -> void:
@@ -74,7 +87,7 @@ func _select_mask(player: int, mask_node: Node3D, mask_id: String) -> void:
 				pass
 				
 			# si el player de susi ya era player
-			if Global.HERMENEGILDO_PLAYER == player:
+			if Global.SUSI_PLAYER == player:
 				Global.SUSI_PLAYER = -1
 				pass
 			
@@ -93,7 +106,7 @@ func _select_mask(player: int, mask_node: Node3D, mask_id: String) -> void:
 					pass
 					
 				# si el player de susi ya era player
-				if Global.HERMENEGILDO_PLAYER == player:
+				if Global.SUSI_PLAYER == player:
 					Global.SUSI_PLAYER = -1
 					pass
 
@@ -125,7 +138,7 @@ func _select_mask(player: int, mask_node: Node3D, mask_id: String) -> void:
 				pass
 				
 			# si el player de susi ya era player
-			if Global.HERMENEGILDO_PLAYER == player:
+			if Global.SUSI_PLAYER == player:
 				Global.SUSI_PLAYER = -1
 				pass
 			
@@ -142,7 +155,7 @@ func _select_mask(player: int, mask_node: Node3D, mask_id: String) -> void:
 					pass
 					
 				# si el player de susi ya era player
-				if Global.HERMENEGILDO_PLAYER == player:
+				if Global.SUSI_PLAYER == player:
 					Global.SUSI_PLAYER = -1
 					pass
 
@@ -164,6 +177,7 @@ func _select_mask(player: int, mask_node: Node3D, mask_id: String) -> void:
 	print("Jugador de SUSI: ", Global.SUSI_PLAYER)
 	
 	if(mask_id == "Susi"):
+		print("SFX: select_susi")
 		Global.sound.play_sfx("select_susi")
 	else:
 		Global.sound.play_sfx("select_hermi")
@@ -251,9 +265,9 @@ func _on_Button_pressed() -> void:
 
 func _character_from_mask_id(mask_id: StringName) -> Global.Character:
 	match String(mask_id):
-		"mask_1":
+		"SUSI":
 			return Global.Character.SUSI
-		"mask_2":
+		"HERMENEGILDO":
 			return Global.Character.HERMENEGILDO
 		_:
 			return Global.Character.SUSI

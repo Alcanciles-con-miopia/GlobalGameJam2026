@@ -133,7 +133,7 @@ func play_mask_sfx(player_id: int, action: String) -> void:
 	if prefix == "":
 		return
 
-	var key := "%s_%s" % [prefix, action]  # ej "susi_move", "herme_rotate"
+	var key := "%s_%s" % [prefix, action]  # ej "susi_move", "hermi_rotate"
 
 	play_sfx(key, 0.05)
 

@@ -27,17 +27,25 @@ func on_enable() -> void:
 	process_mode = Node.PROCESS_MODE_INHERIT
 
 	var text := ""
+	var winSound := ""
+	var loseSound := ""
 	match Global.LAST_WINNER:
 		"SUSI":
 			text = "¡Ha ganado SUSI!"
+			winSound = "win_susi"
+			loseSound = "lose_hermi"
 		"HERMENEGILDO":
 			text = "¡Ha ganado HERMENEGILDO!"
+			winSound = "win_hermi"
+			loseSound = "lose_susi"
 		"TIE":
 			text = "¡Empate!"
 		_:
 			text = "Fin de la ronda"
 
 	result_label.text = text
+	Global.sound.play_sfx(winSound)
+	Global.sound.play_sfx(loseSound)
 
 func on_disable() -> void:
 	if ui_root == null:
@@ -51,4 +59,6 @@ func on_disable() -> void:
 
 func _on_ReplayButton_pressed() -> void:
 	Global.reset_round()
+	
+	Global.sound.play_sfx("button_click")
 	Global.change_scene(Global.Scenes.SELECTMASK)
