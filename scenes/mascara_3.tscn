@@ -6,16 +6,16 @@
 [ext_resource type="Texture2D" uid="uid://byu3yase8iqqc" path="res://assets/models/textura.png" id="5_ljalg"]
 [ext_resource type="Texture2D" uid="uid://do7n8gbesoeic" path="res://assets/images/gizmo.png" id="5_we7ac"]
 
-[sub_resource type="SphereShape3D" id="SphereShape3D_b0hta"]
-radius = 0.0025358277
-
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_b0hta"]
 albedo_texture = ExtResource("5_ljalg")
 
-[node name="mascara3" unique_id=329266782 instance=ExtResource("1_8nifo")]
+[sub_resource type="SphereShape3D" id="SphereShape3D_b0hta"]
+radius = 0.0025358277
+
+[node name="mascara3" unique_id=405035832 instance=ExtResource("1_8nifo")]
 script = ExtResource("2_b0hta")
 
-[node name="Skeleton3D" parent="Skeleton" parent_id_path=PackedInt32Array(832587891) index="0" unique_id=659846354]
+[node name="Skeleton3D" parent="Skeleton" parent_id_path=PackedInt32Array(650168270) index="0" unique_id=1725706851]
 bones/1/position = Vector3(0, 0.010936346, 0.0022914473)
 bones/1/scale = Vector3(1.0000005, 1.0000002, 1.0000001)
 bones/3/position = Vector3(0, 0.010936346, 0.0022914473)
@@ -40,6 +40,9 @@ bones/19/scale = Vector3(1.0000001, 1.0000005, 1.0000005)
 bones/21/rotation = Quaternion(0.774492, -0.30215997, 0.5202309, -0.19550286)
 bones/21/scale = Vector3(1.0000001, 1.0000005, 1.0000005)
 
+[node name="mascara3" parent="Skeleton/Skeleton3D" index="0" unique_id=249801082]
+surface_material_override/0 = SubResource("StandardMaterial3D_b0hta")
+
 [node name="EyeLAttach" type="BoneAttachment3D" parent="Skeleton/Skeleton3D" index="1" unique_id=1228388863]
 transform = Transform3D(0.11654054, 0.58478343, -0.8027746, -0.21613728, -0.7739778, -0.5951833, -0.9693831, 0.24287242, 0.036193687, 0, -1.1641532e-09, -0.0025101602)
 bone_name = "eye_l"
@@ -52,12 +55,12 @@ input_capture_on_drag = true
 script = ExtResource("4_b0hta")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Skeleton/Skeleton3D/EyeLAttach/AreaEyeL" index="0" unique_id=1401327608]
-transform = Transform3D(1, -2.9802322e-08, -4.4703484e-08, 4.4703484e-08, 1, 8.940697e-08, -2.9802322e-08, -1.4901161e-07, 1.0000002, 0.0003733877, 0.001081266, -0.0015416755)
+transform = Transform3D(1.5, -6.705523e-08, 4.470347e-08, 6.7055225e-08, 1.5, 2.2351742e-07, -4.4703476e-08, -2.2351742e-07, 1.5, 0.0003733877, 0.001081266, -0.0015416755)
 shape = SubResource("SphereShape3D_b0hta")
 debug_color = Color(0, 0.6, 0.69803923, 1)
 
 [node name="Sprite3D" type="Sprite3D" parent="Skeleton/Skeleton3D/EyeLAttach/AreaEyeL/CollisionShape3D" index="0" unique_id=56571620]
-transform = Transform3D(0.0020000003, 0, 0, -2.910383e-11, 0.0020000003, -5.820766e-11, 0, 5.820766e-11, 0.0020000003, 0.0018156881, 0.0065018972, 0.004999914)
+transform = Transform3D(0.001, 1.45519135e-11, -4.2351634e-19, -1.45519135e-11, 0.001, -2.9103827e-11, 0, 2.9103827e-11, 0.001, 0.0018156881, 0.0065018972, 0.004999914)
 billboard = 2
 texture = ExtResource("5_we7ac")
 
@@ -73,12 +76,12 @@ input_capture_on_drag = true
 script = ExtResource("4_b0hta")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Skeleton/Skeleton3D/EyeRAttach/AreaEyeR" index="0" unique_id=1273589640]
-transform = Transform3D(1, -4.4703484e-08, -4.4703484e-08, 5.9604645e-08, 0.99999994, 2.9802322e-08, -2.9802322e-08, -1.7881393e-07, 1.0000002, -0.0014032512, 0.0074433335, 0.0033507098)
+transform = Transform3D(1.4999995, -5.9604645e-08, 2.9802322e-08, 1.1920929e-07, 1.5, 1.1920929e-07, -4.4703484e-08, -2.3841858e-07, 1.5, 0.00014624093, 0.0018946691, -0.0009161739)
 shape = SubResource("SphereShape3D_b0hta")
 debug_color = Color(0, 0.6, 0.69803923, 1)
 
 [node name="Sprite3D" type="Sprite3D" parent="Skeleton/Skeleton3D/EyeRAttach/AreaEyeR/CollisionShape3D" index="0" unique_id=114305607]
-transform = Transform3D(0.002, 0, 0, 0, 0.002, 0, 0, 0, 0.002, 0, 0, 0)
+transform = Transform3D(0.001, 1.4551917e-11, 4.6417406e-19, -1.4551917e-11, 0.001, 0, -4.6417406e-19, -6.754622e-27, 0.001, -0.0013579063, 0.0048626075, 0.0037393125)
 billboard = 2
 texture = ExtResource("5_we7ac")
 
@@ -94,12 +97,12 @@ input_capture_on_drag = true
 script = ExtResource("4_b0hta")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Skeleton/Skeleton3D/ForeheadLAttach/AreaForeheadL" index="0" unique_id=2107022938]
-transform = Transform3D(1, -4.8428774e-08, -4.4703484e-08, 0, 1, 8.940697e-08, 0, -1.937151e-07, 1.0000001, -1.0767719e-05, -0.001072594, -0.0010596467)
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 2.9057264e-07, 0, -2.9057264e-07, 1.5, -1.0767719e-05, -0.001072594, -0.0010596467)
 shape = SubResource("SphereShape3D_b0hta")
 debug_color = Color(0, 0.6, 0.69803923, 1)
 
 [node name="Sprite3D" type="Sprite3D" parent="Skeleton/Skeleton3D/ForeheadLAttach/AreaForeheadL/CollisionShape3D" index="0" unique_id=1000783949]
-transform = Transform3D(0.002, 4.3655746e-11, -2.910383e-11, 3.6379788e-11, 0.002, 0, -2.910383e-11, 5.820766e-11, 0.0020000003, -0.00084976805, 0.0015063016, 0.006053404)
+transform = Transform3D(0.001, -1.8189894e-11, 1.45519135e-11, 1.8189894e-11, 0.001, -2.910383e-11, -1.4551913e-11, 2.910383e-11, 0.001, -0.00084976805, 0.0015063016, 0.006053404)
 billboard = 2
 texture = ExtResource("5_we7ac")
 
@@ -115,12 +118,12 @@ input_capture_on_drag = true
 script = ExtResource("4_b0hta")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Skeleton/Skeleton3D/ForeheadRAttach/AreaForeheadR" index="0" unique_id=1420072079]
-transform = Transform3D(1, -2.9802322e-08, -4.4703484e-08, 4.4703484e-08, 1, 8.940697e-08, -2.9802322e-08, -1.4901161e-07, 1.0000002, 0.0003733877, 0.001081266, -0.0015416755)
+transform = Transform3D(1.5, -6.705523e-08, 4.470347e-08, 6.7055225e-08, 1.5, 2.2351742e-07, -4.4703476e-08, -2.2351742e-07, 1.5, 0.0003733877, 0.001081266, -0.0015416755)
 shape = SubResource("SphereShape3D_b0hta")
 debug_color = Color(0, 0.6, 0.69803923, 1)
 
 [node name="Sprite3D" type="Sprite3D" parent="Skeleton/Skeleton3D/ForeheadRAttach/AreaForeheadR/CollisionShape3D" index="0" unique_id=1342000464]
-transform = Transform3D(0.0020000003, -5.820766e-11, 2.910383e-11, 1.1641532e-10, 0.0020000003, 0, -5.820766e-11, -2.910383e-11, 0.0020000003, 0.00074937195, 0.0013283375, 0.005338218)
+transform = Transform3D(0.001, -5.8207654e-11, 2.9103827e-11, 5.8207654e-11, 0.001, 1.45519135e-11, -2.9103827e-11, -1.4551912e-11, 0.001, 0.00074937195, 0.0013283375, 0.005338218)
 billboard = 2
 alpha_cut = 3
 texture = ExtResource("5_we7ac")
@@ -137,12 +140,12 @@ input_capture_on_drag = true
 script = ExtResource("4_b0hta")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Skeleton/Skeleton3D/CheekLAttach/AreaCheekL" index="0" unique_id=1356902328]
-transform = Transform3D(1, -2.9802322e-08, -4.4703484e-08, 4.4703484e-08, 1, 8.940697e-08, -2.9802322e-08, -1.4901161e-07, 1.0000002, 0.0003733877, 0.001081266, -0.0015416755)
+transform = Transform3D(1.5, -6.705523e-08, 4.470347e-08, 6.7055225e-08, 1.5, 2.2351742e-07, -4.4703476e-08, -2.2351742e-07, 1.5, 0.0003733877, 0.001081266, -0.0015416755)
 shape = SubResource("SphereShape3D_b0hta")
 debug_color = Color(0, 0.6, 0.69803923, 1)
 
 [node name="Sprite3D" type="Sprite3D" parent="Skeleton/Skeleton3D/CheekLAttach/AreaCheekL/CollisionShape3D" index="0" unique_id=1215994846]
-transform = Transform3D(0.002, 0, 0, 0, 0.002, 0, 0, 0, 0.002, 0, 0, 0)
+transform = Transform3D(0.001, 0, 0, 0, 0.001, 0, 0, 0, 0.001, 0, 0, 0)
 billboard = 2
 texture = ExtResource("5_we7ac")
 
@@ -158,12 +161,12 @@ input_capture_on_drag = true
 script = ExtResource("4_b0hta")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Skeleton/Skeleton3D/CheekRAttach/AreaCheekR" index="0" unique_id=2119267929]
-transform = Transform3D(1, -2.9802322e-08, -4.4703484e-08, 4.4703484e-08, 1, 8.940697e-08, -2.9802322e-08, -1.4901161e-07, 1.0000002, 0.0003733877, 0.001081266, -0.0015416755)
+transform = Transform3D(1.5, -6.705523e-08, 4.470347e-08, 6.7055225e-08, 1.5, 2.2351742e-07, -4.4703476e-08, -2.2351742e-07, 1.5, 0.0003733877, 0.001081266, -0.0015416755)
 shape = SubResource("SphereShape3D_b0hta")
 debug_color = Color(0, 0.6, 0.69803923, 1)
 
 [node name="Sprite3D" type="Sprite3D" parent="Skeleton/Skeleton3D/CheekRAttach/AreaCheekR/CollisionShape3D" index="0" unique_id=676168211]
-transform = Transform3D(0.002, 0, 0, 0, 0.002, 0, 0, 0, 0.002, 0, 0, 0)
+transform = Transform3D(0.001, 0, 0, 0, 0.001, 0, 0, 0, 0.001, 0, 0, 0)
 billboard = 2
 texture = ExtResource("5_we7ac")
 
@@ -179,12 +182,12 @@ input_capture_on_drag = true
 script = ExtResource("4_b0hta")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Skeleton/Skeleton3D/ChinAttach/AreaChin" index="0" unique_id=159861264]
-transform = Transform3D(1, -2.9802322e-08, -4.4703484e-08, 4.4703484e-08, 1, 8.940697e-08, -2.9802322e-08, -1.4901161e-07, 1.0000002, 0.0003733877, 0.001081266, -0.0015416755)
+transform = Transform3D(1.5, -6.705523e-08, 4.470347e-08, 6.7055225e-08, 1.5, 2.2351742e-07, -4.4703476e-08, -2.2351742e-07, 1.5, 0.0003733877, 0.001081266, -0.0015416755)
 shape = SubResource("SphereShape3D_b0hta")
 debug_color = Color(0, 0.6, 0.69803923, 1)
 
 [node name="Sprite3D" type="Sprite3D" parent="Skeleton/Skeleton3D/ChinAttach/AreaChin/CollisionShape3D" index="0" unique_id=1794868449]
-transform = Transform3D(0.002, 0, 0, 0, 0.002, 0, 0, 0, 0.002, 0, 0, 0)
+transform = Transform3D(0.001, 0, 0, 0, 0.001, 0, 0, 0, 0.001, 0, 0, 0)
 billboard = 2
 texture = ExtResource("5_we7ac")
 
@@ -200,12 +203,12 @@ input_capture_on_drag = true
 script = ExtResource("4_b0hta")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Skeleton/Skeleton3D/NoseAttach/AreaNose" index="0" unique_id=1252934449]
-transform = Transform3D(1, -2.9802322e-08, -4.4703484e-08, 4.4703484e-08, 1, 8.940697e-08, -2.9802322e-08, -1.4901161e-07, 1.0000002, 0.0003733877, 0.001081266, -0.0015416755)
+transform = Transform3D(1.5, -6.705523e-08, 4.470347e-08, 6.7055225e-08, 1.5, 2.2351742e-07, -4.4703476e-08, -2.2351742e-07, 1.5, 0.0003733877, 0.001081266, -0.0015416755)
 shape = SubResource("SphereShape3D_b0hta")
 debug_color = Color(0, 0.6, 0.69803923, 1)
 
 [node name="Sprite3D" type="Sprite3D" parent="Skeleton/Skeleton3D/NoseAttach/AreaNose/CollisionShape3D" index="0" unique_id=2594263]
-transform = Transform3D(0.002, 0, 0, 0, 0.002, 0, 0, 0, 0.002, 0, 0, 0)
+transform = Transform3D(0.001, 0, 0, 0, 0.001, 0, 0, 0, 0.001, 0, 0, 0)
 billboard = 2
 texture = ExtResource("5_we7ac")
 
@@ -221,12 +224,12 @@ input_capture_on_drag = true
 script = ExtResource("4_b0hta")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Skeleton/Skeleton3D/CommissureLAttach/AreaCommissureL" index="0" unique_id=405587259]
-transform = Transform3D(1, -2.9802322e-08, -4.4703484e-08, 4.4703484e-08, 1, 8.940697e-08, -2.9802322e-08, -1.4901161e-07, 1.0000002, 0.0003733877, 0.001081266, -0.0015416755)
+transform = Transform3D(1.5, -6.705523e-08, 4.470347e-08, 6.7055225e-08, 1.5, 2.2351742e-07, -4.4703476e-08, -2.2351742e-07, 1.5, 0.0003733877, 0.001081266, -0.0015416755)
 shape = SubResource("SphereShape3D_b0hta")
 debug_color = Color(0, 0.6, 0.69803923, 1)
 
 [node name="Sprite3D" type="Sprite3D" parent="Skeleton/Skeleton3D/CommissureLAttach/AreaCommissureL/CollisionShape3D" index="0" unique_id=1883764629]
-transform = Transform3D(0.002, 0, 0, 0, 0.002, 0, 0, 0, 0.002, 0, 0, 0)
+transform = Transform3D(0.001, 0, 0, 0, 0.001, 0, 0, 0, 0.001, 0, 0, 0)
 billboard = 2
 texture = ExtResource("5_we7ac")
 
@@ -242,12 +245,12 @@ input_capture_on_drag = true
 script = ExtResource("4_b0hta")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Skeleton/Skeleton3D/CommissureRAttach/AreaCommissureR" index="0" unique_id=930043531]
-transform = Transform3D(1, -2.9802322e-08, -4.4703484e-08, 4.4703484e-08, 1, 8.940697e-08, -2.9802322e-08, -1.4901161e-07, 1.0000002, 0.0003733877, 0.001081266, -0.0015416755)
+transform = Transform3D(1.5, -6.705523e-08, 4.470347e-08, 6.7055225e-08, 1.5, 2.2351742e-07, -4.4703476e-08, -2.2351742e-07, 1.5, 0.0003733877, 0.001081266, -0.0015416755)
 shape = SubResource("SphereShape3D_b0hta")
 debug_color = Color(0, 0.6, 0.69803923, 1)
 
 [node name="Sprite3D" type="Sprite3D" parent="Skeleton/Skeleton3D/CommissureRAttach/AreaCommissureR/CollisionShape3D" index="0" unique_id=523510864]
-transform = Transform3D(0.002, 0, 0, 0, 0.002, 0, 0, 0, 0.002, 0, 0, 0)
+transform = Transform3D(0.001, 0, 0, 0, 0.001, 0, 0, 0, 0.001, 0, 0, 0)
 billboard = 2
 texture = ExtResource("5_we7ac")
 
@@ -263,15 +266,12 @@ input_capture_on_drag = true
 script = ExtResource("4_b0hta")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Skeleton/Skeleton3D/MouthAttach/AreaMouth" index="0" unique_id=577389811]
-transform = Transform3D(1, -2.9802322e-08, -4.4703484e-08, 4.4703484e-08, 1, 8.940697e-08, -2.9802322e-08, -1.4901161e-07, 1.0000002, 0.0003733877, 0.001081266, -0.0015416755)
+transform = Transform3D(1.5, -6.705523e-08, 4.470347e-08, 6.7055225e-08, 1.5, 2.2351742e-07, -4.4703476e-08, -2.2351742e-07, 1.5, 0.0003733877, 0.001081266, -0.0015416755)
 shape = SubResource("SphereShape3D_b0hta")
 debug_color = Color(0, 0.6, 0.69803923, 1)
 
 [node name="Sprite3D" type="Sprite3D" parent="Skeleton/Skeleton3D/MouthAttach/AreaMouth/CollisionShape3D" index="0" unique_id=1049868126]
-transform = Transform3D(0.002, 0, 0, 0, 0.002, 0, 0, 0, 0.002, 0, 0, 0)
+transform = Transform3D(0.001, 0, 0, 0, 0.001, 0, 0, 0, 0.001, 0, 0, 0)
 billboard = 2
 alpha_cut = 2
 texture = ExtResource("5_we7ac")
-
-[node name="mascara3" parent="Skeleton/Skeleton3D" index="13" unique_id=1301239335]
-surface_material_override/0 = SubResource("StandardMaterial3D_b0hta")
