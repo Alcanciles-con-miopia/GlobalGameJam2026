@@ -48,8 +48,8 @@ func randomizeBone(boneName, positionRange, rotationRange, scaleRange):
 	var trans = skel.get_bone_pose(boneID) # Coger el transform del hueso.
 	
 	trans = trans.translated(Vector3(randf_range(-positionRange, positionRange), randf_range(-positionRange, positionRange), 0.0))
-	trans = trans.rotated(Vector3(0.0, 0.0, 1.0), randf_range(-rotationRange, rotationRange))
-	trans = trans.scaled(Vector3(randf_range(1 - scaleRange, 1 + scaleRange), 1.0, 1.0))
+	#trans = trans.rotated(Vector3(0.0, 0.0, 1.0), randf_range(-rotationRange, rotationRange))
+	#trans = trans.scaled(Vector3(randf_range(1 - scaleRange, 1 + scaleRange), 1.0, 1.0))
 	
 	skel.set_bone_pose(boneID, trans) # Settear el transform cambiado al hueso.
 	pass
