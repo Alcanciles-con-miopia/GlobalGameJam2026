@@ -1,11 +1,14 @@
 [gd_scene format=3 uid="uid://co8b72sufgqy4"]
 
-[ext_resource type="PackedScene" uid="uid://rxns32sh85ka" path="res://scenes/mascara_1_r.tscn" id="3_ky6ot"]
+[ext_resource type="PackedScene" uid="uid://bkkmjqddplfwq" path="res://scenes/mascara_1_r.tscn" id="3_ky6ot"]
 [ext_resource type="PackedScene" uid="uid://cosr6dutw8duo" path="res://scenes/mascara_3.tscn" id="4_0xjcg"]
-[ext_resource type="PackedScene" uid="uid://c8a1u52j6i6qo" path="res://scenes/mascara_2_r.tscn" id="4_73dh5"]
-[ext_resource type="PackedScene" uid="uid://dpiepcgpy4qfh" path="res://scenes/mascara_3_r.tscn" id="5_w5bo7"]
+[ext_resource type="PackedScene" uid="uid://hw6pigest48d" path="res://scenes/mascara_2_r.tscn" id="4_73dh5"]
+[ext_resource type="PackedScene" uid="uid://c1qnb6ha78qxw" path="res://scenes/mascara_3_r.tscn" id="5_w5bo7"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_o7x3t"]
 
 [node name="PaigroScene" type="Control" unique_id=427514572]
+material = SubResource("ShaderMaterial_o7x3t")
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0

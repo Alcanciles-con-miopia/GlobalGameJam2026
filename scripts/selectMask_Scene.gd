@@ -3,7 +3,7 @@ extends Node3D
 const MASK_NODES := ["cara1", "cara2"]
 
 @onready var camera: Camera3D = $Camera3D
-@onready var play_button: Button = $UI/Control/Button
+#@onready var play_button: Button = $UI/Control/Button
 @onready var label_p1: Label = $UI/Control/HBoxContainer/LabelP1
 @onready var label_p2: Label = $UI/Control/HBoxContainer/LabelP2
 
@@ -21,7 +21,7 @@ func _ready() -> void:
 	if ui_root:
 		ui_root.visible = false
 
-	play_button.disabled = true
+	 #play_button.disabled = true
 	label_p1.text = "P1: (sin seleccionar)"
 	label_p2.text = "P2: (sin seleccionar)"
 	
@@ -235,7 +235,7 @@ func _update_ui() -> void:
 	else:
 		label_p2.text = "P2: " + String(player2_choice)
 
-	play_button.disabled = (player1_choice == "" or player2_choice == "")
+	#play_button.disabled = (player1_choice == "" or player2_choice == "")
 
 func _reset_selection_state() -> void:
 	player1_choice = ""
