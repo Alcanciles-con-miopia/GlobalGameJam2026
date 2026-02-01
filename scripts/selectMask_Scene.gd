@@ -10,7 +10,7 @@ const MASK_NODES := ["cara1", "cara2"]
 @onready var herm : AnimatedSprite3D = $cara1/Pj
 @onready var susi : AnimatedSprite3D = $cara2/Pj
 
-@onready var aviso = $UI/Aviso
+@onready var aviso = $Aviso
 var mostrar_aviso : bool = true
 var counter = 0
 @export var contro_time : int

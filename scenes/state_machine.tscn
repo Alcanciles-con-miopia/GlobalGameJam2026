@@ -32,7 +32,7 @@ visible = false
 [node name="SelectMaskScene" parent="Scenes" unique_id=152709202 instance=ExtResource("5_okvjo")]
 process_mode = 4
 visible = false
-contro_time = 40000
+contro_time = 300
 
 [node name="IntroScene" parent="Scenes" unique_id=109836491 instance=ExtResource("2_a0fpy")]
 
@@ -52,7 +52,7 @@ ui = NodePath("..")
 [node name="Shader" parent="." unique_id=1218481348 instance=ExtResource("2_6rk0d")]
 
 [node name="AvisoLayer" type="CanvasLayer" parent="." unique_id=1497070559]
-layer = 2
+layer = 0
 
 [node name="Sound" type="Node" parent="." unique_id=841228563]
 script = ExtResource("7_s46hd")
