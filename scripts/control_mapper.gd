@@ -37,7 +37,7 @@ func _add_pad(deviceid:=-1, id = -1):
 		print("ANYADE MANDO: ", deviceid)
 		cursors[id] = Cursor.new()
 		cursors[id].DeviceID = deviceid
-		cursors[id].setColor(Color.BLUE if id == 0 else Color.RED)
+		cursors[id].setColor(Color.AQUAMARINE if id == 0 else Color.BEIGE)
 		ui.add_child(cursors[id])
 		Global.cursors = cursors
 		
