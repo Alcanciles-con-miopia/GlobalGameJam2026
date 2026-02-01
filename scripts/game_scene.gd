@@ -143,15 +143,12 @@ func _pick_random_client_mask() -> void:
 	match chosen.name:
 		"ClientMask_1":
 			current_mask_type = "mask_1"
-			#Global.sound.play_bgm("fino_bgm")
-			Global.sound.play_bgm_i(0)
+			Global.sound.play_bgm("fino_bgm")
 		"ClientMask_2":
-			#Global.sound.play_bgm("alien_bgm")
-			Global.sound.play_bgm_i(1)
+			Global.sound.play_bgm("alien_bgm")
 			current_mask_type = "mask_2"
 		"ClientMask_3":
-			#Global.sound.play_bgm("enano_bgm")
-			Global.sound.play_bgm_i(2)
+			Global.sound.play_bgm("enano_bgm")
 			current_mask_type = "mask_3"
 		_:
 			current_mask_type = "mask_1"  # fallback
