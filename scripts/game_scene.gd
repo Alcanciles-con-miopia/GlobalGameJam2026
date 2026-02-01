@@ -109,8 +109,6 @@ func on_disable() -> void:
 	
 	if Global.sound and Global.sound.has_method("stop_sfx"):
 		Global.sound.stop_sfx()
-	
-	Global.bgm.stop()
 
 func _on_CountdownTimer_timeout() -> void:
 	for c in Global.cursors:
@@ -145,23 +143,17 @@ func _pick_random_client_mask() -> void:
 	match chosen.name:
 		"ClientMask_1":
 			current_mask_type = "mask_1"
-			#Global.sound.play_bgm("fino_bgm")
-			Global.bgm.clip = "fino_bgm"
-			Global.bgm.play()
+			Global.sound.play_bgm("fino_bgm")
+			#Global.bgm.clip = 
+			#Global.bgm.play()
 		"ClientMask_2":
-			#Global.sound.play_bgm("alien_bgm")
-			Global.bgm.clip = "alien_bgm"
-			Global.bgm.play()
+			Global.sound.play_bgm("alien_bgm")
 			current_mask_type = "mask_2"
 		"ClientMask_3":
-			#Global.sound.play_bgm("enano_bgm")
-			Global.bgm.clip = "enano_bgm"
-			Global.bgm.play()
+			Global.sound.play_bgm("enano_bgm")
 			current_mask_type = "mask_3"
 		_:
 			current_mask_type = "mask_1"  # fallback
-			Global.bgm.clip = "fino_bgm"
-			Global.bgm.play()
 
 	print("GameScene: tipo de máscara de cliente elegido:", current_mask_type)
 

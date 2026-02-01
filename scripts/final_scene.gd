@@ -29,9 +29,6 @@ func on_enable() -> void:
 	visible = true
 	process_mode = Node.PROCESS_MODE_INHERIT
 
-	Global.bgm.clip = "selectBGM"
-	Global.bgm.play()
-
 	var text := ""
 	var winSound := ""
 	var loseSound := ""
