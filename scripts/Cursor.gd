@@ -47,10 +47,10 @@ func _physics_process(delta: float) -> void:
 	y_ax = y_ax if abs(y_ax) >= 0.4 else 0
 	direction = Vector2(x_ax, y_ax)
 	var vectorMovible = direction * vel * delta
-	print("SSSSSSSSSS", x_ax, ",", y_ax)
+	#print("SSSSSSSSSS", x_ax, ",", y_ax)
 	vectorMovible.x = vectorMovible.x/4 if abs(x_ax) < 0.7 else (vectorMovible.x/2 if abs(x_ax)<0.95 else vectorMovible.x)
 	vectorMovible.y = vectorMovible.y/4 if abs(y_ax) < 0.7 else (vectorMovible.y/2 if abs(y_ax)<0.95 else vectorMovible.y)
-	print("EEEEEEEEE", vectorMovible)
+	#print("EEEEEEEEE", vectorMovible)
 	var newpos = position + vectorMovible 
 	newpos.x = min(get_viewport().size.x, newpos.x)
 	newpos.x = max(0, newpos.x)

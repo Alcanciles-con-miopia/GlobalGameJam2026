@@ -119,11 +119,15 @@ func _select_mask(player: int, mask_node: Node3D, mask_id: String) -> void:
 			# si quiero seleccionar a Hermenegildo
 			if mask_id == "Hermenegildo":
 				Global.HERMENEGILDO_PLAYER = player
+				Global.sound.set_sfx_volume_db(50)
+				Global.sound.play_sfx("select_hermi")
 				pass
 				
 			# si quiero seleccionar a Susi
 			if mask_id == "Susi":
 				Global.SUSI_PLAYER = player
+				Global.sound.set_sfx_volume_db(50)
+				Global.sound.play_sfx("select_susi")
 				pass
 
 	else: # lo mismo pal jugador 2
@@ -166,21 +170,19 @@ func _select_mask(player: int, mask_node: Node3D, mask_id: String) -> void:
 			# si quiero seleccionar a Hermenegildo
 			if mask_id == "Hermenegildo":
 				Global.HERMENEGILDO_PLAYER = player
+				Global.sound.set_sfx_volume_db(50)
+				Global.sound.play_sfx("select_hermi")
 				pass
 				
 			# si quiero seleccionar a Susi
 			if mask_id == "Susi":
 				Global.SUSI_PLAYER = player
+				Global.sound.set_sfx_volume_db(50)
+				Global.sound.play_sfx("select_susi")
 				pass
 
 	print("Jugador de HERMENEGILDO: ", Global.HERMENEGILDO_PLAYER)
 	print("Jugador de SUSI: ", Global.SUSI_PLAYER)
-	
-	if(mask_id == "Susi"):
-		print("SFX: select_susi")
-		Global.sound.play_sfx("select_susi")
-	else:
-		Global.sound.play_sfx("select_hermi")
 	
 	_update_ui()
 
@@ -250,8 +252,6 @@ func _reset_selection_state() -> void:
 func _on_Button_pressed() -> void:
 	
 	if (player1_choice == "" or player2_choice == ""): return
-	
-	print("OOOOOOOOOOO")
 	
 	Global.player1_mask_id = player1_choice
 	Global.player2_mask_id = player2_choice
