@@ -8,9 +8,9 @@
 [ext_resource type="PackedScene" uid="uid://bpaonj5o5v8in" path="res://scenes/mascara_2.tscn" id="3_tqxxy"]
 [ext_resource type="Script" uid="uid://dlge0rwka1j3n" path="res://scripts/Countdown.gd" id="3_ycayy"]
 [ext_resource type="PackedScene" uid="uid://cosr6dutw8duo" path="res://scenes/mascara_3.tscn" id="4_5ay1a"]
-[ext_resource type="PackedScene" uid="uid://rxns32sh85ka" path="res://scenes/mascara_1_r.tscn" id="5_rurhu"]
-[ext_resource type="PackedScene" uid="uid://c8a1u52j6i6qo" path="res://scenes/mascara_2_r.tscn" id="6_kk2rg"]
-[ext_resource type="PackedScene" uid="uid://dpiepcgpy4qfh" path="res://scenes/mascara_3_r.tscn" id="7_kk2rg"]
+[ext_resource type="PackedScene" uid="uid://bkkmjqddplfwq" path="res://scenes/mascara_1_r.tscn" id="5_rurhu"]
+[ext_resource type="PackedScene" uid="uid://hw6pigest48d" path="res://scenes/mascara_2_r.tscn" id="6_kk2rg"]
+[ext_resource type="PackedScene" uid="uid://c1qnb6ha78qxw" path="res://scenes/mascara_3_r.tscn" id="7_kk2rg"]
 [ext_resource type="Script" uid="uid://cay4w1ja8ica0" path="res://scripts/ClientMaskInfo.gd" id="7_utbpp"]
 
 [node name="GameScene" type="Node3D" unique_id=1376563395]
