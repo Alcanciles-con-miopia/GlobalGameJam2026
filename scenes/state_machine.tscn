@@ -32,7 +32,7 @@ visible = false
 [node name="SelectMaskScene" parent="Scenes" unique_id=152709202 instance=ExtResource("5_okvjo")]
 process_mode = 4
 visible = false
-contro_time = 100
+contro_time = 40000
 
 [node name="IntroScene" parent="Scenes" unique_id=109836491 instance=ExtResource("2_a0fpy")]
 

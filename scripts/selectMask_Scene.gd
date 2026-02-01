@@ -45,6 +45,12 @@ func _input(event: InputEvent) -> void:
 	if not event.is_action_pressed("A"):
 		return
 		
+	if mostrar_aviso:
+		mostrar_aviso = false
+		counter = 0
+		var tween = create_tween()
+		tween.tween_property(aviso, "modulate", Color.TRANSPARENT, 0.5)
+	
 	# P1
 	if Global.cursors.size() > 0 and Global.cursors[0] and event.device == Global.cursors[0].DeviceID:
 		_handle_mask_click(1, Global.cursors[0].position)
