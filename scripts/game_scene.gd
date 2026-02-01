@@ -103,6 +103,7 @@ func _pick_random_client_mask() -> void:
 		push_error("GameScene: no hay máscaras dentro de ClientMasks")
 		return
 
+	
 	# Ocultar todas
 	for m in masks:
 		if m is Node3D:
