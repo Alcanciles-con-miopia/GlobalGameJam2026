@@ -7,6 +7,8 @@ const MASK_NODES := ["cara1", "cara2"]
 @onready var label_p1: Label = $UI/Control/HBoxContainer/LabelP1
 @onready var label_p2: Label = $UI/Control/HBoxContainer/LabelP2
 @onready var jugar_spr3d : Sprite3D = $BotonJugar
+@onready var herm : AnimatedSprite3D = $cara1/Pj
+@onready var susi : AnimatedSprite3D = $cara2/Pj
 
 var ui_root: Control = null
 
@@ -79,33 +81,33 @@ func _handle_mask_click(player: int, mouse_pos: Vector2) -> void:
 	_select_mask(player, mask_node, mask_id)
 	
 func _handle_mask_hover(player: int, mouse_pos: Vector2) -> void:
-	print_debug("COJONES")
 	
-	var from: Vector3 = camera.project_ray_origin(mouse_pos)
-	var to: Vector3 = from + camera.project_ray_normal(mouse_pos) * 100.0
-
-	var space_state: PhysicsDirectSpaceState3D = camera.get_world_3d().direct_space_state
-	var query := PhysicsRayQueryParameters3D.create(from, to)
-	var result: Dictionary = space_state.intersect_ray(query)
-
-	if result.is_empty():
-		return
-
-	var collider := result["collider"] as Node
-	if collider == null:
-		return
-		
-	if collider.is_in_group("play_button_3d") \
-	or (collider.get_parent() and collider.get_parent().is_in_group("play_button_3d")):
-		print_debug("HOVER???")
-		#var sprite = collider.get_parent().get_parent()
-		#sprite.modulate = Color(0xa8ec34)
-		#if sprite is Sprite3D:
-			#sprite.modulate = Color.RED
-		jugar_spr3d.modulate = Color(0xa8ec34ff)
-	else:
-		jugar_spr3d.modulate = Color(0xffffffff)
-		return
+	#var from: Vector3 = camera.project_ray_origin(mouse_pos)
+	#var to: Vector3 = from + camera.project_ray_normal(mouse_pos) * 100.0
+#
+	#var space_state: PhysicsDirectSpaceState3D = camera.get_world_3d().direct_space_state
+	#var query := PhysicsRayQueryParameters3D.create(from, to)
+	#var result: Dictionary = space_state.intersect_ray(query)
+#
+	#if result.is_empty():
+		#return
+#
+	#var collider := result["collider"] as Node
+	#if collider == null:
+		#return
+		#
+	#if collider.is_in_group("play_button_3d") \
+	#or (collider.get_parent() and collider.get_parent().is_in_group("play_button_3d")):
+		#print_debug("HOVER???")
+		##var sprite = collider.get_parent().get_parent()
+		##sprite.modulate = Color(0xa8ec34)
+		##if sprite is Sprite3D:
+			##sprite.modulate = Color.RED
+		#jugar_spr3d.modulate = Color(0xa8ec34ff)
+	#else:
+		#jugar_spr3d.modulate = Color(0xffffffff)
+		#return
+	pass
 
 func _select_mask(player: int, mask_node: Node3D, mask_id: String) -> void:
 	if player == 1:
@@ -118,11 +120,13 @@ func _select_mask(player: int, mask_node: Node3D, mask_id: String) -> void:
 			# si el player de hermenegildo ya era player
 			if Global.HERMENEGILDO_PLAYER == player:
 				Global.HERMENEGILDO_PLAYER = -1
+				herm.stop()
 				pass
 				
 			# si el player de susi ya era player
 			if Global.SUSI_PLAYER == player:
 				Global.SUSI_PLAYER = -1
+				susi.stop()
 				pass
 			
 		else:
@@ -137,11 +141,13 @@ func _select_mask(player: int, mask_node: Node3D, mask_id: String) -> void:
 				# si el player de hermenegildo ya era player
 				if Global.HERMENEGILDO_PLAYER == player:
 					Global.HERMENEGILDO_PLAYER = -1
+					herm.stop()
 					pass
 					
 				# si el player de susi ya era player
 				if Global.SUSI_PLAYER == player:
 					Global.SUSI_PLAYER = -1
+					susi.stop()
 					pass
 
 			# 4) Asigna la nueva
@@ -155,6 +161,9 @@ func _select_mask(player: int, mask_node: Node3D, mask_id: String) -> void:
 				Global.HERMENEGILDO_PLAYER = player
 				Global.sound.set_sfx_volume_db(50)
 				Global.sound.play_sfx("select_hermi")
+				#...
+				#herm.play("selec")
+				#...
 				pass
 				
 			# si quiero seleccionar a Susi
@@ -162,6 +171,9 @@ func _select_mask(player: int, mask_node: Node3D, mask_id: String) -> void:
 				Global.SUSI_PLAYER = player
 				Global.sound.set_sfx_volume_db(50)
 				Global.sound.play_sfx("select_susi")
+				#...
+				susi.play("selec")
+				#...
 				pass
 
 	else: # lo mismo pal jugador 2
@@ -173,11 +185,13 @@ func _select_mask(player: int, mask_node: Node3D, mask_id: String) -> void:
 			# si el player de hermenegildo ya era player
 			if Global.HERMENEGILDO_PLAYER == player:
 				Global.HERMENEGILDO_PLAYER = -1
+				herm.stop()
 				pass
 				
 			# si el player de susi ya era player
 			if Global.SUSI_PLAYER == player:
 				Global.SUSI_PLAYER = -1
+				susi.stop()
 				pass
 			
 		else:
@@ -190,11 +204,13 @@ func _select_mask(player: int, mask_node: Node3D, mask_id: String) -> void:
 				# si el player de hermenegildo ya era player
 				if Global.HERMENEGILDO_PLAYER == player:
 					Global.HERMENEGILDO_PLAYER = -1
+					herm.stop();
 					pass
 					
 				# si el player de susi ya era player
 				if Global.SUSI_PLAYER == player:
 					Global.SUSI_PLAYER = -1
+					susi.stop()
 					pass
 
 			p2_mask_node = mask_node
@@ -213,11 +229,17 @@ func _select_mask(player: int, mask_node: Node3D, mask_id: String) -> void:
 				Global.SUSI_PLAYER = player
 				Global.sound.set_sfx_volume_db(50)
 				Global.sound.play_sfx("select_susi")
+				susi.play("selec")
 				pass
 
-	print("Jugador de HERMENEGILDO: ", Global.HERMENEGILDO_PLAYER)
-	print("Jugador de SUSI: ", Global.SUSI_PLAYER)
+	#print("Jugador de HERMENEGILDO: ", Global.HERMENEGILDO_PLAYER)
+	#print("Jugador de SUSI: ", Global.SUSI_PLAYER)
 	
+	if Global.SUSI_PLAYER != -1 and Global.HERMENEGILDO_PLAYER != -1:
+		jugar_spr3d.modulate = Color(0xa8ec34ff)
+	else:
+		jugar_spr3d.modulate = Color(0xffffffff)
+
 	_update_ui()
 
 func _reset_mask(mask_node: Node3D) -> void:
