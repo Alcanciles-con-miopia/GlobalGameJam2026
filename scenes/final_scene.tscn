@@ -5,11 +5,12 @@
 [ext_resource type="Texture2D" uid="uid://g6yhep6oc61u" path="res://assets/images/marcoArriba.png" id="3_r78si"]
 [ext_resource type="Texture2D" uid="uid://csck8cqejkvc4" path="res://assets/images/marcoBajo.png" id="4_ytd0m"]
 [ext_resource type="Texture2D" uid="uid://dsxa18b2j2k77" path="res://assets/images/cortinas.png" id="5_iwokc"]
-[ext_resource type="Texture2D" uid="uid://csb8vqqxc2jc3" path="res://assets/images/jugar.png" id="6_by4lc"]
+[ext_resource type="Texture2D" uid="uid://b184ol05v1p73" path="res://assets/images/otra.png" id="6_by4lc"]
 [ext_resource type="Texture2D" uid="uid://dufk5am03ba17" path="res://assets/images/p1.png" id="7_x2ws3"]
 [ext_resource type="Texture2D" uid="uid://bc4cc1hcv5es2" path="res://assets/images/p2.png" id="8_d32fx"]
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_v2vgp"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_by4lc"]
+size = Vector3(2.3251877, 1.6777344, 1)
 
 [node name="FinalScene" type="Node3D" unique_id=1376563395]
 script = ExtResource("1_4bkdv")
@@ -77,15 +78,6 @@ texture = ExtResource("4_ytd0m")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -7.8703704)
 texture = ExtResource("5_iwokc")
 
-[node name="BotonJugar" type="Sprite3D" parent="." unique_id=78300272]
-transform = Transform3D(0.2312066, 0, 0, 0, 0.2312066, 0, 0, 0, 1, 0, 2.109699, 0.6028414)
-texture = ExtResource("6_by4lc")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="BotonJugar" unique_id=755031475 groups=["play_button_3d"]]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="BotonJugar/StaticBody3D" unique_id=711319765]
-shape = SubResource("BoxShape3D_v2vgp")
-
 [node name="Pj1" type="Sprite3D" parent="." unique_id=1899490094]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5626724, 0.2915205, 0)
 texture = ExtResource("7_x2ws3")
@@ -93,5 +85,15 @@ texture = ExtResource("7_x2ws3")
 [node name="Pj2" type="Sprite3D" parent="." unique_id=1855908176]
 transform = Transform3D(0.95, 0, 0, 0, 0.95, 0, 0, 0, 0.95, 0.06818676, 0.18508077, 0)
 texture = ExtResource("8_d32fx")
+
+[node name="BotonOtra" type="Sprite3D" parent="." unique_id=2001853990]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.2922175, 0.36281872)
+texture = ExtResource("6_by4lc")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="BotonOtra" unique_id=247155076 groups=["play_button_3d"]]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="BotonOtra/StaticBody3D" unique_id=220347988]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.03368759, 0.01171875, 0)
+shape = SubResource("BoxShape3D_by4lc")
 
 [connection signal="pressed" from="UI/Control/Button" to="." method="_on_ReplayButton_pressed"]
