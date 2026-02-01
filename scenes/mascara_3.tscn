@@ -2,20 +2,20 @@
 
 [ext_resource type="PackedScene" uid="uid://c1jgin4iihkd1" path="res://assets/models/mascara3.fbx" id="1_8nifo"]
 [ext_resource type="Script" uid="uid://det5nnvshm3lv" path="res://scenes/camaraRef.gd" id="2_b0hta"]
-[ext_resource type="Texture2D" uid="uid://cbwo5xi7ovqwk" path="res://assets/models/Mask_text.png" id="3_v5umj"]
 [ext_resource type="Script" uid="uid://cqujx6jyosf0y" path="res://scripts/draggableObject.gd" id="4_b0hta"]
+[ext_resource type="Texture2D" uid="uid://byu3yase8iqqc" path="res://assets/models/textura.png" id="5_ljalg"]
 [ext_resource type="Texture2D" uid="uid://do7n8gbesoeic" path="res://assets/images/gizmo.png" id="5_we7ac"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_b0hta"]
-albedo_texture = ExtResource("3_v5umj")
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_b0hta"]
 radius = 0.0025358277
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_b0hta"]
+albedo_texture = ExtResource("5_ljalg")
+
 [node name="mascara3" unique_id=329266782 instance=ExtResource("1_8nifo")]
 script = ExtResource("2_b0hta")
 
-[node name="Skeleton3D" parent="Skeleton" parent_id_path=PackedInt32Array(519133591) index="0" unique_id=174431743]
+[node name="Skeleton3D" parent="Skeleton" parent_id_path=PackedInt32Array(832587891) index="0" unique_id=659846354]
 bones/1/position = Vector3(0, 0.010936346, 0.0022914473)
 bones/1/scale = Vector3(1.0000005, 1.0000002, 1.0000001)
 bones/3/position = Vector3(0, 0.010936346, 0.0022914473)
@@ -39,9 +39,6 @@ bones/19/rotation = Quaternion(0.774492, 0.30215997, -0.5202309, -0.19550286)
 bones/19/scale = Vector3(1.0000001, 1.0000005, 1.0000005)
 bones/21/rotation = Quaternion(0.774492, -0.30215997, 0.5202309, -0.19550286)
 bones/21/scale = Vector3(1.0000001, 1.0000005, 1.0000005)
-
-[node name="mascara3" parent="Skeleton/Skeleton3D" index="0" unique_id=994337183]
-surface_material_override/0 = SubResource("StandardMaterial3D_b0hta")
 
 [node name="EyeLAttach" type="BoneAttachment3D" parent="Skeleton/Skeleton3D" index="1" unique_id=1228388863]
 transform = Transform3D(0.11654054, 0.58478343, -0.8027746, -0.21613728, -0.7739778, -0.5951833, -0.9693831, 0.24287242, 0.036193687, 0, -1.1641532e-09, -0.0025101602)
@@ -275,3 +272,6 @@ transform = Transform3D(0.002, 0, 0, 0, 0.002, 0, 0, 0, 0.002, 0, 0, 0)
 billboard = 2
 alpha_cut = 2
 texture = ExtResource("5_we7ac")
+
+[node name="mascara3" parent="Skeleton/Skeleton3D" index="13" unique_id=1301239335]
+surface_material_override/0 = SubResource("StandardMaterial3D_b0hta")

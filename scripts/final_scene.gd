@@ -10,6 +10,12 @@ func _ready() -> void:
 
 	process_mode = Node.PROCESS_MODE_DISABLED
 
+@onready var camera: Camera3D = $Camera3D
+
+func _input(event: InputEvent) -> void:
+	if event is InputEventJoypadButton and event.is_action_pressed("A"):
+		_on_ReplayButton_pressed()
+
 func on_enable() -> void:
 	if ui_root == null:
 		ui_root = get_node_or_null("UI/Control")
