@@ -7,6 +7,7 @@ const MASK_NODES := ["cara1", "cara2"]
 @onready var label_p1: Label = $UI/Control/HBoxContainer/LabelP1
 @onready var label_p2: Label = $UI/Control/HBoxContainer/LabelP2
 
+
 var ui_root: Control = null
 
 var player1_choice: StringName = ""
@@ -26,15 +27,10 @@ func _ready() -> void:
 	
 
 func _input(event: InputEvent) -> void:
-	if event is InputEventMouseButton and event.pressed:
-		var mb := event as InputEventMouseButton
-
-		if mb.button_index == MOUSE_BUTTON_LEFT:
-			# Jugador 1
-			_handle_mask_click(1, mb.position)
-		elif mb.button_index == MOUSE_BUTTON_RIGHT:
-			# Jugador 2
-			_handle_mask_click(2, mb.position)
+	if event is InputEventJoypadButton and event.is_action_pressed("A") and (Global.cursors[0] and event.device == Global.cursors[0].DeviceID):
+		_handle_mask_click(1, Global.cursors[0].position)
+	elif event is InputEventJoypadButton and event.is_action_pressed("A") and (Global.cursors[1] and event.device == Global.cursors[1].DeviceID):
+		_handle_mask_click(2, Global.cursors[1].position)
 
 func _handle_mask_click(player: int, mouse_pos: Vector2) -> void:
 	var from: Vector3 = camera.project_ray_origin(mouse_pos)
@@ -232,7 +228,9 @@ func _on_Button_pressed() -> void:
 	
 	Global.player1_character = _character_from_mask_id(player1_choice)
 	Global.player2_character = _character_from_mask_id(player2_choice)
-
+	
+	Global.sound.play_sfx("button_click")
+	
 	Global.change_scene(Global.Scenes.GAME)
 
 func _character_from_mask_id(mask_id: StringName) -> Global.Character:

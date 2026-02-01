@@ -1,7 +1,7 @@
 extends TextureRect
 class_name Cursor
 
-var DeviceID := 0
+var DeviceID := -1
 
 const MANO_ABIERTA = preload("res://assets/images/mano_abierta.png")
 const MANO_CERRADA = preload("res://assets/images/mano_cerrada.png")
@@ -13,25 +13,32 @@ func _ready() -> void:
 	texture = MANO_ABIERTA
 	vibrate(0.2)
 
+
 func setColor(color):
 	set_modulate(color);
 
 func vibrate(time:= 0.1):
+	if DeviceID == -1: return
 	Input.start_joy_vibration(DeviceID, 1, 1 ,time)
 
 func _input(event: InputEvent) -> void:
 	if event is InputEventJoypadButton and event.is_action_pressed("A") and event.device == DeviceID:
 		texture = MANO_CERRADA
 		# LANZAR RAYCAST ANDRES AQUI
+		#print_debug("CURSOR CLICK")
+		Global.on_cursor_click.emit(event, position, DeviceID)
+		#Global.on_cursor_click.emit()
+
 	elif event is InputEventJoypadButton and event.is_action_released("A") and event.device == DeviceID:
 		texture = MANO_ABIERTA
 
 func _physics_process(delta: float) -> void:
+	if DeviceID == -1: return
 	var x_ax = Input.get_joy_axis(DeviceID, JOY_AXIS_LEFT_X)
 	x_ax = x_ax if abs(x_ax) >= 0.4 else 0
 	var y_ax = Input.get_joy_axis(DeviceID, JOY_AXIS_LEFT_Y)
 	y_ax = y_ax if abs(y_ax) >= 0.4 else 0
 	direction = Vector2(x_ax if position.x < get_viewport().size.x else -x_ax, y_ax if position.y < get_viewport().size.y else -y_ax )
-	print(get_viewport().size, " || ", position, " || ", direction)
+	#print(get_viewport().size, " || ", position, " || ", direction)
 	position += direction * vel * delta
 	#print("AA: ", DeviceID, " vector: ", direction)

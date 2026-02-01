@@ -1,9 +1,9 @@
-[gd_scene format=3 uid="uid://cugvtvbfh07ky"]
+[gd_scene format=3 uid="uid://2ohsnn4cebqs"]
 
 [ext_resource type="PackedScene" uid="uid://dapi17w4oqsgl" path="res://assets/models/mascaras.fbx" id="1_gmjp2"]
 [ext_resource type="Script" uid="uid://g6ko2qn080gq" path="res://scripts/selectMask_Scene.gd" id="3_72k5u"]
 [ext_resource type="PackedScene" uid="uid://ddu4o7i0bx55w" path="res://assets/models/marco.fbx" id="3_ljs87"]
-[ext_resource type="Script" uid="uid://bhrjbe7fwso4o" path="res://scripts/mask_selectable.gd" id="3_t3dyg"]
+[ext_resource type="Script" path="res://scripts/mask_selectable.gd" id="3_t3dyg"]
 [ext_resource type="Texture2D" uid="uid://dj27l4tawfujf" path="res://assets/ui/mariscosrecio.png" id="5_t3dyg"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_t3dyg"]
@@ -28,6 +28,12 @@ mask_id = &"Hermenegildo"
 transform = Transform3D(100, 0, 0, 0, -1.1920929e-05, 99.99999, 0, -99.99999, -1.1920929e-05, -1.4288809, 0, 0)
 
 [node name="Skeleton3D" parent="cara1/Armature" index="0" unique_id=1641692067]
+
+[node name="Armature" parent="cara1" index="0" unique_id=2121803175]
+transform = Transform3D(100, 0, 0, 0, -1.1920929e-05, 99.99999, 0, -99.99999, -1.1920929e-05, -1.4288809, 0, 0)
+
+[node name="Skeleton3D" parent="cara1/Armature" index="0" unique_id=1037336284]
+
 bones/1/rotation = Quaternion(0.3096804, -0.3197692, -0.65235215, 0.61341864)
 bones/1/scale = Vector3(0.99999994, 0.9999999, 0.9999999)
 bones/3/rotation = Quaternion(0.15685815, 0.042271618, -0.23383817, 0.9586075)
@@ -75,6 +81,10 @@ mask_id = &"Susi"
 transform = Transform3D(100, 0, 0, 0, -1.1920929e-05, 99.99999, 0, -99.99999, -1.1920929e-05, -1.4288809, 0, 0)
 
 [node name="Skeleton3D" parent="cara2/Armature" index="0" unique_id=1641692067]
+[node name="Armature" parent="cara2" index="0" unique_id=2121803175]
+transform = Transform3D(100, 0, 0, 0, -1.1920929e-05, 99.99999, 0, -99.99999, -1.1920929e-05, -1.4288809, 0, 0)
+
+[node name="Skeleton3D" parent="cara2/Armature" index="0" unique_id=1037336284]
 bones/1/rotation = Quaternion(0.3096803, -0.3197692, -0.65235215, 0.61341864)
 bones/1/scale = Vector3(1, 1.0000001, 0.99999994)
 bones/3/rotation = Quaternion(0.15685815, 0.042271618, -0.23383817, 0.9586075)
