@@ -17,7 +17,7 @@ compatibility/default_parent_skeleton_in_mesh_instance_3d=true
 config/name="PERSONATUS"
 run/main_scene="uid://c161kl18xdbk1"
 config/features=PackedStringArray("4.6", "Forward Plus")
-boot_splash/bg_color=Color(0.09411765, 0.09411765, 0.09019608, 1)
+boot_splash/bg_color=Color(0.61960787, 0.88235295, 0.9529412, 1)
 config/icon="uid://2rw516cqknxv"
 
 [autoload]
