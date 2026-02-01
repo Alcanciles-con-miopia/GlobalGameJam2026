@@ -55,6 +55,7 @@ debug_color = Color(0, 0.6, 0.69803923, 1)
 
 [node name="Sprite3D" type="Sprite3D" parent="Skeleton/Skeleton3D/EyeLAttach/AreaEyeL/CollisionShape3D" index="0" unique_id=1203186805]
 transform = Transform3D(0.0009999999, -1.4551915e-11, -1.4551915e-11, 1.4551915e-11, 0.0009999999, -1.4551915e-10, 0, 2.910383e-11, 0.0009999999, 0.0018925269, 0.006777051, 0.005211504)
+modulate = Color(1, 1, 1, 0.6862745)
 billboard = 2
 alpha_cut = 2
 texture = ExtResource("5_fsaqe")
@@ -77,6 +78,7 @@ debug_color = Color(0, 0.6, 0.69803923, 1)
 
 [node name="Sprite3D" type="Sprite3D" parent="Skeleton/Skeleton3D/EyeRAttach/AreaEyeR/CollisionShape3D" index="0" unique_id=424771812]
 transform = Transform3D(0.001, 1.4551915e-11, 1.4551914e-11, -1.4551915e-11, 0.001, -5.820766e-11, -1.4551915e-11, 5.820766e-11, 0.001, -0.0018794257, 0.006730143, 0.0051754327)
+modulate = Color(1, 1, 1, 0.6862745)
 billboard = 2
 alpha_cut = 2
 texture = ExtResource("5_fsaqe")
@@ -99,6 +101,7 @@ debug_color = Color(0, 0.6, 0.69803923, 1)
 
 [node name="Sprite3D" type="Sprite3D" parent="Skeleton/Skeleton3D/ForeheadLAttach/AreaForeheadL/CollisionShape3D" index="0" unique_id=2081877122]
 transform = Transform3D(0.0010000002, 3.637979e-12, 2.910383e-11, 2.910383e-11, 0.0009999999, 0, 1.4551915e-11, 0, 0.0009999999, -0.0011378957, 0.0014206301, 0.007529931)
+modulate = Color(1, 1, 1, 0.6862745)
 billboard = 2
 alpha_cut = 2
 texture = ExtResource("5_fsaqe")
@@ -121,6 +124,7 @@ debug_color = Color(0, 0.6, 0.69803923, 1)
 
 [node name="Sprite3D" type="Sprite3D" parent="Skeleton/Skeleton3D/ForeheadRAttach/AreaForeheadR/CollisionShape3D" index="0" unique_id=1662783913]
 transform = Transform3D(0.001, -7.639754e-11, 8.4933474e-26, 7.639754e-11, 0.001, 0, -8.4933474e-26, 6.488708e-33, 0.001, 0.0009947093, 0.0017632227, 0.007085905)
+modulate = Color(1, 1, 1, 0.6862745)
 billboard = 2
 alpha_cut = 2
 texture = ExtResource("5_fsaqe")
@@ -143,6 +147,7 @@ debug_color = Color(0, 0.6, 0.69803923, 1)
 
 [node name="Sprite3D" type="Sprite3D" parent="Skeleton/Skeleton3D/CheekLAttach/AreaCheekL/CollisionShape3D" index="0" unique_id=1070025596]
 transform = Transform3D(0.001, 0, 0, 0, 0.001, 0, 0, 0, 0.001, 0, 0, 0)
+modulate = Color(1, 1, 1, 0.6862745)
 billboard = 2
 alpha_cut = 2
 texture = ExtResource("5_fsaqe")
@@ -165,6 +170,7 @@ debug_color = Color(0, 0.6, 0.69803923, 1)
 
 [node name="Sprite3D" type="Sprite3D" parent="Skeleton/Skeleton3D/CheekRAttach/AreaCheekR/CollisionShape3D" index="0" unique_id=2144044773]
 transform = Transform3D(0.001, 0, 0, 0, 0.001, 0, 0, 0, 0.001, 0, 0, 0)
+modulate = Color(1, 1, 1, 0.6862745)
 billboard = 2
 alpha_cut = 2
 texture = ExtResource("5_fsaqe")
@@ -187,6 +193,7 @@ debug_color = Color(0, 0.6, 0.69803923, 1)
 
 [node name="Sprite3D" type="Sprite3D" parent="Skeleton/Skeleton3D/ChinAttach/AreaChin/CollisionShape3D" index="0" unique_id=954988739]
 transform = Transform3D(0.001, -4.3368087e-19, -1.7347235e-18, 4.3368087e-19, 0.001, -5.831286e-18, 1.7347235e-18, 5.831286e-18, 0.001, -0.0065583223, 0, 1.6552804e-10)
+modulate = Color(1, 1, 1, 0.6862745)
 billboard = 2
 alpha_cut = 2
 texture = ExtResource("5_fsaqe")
@@ -209,6 +216,7 @@ debug_color = Color(0, 0.6, 0.69803923, 1)
 
 [node name="Sprite3D" type="Sprite3D" parent="Skeleton/Skeleton3D/NoseAttach/AreaNose/CollisionShape3D" index="0" unique_id=509262247]
 transform = Transform3D(0.001, -2.910383e-11, -3.469447e-18, 2.910383e-11, 0.001, 0, -3.469447e-17, 1.3877788e-17, 0.001, -0.0017545461, 0.00520366, 9.276846e-10)
+modulate = Color(1, 1, 1, 0.6862745)
 billboard = 2
 alpha_cut = 2
 texture = ExtResource("5_fsaqe")
@@ -231,6 +239,7 @@ debug_color = Color(0, 0.6, 0.69803923, 1)
 
 [node name="Sprite3D" type="Sprite3D" parent="Skeleton/Skeleton3D/CommissureLAttach/AreaCommissureL/CollisionShape3D" index="0" unique_id=323911449]
 transform = Transform3D(0.001, 5.820766e-11, -2.2737366e-11, -5.820766e-11, 0.001, 1.909939e-11, 2.2737368e-11, -1.9099387e-11, 0.001, -0.0018063872, 0.0019933656, 3.1086383e-05)
+modulate = Color(1, 1, 1, 0.6862745)
 billboard = 2
 alpha_cut = 2
 texture = ExtResource("5_fsaqe")
