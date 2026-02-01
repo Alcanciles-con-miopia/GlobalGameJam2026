@@ -7,6 +7,8 @@ class_name SoundManager
 @export_dir var bgm_folder: String = "res://audio/bgm"
 @export_dir var sfx_folder: String = "res://audio/sfx"
 
+@export var clips: Array[AudioStream] = [] 
+
 var bgm_tracks: Dictionary = {}
 var sfx_tracks: Dictionary = {}
 
@@ -71,6 +73,13 @@ func play_bgm(name: String, loop: bool = true) -> void:
 	bgm.volume_db = bgm_volume_db
 	bgm.play()
 
+func play_bgm_i(i : int, loop: bool = true) -> void:
+	bgm.stop()
+	bgm.stream = clips[i]
+	if bgm.stream:
+		bgm.stream.loop = loop
+	bgm.volume_db = bgm_volume_db
+	bgm.play()
 
 func stop_bgm() -> void:
 	bgm.stop()

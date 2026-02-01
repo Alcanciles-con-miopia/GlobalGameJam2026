@@ -144,8 +144,6 @@ func _pick_random_client_mask() -> void:
 		"ClientMask_1":
 			current_mask_type = "mask_1"
 			Global.sound.play_bgm("fino_bgm")
-			#Global.bgm.clip = 
-			#Global.bgm.play()
 		"ClientMask_2":
 			Global.sound.play_bgm("alien_bgm")
 			current_mask_type = "mask_2"

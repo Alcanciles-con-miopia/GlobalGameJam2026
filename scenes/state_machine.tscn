@@ -10,6 +10,9 @@
 [ext_resource type="PackedScene" uid="uid://bsth51shqxg7x" path="res://objects/canvas/fade.tscn" id="5_yux3b"]
 [ext_resource type="PackedScene" uid="uid://u6p18g3qb332" path="res://scenes/final_scene.tscn" id="6_yux3b"]
 [ext_resource type="Script" uid="uid://cdy06es2yfjyw" path="res://scripts/sound_manager.gd" id="7_s46hd"]
+[ext_resource type="AudioStream" uid="uid://tlr6wwcha1hc" path="res://audio/bgm/fino_bgm.ogg" id="11_wbte5"]
+[ext_resource type="AudioStream" uid="uid://cqhw4ln7jmt2f" path="res://audio/bgm/alien_bgm.ogg" id="12_olh3i"]
+[ext_resource type="AudioStream" uid="uid://cxukyyxmwnw64" path="res://audio/bgm/enano_bgm.ogg" id="13_bp2fu"]
 
 [node name="State Machine" type="Node" unique_id=2056614218 node_paths=PackedStringArray("scenes")]
 script = ExtResource("1_nj0rb")
@@ -56,6 +59,7 @@ layer = 0
 
 [node name="Sound" type="Node" parent="." unique_id=841228563]
 script = ExtResource("7_s46hd")
+clips = Array[AudioStream]([ExtResource("11_wbte5"), ExtResource("12_olh3i"), ExtResource("13_bp2fu")])
 
 [node name="BGM" type="AudioStreamPlayer2D" parent="Sound" unique_id=1735689702]
 
