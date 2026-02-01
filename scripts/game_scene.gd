@@ -63,6 +63,11 @@ func on_enable() -> void:
 		comparer.setup(client_skel, p1_skel, p2_skel)
 
 	countdown_timer.start()
+	
+	# tweens de entrada
+	$ClientMasks/ClientMask_1.enter()
+	$ClientMasks/ClientMask_2.enter()
+	$ClientMasks/ClientMask_3.enter()
 
 func on_disable() -> void:
 	if ui_root == null:
@@ -94,7 +99,6 @@ func _on_CountdownTimer_timeout() -> void:
 	else:
 		Global.LAST_WINNER = "TIE"
 		Global.change_scene(Global.Scenes.FINALSCENE)
-		
 
 func _pick_random_client_mask() -> void:
 	# ClientMasks por ahora tiene 3 hijos: ClientMask_1/2/3 (si eso ya escalamos)
