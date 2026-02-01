@@ -5,12 +5,26 @@
 [ext_resource type="Script" uid="uid://bhrjbe7fwso4o" path="res://scripts/mask_selectable.gd" id="3_t3dyg"]
 [ext_resource type="Texture2D" uid="uid://csb8vqqxc2jc3" path="res://assets/images/jugar.png" id="4_448pe"]
 [ext_resource type="Texture2D" uid="uid://gyho5vli6sbx" path="res://assets/images/animations/susi/seleccionada/susi_selec_spritesheet.png" id="4_bfohn"]
+[ext_resource type="Texture2D" uid="uid://dyuogsynkwe5q" path="res://assets/images/CONTROLES.png" id="5_bfohn"]
 [ext_resource type="Texture2D" uid="uid://g6yhep6oc61u" path="res://assets/images/marcoArriba.png" id="6_448pe"]
 [ext_resource type="Texture2D" uid="uid://csck8cqejkvc4" path="res://assets/images/marcoBajo.png" id="7_obepn"]
 [ext_resource type="Texture2D" uid="uid://dsxa18b2j2k77" path="res://assets/images/cortinas.png" id="8_obepn"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_t3dyg"]
 size = Vector3(2.915039, 3.5263062, 1)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_obepn"]
+animations = [{
+"frames": [],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"selec",
+"speed": 8.0
+}]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_obepn"]
 atlas = ExtResource("4_bfohn")
@@ -195,6 +209,8 @@ shape = SubResource("BoxShape3D_t3dyg")
 
 [node name="Pj" type="AnimatedSprite3D" parent="cara1" unique_id=1493597041]
 transform = Transform3D(1.05, 0, 0, 0, 1.05, 0, 0, 0, 1.05, 1.7844951, -0.4224765, 0)
+sprite_frames = SubResource("SpriteFrames_obepn")
+animation = &"selec"
 
 [node name="cara2" parent="." unique_id=954683335 instance=ExtResource("1_gmjp2")]
 transform = Transform3D(0.8354266, 0, 0, 0, 0.9085699, 0, 0, 0, 1, 4.269534, 0.60951877, -2.4709845)
@@ -272,6 +288,27 @@ layout_mode = 2
 
 [node name="LabelP2" type="Label" parent="UI/Control/HBoxContainer" unique_id=1624335164]
 layout_mode = 2
+
+[node name="Aviso" type="Control" parent="UI" unique_id=608631677]
+visibility_layer = 2
+layout_mode = 3
+anchors_preset = 0
+offset_left = 4.0
+offset_right = 161.0
+offset_bottom = 26.0
+
+[node name="ColorRect" type="ColorRect" parent="UI/Aviso" unique_id=427742232]
+layout_mode = 0
+offset_left = -20.0
+offset_right = 1277.0
+offset_bottom = 719.0
+color = Color(0.6429044, 0.44215113, 0.16083506, 1)
+
+[node name="TextureRect" type="TextureRect" parent="UI/Aviso" unique_id=137704907]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("5_bfohn")
 
 [node name="BotonJugar" type="Sprite3D" parent="." unique_id=1494169577]
 transform = Transform3D(0.2312066, 0, 0, 0, 0.2312066, 0, 0, 0, 1, 0, 2.109699, 0.36281872)

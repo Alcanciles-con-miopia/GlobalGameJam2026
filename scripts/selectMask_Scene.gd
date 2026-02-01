@@ -10,6 +10,11 @@ const MASK_NODES := ["cara1", "cara2"]
 @onready var herm : AnimatedSprite3D = $cara1/Pj
 @onready var susi : AnimatedSprite3D = $cara2/Pj
 
+@onready var aviso = $UI/Aviso
+var mostrar_aviso : bool = true
+var counter = 0
+@export var contro_time : int
+
 var ui_root: Control = null
 
 var player1_choice: StringName = ""
@@ -334,6 +339,9 @@ func on_enable() -> void:
 	
 	if ui_root:
 		ui_root.visible = true
+		
+	aviso.visible = true
+	mostrar_aviso = true
 
 	process_mode = Node.PROCESS_MODE_INHERIT
 	
@@ -348,3 +356,13 @@ func on_disable() -> void:
 
 	visible = false
 	process_mode = Node.PROCESS_MODE_DISABLED
+
+
+func _process(delta: float) -> void:
+	if mostrar_aviso:
+		counter += 1
+		if counter >= contro_time:
+			mostrar_aviso = false
+			counter = 0
+			var tween = create_tween()
+			tween.tween_property(aviso, "modulate", Color.TRANSPARENT, 0.5)
