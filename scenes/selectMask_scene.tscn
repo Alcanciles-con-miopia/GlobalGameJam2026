@@ -15,6 +15,66 @@
 [sub_resource type="BoxShape3D" id="BoxShape3D_t3dyg"]
 size = Vector3(2.915039, 3.5263062, 1)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_5loaa"]
+atlas = ExtResource("4_awjr2")
+region = Rect2(0, 0, 1280, 720)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iqrai"]
+atlas = ExtResource("4_awjr2")
+region = Rect2(1280, 0, 1280, 720)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x8nu2"]
+atlas = ExtResource("4_awjr2")
+region = Rect2(2560, 0, 1280, 720)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nnkot"]
+atlas = ExtResource("4_awjr2")
+region = Rect2(0, 720, 1280, 720)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vsu2t"]
+atlas = ExtResource("4_awjr2")
+region = Rect2(1280, 720, 1280, 720)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fv1cx"]
+atlas = ExtResource("4_awjr2")
+region = Rect2(2560, 720, 1280, 720)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lykdh"]
+atlas = ExtResource("4_awjr2")
+region = Rect2(0, 1440, 1280, 720)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_whdf4"]
+atlas = ExtResource("4_awjr2")
+region = Rect2(1280, 1440, 1280, 720)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e6qp1"]
+atlas = ExtResource("4_awjr2")
+region = Rect2(2560, 1440, 1280, 720)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r8n6u"]
+atlas = ExtResource("4_awjr2")
+region = Rect2(0, 2160, 1280, 720)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6ixq6"]
+atlas = ExtResource("4_awjr2")
+region = Rect2(1280, 2160, 1280, 720)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ndx36"]
+atlas = ExtResource("4_awjr2")
+region = Rect2(2560, 2160, 1280, 720)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wg633"]
+atlas = ExtResource("4_awjr2")
+region = Rect2(0, 2880, 1280, 720)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ne07x"]
+atlas = ExtResource("4_awjr2")
+region = Rect2(1280, 2880, 1280, 720)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_14u77"]
+atlas = ExtResource("4_awjr2")
+region = Rect2(2560, 2880, 1280, 720)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_6efel"]
 atlas = ExtResource("4_awjr2")
 region = Rect2(0, 0, 1280, 720)
@@ -77,10 +137,55 @@ region = Rect2(2560, 2880, 1280, 720)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_obepn"]
 animations = [{
-"frames": [],
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5loaa")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iqrai")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x8nu2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nnkot")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vsu2t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fv1cx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lykdh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_whdf4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e6qp1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r8n6u")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6ixq6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ndx36")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wg633")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ne07x")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_14u77")
+}],
 "loop": true,
-"name": &"default",
-"speed": 5.0
+"name": &"idle",
+"speed": 4.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -132,6 +237,66 @@ animations = [{
 "name": &"selec",
 "speed": 8.0
 }]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2c41t"]
+atlas = ExtResource("4_bfohn")
+region = Rect2(0, 0, 1280, 720)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cxqdl"]
+atlas = ExtResource("4_bfohn")
+region = Rect2(1280, 0, 1280, 720)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pj3of"]
+atlas = ExtResource("4_bfohn")
+region = Rect2(2560, 0, 1280, 720)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_81l6u"]
+atlas = ExtResource("4_bfohn")
+region = Rect2(0, 720, 1280, 720)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wmrbt"]
+atlas = ExtResource("4_bfohn")
+region = Rect2(1280, 720, 1280, 720)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j2o84"]
+atlas = ExtResource("4_bfohn")
+region = Rect2(2560, 720, 1280, 720)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i3elt"]
+atlas = ExtResource("4_bfohn")
+region = Rect2(0, 1440, 1280, 720)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tci65"]
+atlas = ExtResource("4_bfohn")
+region = Rect2(1280, 1440, 1280, 720)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xdlwq"]
+atlas = ExtResource("4_bfohn")
+region = Rect2(2560, 1440, 1280, 720)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_53sfv"]
+atlas = ExtResource("4_bfohn")
+region = Rect2(0, 2160, 1280, 720)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d4mlp"]
+atlas = ExtResource("4_bfohn")
+region = Rect2(1280, 2160, 1280, 720)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rd8m8"]
+atlas = ExtResource("4_bfohn")
+region = Rect2(2560, 2160, 1280, 720)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bblk2"]
+atlas = ExtResource("4_bfohn")
+region = Rect2(0, 2880, 1280, 720)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wiymk"]
+atlas = ExtResource("4_bfohn")
+region = Rect2(1280, 2880, 1280, 720)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jhmw3"]
+atlas = ExtResource("4_bfohn")
+region = Rect2(2560, 2880, 1280, 720)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_obepn"]
 atlas = ExtResource("4_bfohn")
@@ -195,10 +360,55 @@ region = Rect2(2560, 2880, 1280, 720)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_6efel"]
 animations = [{
-"frames": [],
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2c41t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cxqdl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pj3of")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_81l6u")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wmrbt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j2o84")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i3elt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tci65")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xdlwq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_53sfv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d4mlp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rd8m8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bblk2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wiymk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jhmw3")
+}],
 "loop": true,
-"name": &"default",
-"speed": 5.0
+"name": &"idle",
+"speed": 4.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -269,10 +479,10 @@ transform = Transform3D(0.84493756, 0, 0, 0, 0.8837036, 0, 0, 0, 1, -1.8457849, 
 script = ExtResource("3_t3dyg")
 mask_id = &"Hermenegildo"
 
-[node name="Armature" parent="cara1" index="0" unique_id=351499130]
+[node name="Armature" parent="cara1" index="0" unique_id=238825806]
 transform = Transform3D(100, 0, 0, 0, -1.1920929e-05, 99.99999, 0, -99.99999, -1.1920929e-05, -1.4288809, 0, 0)
 
-[node name="Skeleton3D" parent="cara1/Armature" index="0" unique_id=1933396897]
+[node name="Skeleton3D" parent="cara1/Armature" index="0" unique_id=705312858]
 bones/1/rotation = Quaternion(0.3096804, -0.3197692, -0.65235215, 0.61341864)
 bones/1/scale = Vector3(0.99999994, 0.9999999, 0.9999999)
 bones/3/rotation = Quaternion(0.15685815, 0.042271618, -0.23383817, 0.9586075)
@@ -289,7 +499,7 @@ bones/13/rotation = Quaternion(0.5129954, -0.48665777, -0.5129953, 0.48665774)
 bones/13/scale = Vector3(0.99999994, 1.0000001, 1.0000001)
 bones/15/rotation = Quaternion(0.49226826, -0.50761396, -0.49226823, 0.507614)
 
-[node name="mascaraPrueba" parent="cara1/Armature/Skeleton3D" index="0" unique_id=163653717]
+[node name="mascaraPrueba" parent="cara1/Armature/Skeleton3D" index="0" unique_id=267894587]
 visible = false
 
 [node name="ojoDch" type="BoneAttachment3D" parent="cara1/Armature/Skeleton3D" index="1" unique_id=824032332]
@@ -317,17 +527,17 @@ shape = SubResource("BoxShape3D_t3dyg")
 [node name="Pj" type="AnimatedSprite3D" parent="cara1" unique_id=1493597041]
 transform = Transform3D(1.05, 0, 0, 0, 1.05, 0, 0, 0, 1.05, 1.7844951, -0.4224765, 0)
 sprite_frames = SubResource("SpriteFrames_obepn")
-animation = &"selec"
+animation = &"idle"
 
 [node name="cara2" parent="." unique_id=954683335 instance=ExtResource("1_gmjp2")]
 transform = Transform3D(0.8354266, 0, 0, 0, 0.9085699, 0, 0, 0, 1, 4.269534, 0.60951877, -2.4709845)
 script = ExtResource("3_t3dyg")
 mask_id = &"Susi"
 
-[node name="Armature" parent="cara2" index="0" unique_id=351499130]
+[node name="Armature" parent="cara2" index="0" unique_id=238825806]
 transform = Transform3D(100, 0, 0, 0, -1.1920929e-05, 99.99999, 0, -99.99999, -1.1920929e-05, -1.4288809, 0, 0)
 
-[node name="Skeleton3D" parent="cara2/Armature" index="0" unique_id=1933396897]
+[node name="Skeleton3D" parent="cara2/Armature" index="0" unique_id=705312858]
 bones/1/rotation = Quaternion(0.3096803, -0.3197692, -0.65235215, 0.61341864)
 bones/1/scale = Vector3(1, 1.0000001, 0.99999994)
 bones/3/rotation = Quaternion(0.15685815, 0.042271618, -0.23383817, 0.9586075)
@@ -344,7 +554,7 @@ bones/13/rotation = Quaternion(0.5129954, -0.48665777, -0.5129953, 0.48665774)
 bones/13/scale = Vector3(0.99999994, 1.0000001, 1.0000001)
 bones/15/rotation = Quaternion(0.49226826, -0.50761396, -0.49226823, 0.507614)
 
-[node name="mascaraPrueba" parent="cara2/Armature/Skeleton3D" index="0" unique_id=163653717]
+[node name="mascaraPrueba" parent="cara2/Armature/Skeleton3D" index="0" unique_id=267894587]
 visible = false
 
 [node name="ojoDch" type="BoneAttachment3D" parent="cara2/Armature/Skeleton3D" index="1" unique_id=218842739]
@@ -372,7 +582,7 @@ shape = SubResource("BoxShape3D_t3dyg")
 [node name="Pj" type="AnimatedSprite3D" parent="cara2" unique_id=1927558231]
 transform = Transform3D(1.05, 0, 0, 0, 1.0500003, 0, 0, 0, 1.05, -4.710639, -0.39722624, -0.10225725)
 sprite_frames = SubResource("SpriteFrames_6efel")
-animation = &"selec"
+animation = &"idle"
 
 [node name="UI" type="CanvasLayer" parent="." unique_id=343692524]
 layer = -1

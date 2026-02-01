@@ -131,13 +131,13 @@ func _select_mask(player: int, mask_node: Node3D, mask_id: String) -> void:
 			# si el player de hermenegildo ya era player
 			if Global.HERMENEGILDO_PLAYER == player:
 				Global.HERMENEGILDO_PLAYER = -1
-				herm.stop()
+				herm.play("idle")
 				pass
 				
 			# si el player de susi ya era player
 			if Global.SUSI_PLAYER == player:
 				Global.SUSI_PLAYER = -1
-				susi.stop()
+				susi.play("idle")
 				pass
 			
 		else:
@@ -152,13 +152,13 @@ func _select_mask(player: int, mask_node: Node3D, mask_id: String) -> void:
 				# si el player de hermenegildo ya era player
 				if Global.HERMENEGILDO_PLAYER == player:
 					Global.HERMENEGILDO_PLAYER = -1
-					herm.stop()
+					herm.play("idle")
 					pass
 					
 				# si el player de susi ya era player
 				if Global.SUSI_PLAYER == player:
 					Global.SUSI_PLAYER = -1
-					susi.stop()
+					susi.play("idle")
 					pass
 
 			# 4) Asigna la nueva
@@ -196,13 +196,13 @@ func _select_mask(player: int, mask_node: Node3D, mask_id: String) -> void:
 			# si el player de hermenegildo ya era player
 			if Global.HERMENEGILDO_PLAYER == player:
 				Global.HERMENEGILDO_PLAYER = -1
-				herm.stop()
+				herm.play("idle")
 				pass
 				
 			# si el player de susi ya era player
 			if Global.SUSI_PLAYER == player:
 				Global.SUSI_PLAYER = -1
-				susi.stop()
+				susi.play("idle")
 				pass
 			
 		else:
@@ -215,13 +215,13 @@ func _select_mask(player: int, mask_node: Node3D, mask_id: String) -> void:
 				# si el player de hermenegildo ya era player
 				if Global.HERMENEGILDO_PLAYER == player:
 					Global.HERMENEGILDO_PLAYER = -1
-					herm.stop();
+					herm.play("idle")
 					pass
 					
 				# si el player de susi ya era player
 				if Global.SUSI_PLAYER == player:
 					Global.SUSI_PLAYER = -1
-					susi.stop()
+					susi.play("idle")
 					pass
 
 			p2_mask_node = mask_node
@@ -354,8 +354,8 @@ func on_enable() -> void:
 	
 	Global.HERMENEGILDO_PLAYER = -1
 	Global.SUSI_PLAYER = -1
-	susi.stop()
-	herm.stop()
+	susi.play("idle")
+	herm.play("idle")
 	jugar_spr3d.modulate = Color(0xffffffff)
 	
 	_reset_selection_state()
