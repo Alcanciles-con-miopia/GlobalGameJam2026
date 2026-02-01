@@ -69,6 +69,20 @@ func on_enable() -> void:
 	$ClientMasks/ClientMask_1.enter()
 	$ClientMasks/ClientMask_2.enter()
 	$ClientMasks/ClientMask_3.enter()
+	
+	#var tween1 = Tween.new()
+	#tween1.tween_property(p1_mask_root, "position", Vector3(0,5,1), 0)
+	#tween1.tween_property(p1_mask_root, "position", Vector3(0,2.5,1), 0.5)
+	#tween1.tween_property(p1_mask_root, "position", Vector3(0,2.5,1), 0.2)
+	#tween1.tween_property(p1_mask_root, "position", Vector3(0,2.5,0.5), 0.5)
+	#tween1.tween_property(p1_mask_root, "position", Vector3(0,2.5,0), 0.2)
+	#
+	#var tween2 = Tween.new()
+	#tween2.tween_property(p2_mask_root, "position", Vector3(0,5,1), 0)
+	#tween2.tween_property(p2_mask_root, "position", Vector3(0,2.5,1), 0.5)
+	#tween2.tween_property(p2_mask_root, "position", Vector3(0,2.5,1), 0.2)
+	#tween2.tween_property(p2_mask_root, "position", Vector3(0,2.5,0.5), 0.5)
+	#tween2.tween_property(p2_mask_root, "position", Vector3(0,2.5,0), 0.2)
 
 func on_disable() -> void:
 	if ui_root == null:
@@ -97,6 +111,8 @@ func on_disable() -> void:
 		Global.sound.stop_sfx()
 
 func _on_CountdownTimer_timeout() -> void:
+	for c in Global.cursors:
+		Input.start_joy_vibration(c.DeviceID, 1, 1 ,1)
 	if comparer and comparer.has_method("finish_round"):
 		comparer.finish_round()
 	else:
