@@ -102,6 +102,7 @@ func _select_mask(player: int, mask_node: Node3D, mask_id: String) -> void:
 			player1_choice = mask_id
 			_highlight_mask(mask_node, 1)
 			
+			
 			# si quiero seleccionar a Hermenegildo
 			if mask_id == "Hermenegildo":
 				Global.HERMENEGILDO_PLAYER = player
@@ -161,6 +162,11 @@ func _select_mask(player: int, mask_node: Node3D, mask_id: String) -> void:
 
 	print("Jugador de HERMENEGILDO: ", Global.HERMENEGILDO_PLAYER)
 	print("Jugador de SUSI: ", Global.SUSI_PLAYER)
+	
+	if(mask_id == "Susi"):
+		Global.sound.play_sfx("select_susi")
+	else:
+		Global.sound.play_sfx("select_hermi")
 	
 	_update_ui()
 
