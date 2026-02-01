@@ -28,7 +28,7 @@ func _ready() -> void:
 	Global.on_game_end.connect(_on_game_end)
 	
 	## PRIMER CAMBIO DE ESCENA
-	Global.change_scene(Global.Scenes.SELECTMASK)
+	Global.change_scene(Global.Scenes.GAME)
 	#_wiiconnect()
 	pass 
 	
