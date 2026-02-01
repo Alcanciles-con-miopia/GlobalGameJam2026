@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b184ol05v1p73"
-path.s3tc="res://.godot/imported/otra.png-1b003fe0bd075836a470102119006b68.s3tc.ctex"
+uid="uid://c24760c7cr0di"
+path.s3tc="res://.godot/imported/herme_selec_spritesheet.png-d9f07d26e2850bc7b6548375e1f60a83.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://assets/images/otra.png"
-dest_files=["res://.godot/imported/otra.png-1b003fe0bd075836a470102119006b68.s3tc.ctex"]
+source_file="res://assets/images/animations/herme/seleccionado/herme_selec_spritesheet.png"
+dest_files=["res://.godot/imported/herme_selec_spritesheet.png-d9f07d26e2850bc7b6548375e1f60a83.s3tc.ctex"]
 
 [params]
 

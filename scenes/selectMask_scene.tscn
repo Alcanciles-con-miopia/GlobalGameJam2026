@@ -4,14 +4,76 @@
 [ext_resource type="Script" uid="uid://g6ko2qn080gq" path="res://scripts/selectMask_Scene.gd" id="3_72k5u"]
 [ext_resource type="Script" uid="uid://bhrjbe7fwso4o" path="res://scripts/mask_selectable.gd" id="3_t3dyg"]
 [ext_resource type="Texture2D" uid="uid://csb8vqqxc2jc3" path="res://assets/images/jugar.png" id="4_448pe"]
+[ext_resource type="Texture2D" uid="uid://c24760c7cr0di" path="res://assets/images/animations/herme/seleccionado/herme_selec_spritesheet.png" id="4_awjr2"]
 [ext_resource type="Texture2D" uid="uid://gyho5vli6sbx" path="res://assets/images/animations/susi/seleccionada/susi_selec_spritesheet.png" id="4_bfohn"]
 [ext_resource type="Texture2D" uid="uid://dyuogsynkwe5q" path="res://assets/images/CONTROLES.png" id="5_bfohn"]
 [ext_resource type="Texture2D" uid="uid://g6yhep6oc61u" path="res://assets/images/marcoArriba.png" id="6_448pe"]
 [ext_resource type="Texture2D" uid="uid://csck8cqejkvc4" path="res://assets/images/marcoBajo.png" id="7_obepn"]
 [ext_resource type="Texture2D" uid="uid://dsxa18b2j2k77" path="res://assets/images/cortinas.png" id="8_obepn"]
+[ext_resource type="FontFile" uid="uid://bb5uir3t076qk" path="res://assets/font/ChelseaMarket-Regular.ttf" id="11_sgrlf"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_t3dyg"]
 size = Vector3(2.915039, 3.5263062, 1)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6efel"]
+atlas = ExtResource("4_awjr2")
+region = Rect2(0, 0, 1280, 720)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n5i8c"]
+atlas = ExtResource("4_awjr2")
+region = Rect2(1280, 0, 1280, 720)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6w1s1"]
+atlas = ExtResource("4_awjr2")
+region = Rect2(2560, 0, 1280, 720)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uvlpd"]
+atlas = ExtResource("4_awjr2")
+region = Rect2(0, 720, 1280, 720)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pwdy7"]
+atlas = ExtResource("4_awjr2")
+region = Rect2(1280, 720, 1280, 720)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r46pd"]
+atlas = ExtResource("4_awjr2")
+region = Rect2(2560, 720, 1280, 720)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ibd1u"]
+atlas = ExtResource("4_awjr2")
+region = Rect2(0, 1440, 1280, 720)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c35je"]
+atlas = ExtResource("4_awjr2")
+region = Rect2(1280, 1440, 1280, 720)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4kovr"]
+atlas = ExtResource("4_awjr2")
+region = Rect2(2560, 1440, 1280, 720)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_co0hd"]
+atlas = ExtResource("4_awjr2")
+region = Rect2(0, 2160, 1280, 720)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yyb7e"]
+atlas = ExtResource("4_awjr2")
+region = Rect2(1280, 2160, 1280, 720)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t23v0"]
+atlas = ExtResource("4_awjr2")
+region = Rect2(2560, 2160, 1280, 720)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sy1xw"]
+atlas = ExtResource("4_awjr2")
+region = Rect2(0, 2880, 1280, 720)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_37c7x"]
+atlas = ExtResource("4_awjr2")
+region = Rect2(1280, 2880, 1280, 720)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xmg7m"]
+atlas = ExtResource("4_awjr2")
+region = Rect2(2560, 2880, 1280, 720)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_obepn"]
 animations = [{
@@ -20,7 +82,52 @@ animations = [{
 "name": &"default",
 "speed": 5.0
 }, {
-"frames": [],
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6efel")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n5i8c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6w1s1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uvlpd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pwdy7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r46pd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ibd1u")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c35je")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4kovr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_co0hd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yyb7e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t23v0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sy1xw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_37c7x")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xmg7m")
+}],
 "loop": true,
 "name": &"selec",
 "speed": 8.0
@@ -145,7 +252,7 @@ animations = [{
 }]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_lrb8b"]
-size = Vector3(9.6718445, 6.578125, 1)
+size = Vector3(2.3251877, 1.6777344, 1)
 
 [node name="SelectMaskScene" type="Node3D" unique_id=152709202]
 script = ExtResource("3_72k5u")
@@ -162,10 +269,10 @@ transform = Transform3D(0.84493756, 0, 0, 0, 0.8837036, 0, 0, 0, 1, -1.8457849, 
 script = ExtResource("3_t3dyg")
 mask_id = &"Hermenegildo"
 
-[node name="Armature" parent="cara1" index="0" unique_id=238825806]
+[node name="Armature" parent="cara1" index="0" unique_id=351499130]
 transform = Transform3D(100, 0, 0, 0, -1.1920929e-05, 99.99999, 0, -99.99999, -1.1920929e-05, -1.4288809, 0, 0)
 
-[node name="Skeleton3D" parent="cara1/Armature" index="0" unique_id=705312858]
+[node name="Skeleton3D" parent="cara1/Armature" index="0" unique_id=1933396897]
 bones/1/rotation = Quaternion(0.3096804, -0.3197692, -0.65235215, 0.61341864)
 bones/1/scale = Vector3(0.99999994, 0.9999999, 0.9999999)
 bones/3/rotation = Quaternion(0.15685815, 0.042271618, -0.23383817, 0.9586075)
@@ -182,7 +289,7 @@ bones/13/rotation = Quaternion(0.5129954, -0.48665777, -0.5129953, 0.48665774)
 bones/13/scale = Vector3(0.99999994, 1.0000001, 1.0000001)
 bones/15/rotation = Quaternion(0.49226826, -0.50761396, -0.49226823, 0.507614)
 
-[node name="mascaraPrueba" parent="cara1/Armature/Skeleton3D" index="0" unique_id=267894587]
+[node name="mascaraPrueba" parent="cara1/Armature/Skeleton3D" index="0" unique_id=163653717]
 visible = false
 
 [node name="ojoDch" type="BoneAttachment3D" parent="cara1/Armature/Skeleton3D" index="1" unique_id=824032332]
@@ -217,10 +324,10 @@ transform = Transform3D(0.8354266, 0, 0, 0, 0.9085699, 0, 0, 0, 1, 4.269534, 0.6
 script = ExtResource("3_t3dyg")
 mask_id = &"Susi"
 
-[node name="Armature" parent="cara2" index="0" unique_id=238825806]
+[node name="Armature" parent="cara2" index="0" unique_id=351499130]
 transform = Transform3D(100, 0, 0, 0, -1.1920929e-05, 99.99999, 0, -99.99999, -1.1920929e-05, -1.4288809, 0, 0)
 
-[node name="Skeleton3D" parent="cara2/Armature" index="0" unique_id=705312858]
+[node name="Skeleton3D" parent="cara2/Armature" index="0" unique_id=1933396897]
 bones/1/rotation = Quaternion(0.3096803, -0.3197692, -0.65235215, 0.61341864)
 bones/1/scale = Vector3(1, 1.0000001, 0.99999994)
 bones/3/rotation = Quaternion(0.15685815, 0.042271618, -0.23383817, 0.9586075)
@@ -237,7 +344,7 @@ bones/13/rotation = Quaternion(0.5129954, -0.48665777, -0.5129953, 0.48665774)
 bones/13/scale = Vector3(0.99999994, 1.0000001, 1.0000001)
 bones/15/rotation = Quaternion(0.49226826, -0.50761396, -0.49226823, 0.507614)
 
-[node name="mascaraPrueba" parent="cara2/Armature/Skeleton3D" index="0" unique_id=267894587]
+[node name="mascaraPrueba" parent="cara2/Armature/Skeleton3D" index="0" unique_id=163653717]
 visible = false
 
 [node name="ojoDch" type="BoneAttachment3D" parent="cara2/Armature/Skeleton3D" index="1" unique_id=218842739]
@@ -314,13 +421,41 @@ offset_right = 1274.0
 offset_bottom = 755.0
 texture = ExtResource("5_bfohn")
 
+[node name="ImgTitulo" type="TextureRect" parent="." unique_id=1707482387]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Titulo" type="Control" parent="." unique_id=118667995]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TituloText" type="Label" parent="Titulo" unique_id=1332986414]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 304.0
+offset_top = 576.0
+offset_right = 1107.0
+offset_bottom = 740.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("11_sgrlf")
+theme_override_font_sizes/font_size = 100
+text = "PERSONATUS"
+
 [node name="BotonJugar" type="Sprite3D" parent="." unique_id=1494169577]
-transform = Transform3D(0.2312066, 0, 0, 0, 0.2312066, 0, 0, 0, 1, 0, 2.109699, 0.36281872)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.2922175, 0.36281872)
 texture = ExtResource("4_448pe")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="BotonJugar" unique_id=473000083 groups=["play_button_3d"]]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="BotonJugar/StaticBody3D" unique_id=1193048204]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.03368759, 0.01171875, 0)
 shape = SubResource("BoxShape3D_lrb8b")
 
 [node name="MarcoArriba" type="Sprite3D" parent="." unique_id=958351713]

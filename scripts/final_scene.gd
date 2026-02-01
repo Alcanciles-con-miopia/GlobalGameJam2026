@@ -2,6 +2,9 @@ extends Node3D
 
 @onready var result_label: Label = $UI/Control/ResultLabel
 var ui_root: Control = null
+@onready var herm : AnimatedSprite3D = $Pj1
+@onready var susi : AnimatedSprite3D = $Pj2
+
 
 func _ready() -> void:
 	ui_root = get_node_or_null("UI/Control")
@@ -31,15 +34,24 @@ func on_enable() -> void:
 	var loseSound := ""
 	match Global.LAST_WINNER:
 		"SUSI":
+			print_debug("SUSI")
 			text = "¡Ha ganado SUSI!"
 			winSound = "win_susi"
+			herm.play("perder")
+			susi.play("ganar")
 			loseSound = "lose_hermi"
 		"HERMENEGILDO":
+			print_debug("HERM")
 			text = "¡Ha ganado HERMENEGILDO!"
 			winSound = "win_hermi"
+			herm.play("ganar")
+			susi.play("perder")
 			loseSound = "lose_susi"
 		"TIE":
+			print_debug("EMPATE")
 			text = "¡Empate!"
+			susi.play("ganar")
+			herm.play("ganar")
 		_:
 			text = "Fin de la ronda"
 

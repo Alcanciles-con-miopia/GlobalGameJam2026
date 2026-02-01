@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://2fn8su01j5da"]
 
 [ext_resource type="Script" uid="uid://s5s6mh4w7ceg" path="res://scripts/intro_scene.gd" id="1_xmg1o"]
+[ext_resource type="FontFile" uid="uid://b0g21t6xxd722" path="res://assets/font/Barrio-Regular.ttf" id="2_0y5sa"]
 
 [node name="IntroScene" type="Control" unique_id=1140344064]
 layout_mode = 3
@@ -27,10 +28,13 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -46.0
-offset_top = -22.5
-offset_right = 46.0
-offset_bottom = 22.5
+offset_left = -165.0
+offset_top = 118.0
+offset_right = 165.0
+offset_bottom = 163.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_colors/font_color = Color(0.827451, 0.14901961, 0.09803922, 1)
+theme_override_fonts/font = ExtResource("2_0y5sa")
 theme_override_font_sizes/font_size = 32
+text = "Alcanciles con miopía"

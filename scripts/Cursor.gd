@@ -40,23 +40,36 @@ func _input(event: InputEvent) -> void:
 		#print("vel factor")
 
 func _physics_process(delta: float) -> void:
-	if DeviceID == -1: return
+	if DeviceID == -1:
+		return
+
 	var x_ax = Input.get_joy_axis(DeviceID, JOY_AXIS_LEFT_X)
-	x_ax = x_ax if abs(x_ax) >= 0.4 else 0
 	var y_ax = Input.get_joy_axis(DeviceID, JOY_AXIS_LEFT_Y)
-	y_ax = y_ax if abs(y_ax) >= 0.4 else 0
-	direction = Vector2(x_ax, y_ax)
-	var vectorMovible = direction * vel * delta
-	#print("SSSSSSSSSS", x_ax, ",", y_ax)
-	vectorMovible.x = vectorMovible.x/4 if abs(x_ax) < 0.7 else (vectorMovible.x/2 if abs(x_ax)<0.95 else vectorMovible.x)
-	vectorMovible.y = vectorMovible.y/4 if abs(y_ax) < 0.7 else (vectorMovible.y/2 if abs(y_ax)<0.95 else vectorMovible.y)
-	#print("EEEEEEEEE", vectorMovible)
-	var newpos = position + vectorMovible 
-	newpos.x = min(get_viewport().size.x, newpos.x)
-	newpos.x = max(0, newpos.x)
-	newpos.y = min(get_viewport().size.y, newpos.y)
-	newpos.y = max(0, newpos.y)
+
+	var input_vec = Vector2(x_ax, y_ax)
+	var strength = input_vec.length()
+
+	if strength < 0.4:
+		return
+
+	var direction = input_vec.normalized()
+
+	var speed_factor := 1.0
+	if strength < 0.7:
+		speed_factor = 0.25
+	elif strength < 0.95:
+		speed_factor = 0.5
+	else:
+		speed_factor = 1.0
+
+	var vectorMovible = direction * vel * speed_factor * delta
+	var newpos = position + vectorMovible
+
+	newpos.x = clamp(newpos.x, 0, get_viewport().size.x)
+	newpos.y = clamp(newpos.y, 0, get_viewport().size.y)
+
 	position = newpos
 	Global.on_cursor_move.emit(position, DeviceID)
+
 	#print_debug(Global.cursors[0])
 	#print("AA: ", DeviceID, " vector: ", direction)
