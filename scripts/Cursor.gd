@@ -7,7 +7,7 @@ const MANO_ABIERTA = preload("res://assets/images/mano_abierta.png")
 const MANO_CERRADA = preload("res://assets/images/mano_cerrada.png")
 
 var direction : Vector2
-var vel := 2000
+var vel := 1000
 
 func _ready() -> void:
 	texture = MANO_ABIERTA
@@ -26,7 +26,7 @@ func _input(event: InputEvent) -> void:
 		texture = MANO_CERRADA
 		# LANZAR RAYCAST ANDRES AQUI
 		#print_debug("CURSOR CLICK")
-		Global.on_cursor_click.emit(event, position, DeviceID)
+		Global.on_cursor_click.emit(event, position + Vector2(20, 20), DeviceID)
 		#Global.on_cursor_click.emit()
 
 	elif event is InputEventJoypadButton and event.is_action_released("A") and event.device == DeviceID:
