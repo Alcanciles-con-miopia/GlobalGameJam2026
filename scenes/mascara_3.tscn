@@ -61,6 +61,7 @@ debug_color = Color(0, 0.6, 0.69803923, 1)
 
 [node name="Sprite3D" type="Sprite3D" parent="Skeleton/Skeleton3D/EyeLAttach/AreaEyeL/CollisionShape3D" index="0" unique_id=56571620]
 transform = Transform3D(0.001, 1.45519135e-11, -4.2351634e-19, -1.45519135e-11, 0.001, -2.9103827e-11, 0, 2.9103827e-11, 0.001, 0.0018156881, 0.0065018972, 0.004999914)
+modulate = Color(1, 1, 1, 0.6862745)
 billboard = 2
 texture = ExtResource("5_we7ac")
 
@@ -82,6 +83,7 @@ debug_color = Color(0, 0.6, 0.69803923, 1)
 
 [node name="Sprite3D" type="Sprite3D" parent="Skeleton/Skeleton3D/EyeRAttach/AreaEyeR/CollisionShape3D" index="0" unique_id=114305607]
 transform = Transform3D(0.001, 1.4551917e-11, 4.6417406e-19, -1.4551917e-11, 0.001, 0, -4.6417406e-19, -6.754622e-27, 0.001, -0.0013579063, 0.0048626075, 0.0037393125)
+modulate = Color(1, 1, 1, 0.6862745)
 billboard = 2
 texture = ExtResource("5_we7ac")
 
@@ -103,6 +105,7 @@ debug_color = Color(0, 0.6, 0.69803923, 1)
 
 [node name="Sprite3D" type="Sprite3D" parent="Skeleton/Skeleton3D/ForeheadLAttach/AreaForeheadL/CollisionShape3D" index="0" unique_id=1000783949]
 transform = Transform3D(0.001, -1.8189894e-11, 1.45519135e-11, 1.8189894e-11, 0.001, -2.910383e-11, -1.4551913e-11, 2.910383e-11, 0.001, -0.00084976805, 0.0015063016, 0.006053404)
+modulate = Color(1, 1, 1, 0.6862745)
 billboard = 2
 texture = ExtResource("5_we7ac")
 
@@ -124,6 +127,7 @@ debug_color = Color(0, 0.6, 0.69803923, 1)
 
 [node name="Sprite3D" type="Sprite3D" parent="Skeleton/Skeleton3D/ForeheadRAttach/AreaForeheadR/CollisionShape3D" index="0" unique_id=1342000464]
 transform = Transform3D(0.001, -5.8207654e-11, 2.9103827e-11, 5.8207654e-11, 0.001, 1.45519135e-11, -2.9103827e-11, -1.4551912e-11, 0.001, 0.00074937195, 0.0013283375, 0.005338218)
+modulate = Color(1, 1, 1, 0.6862745)
 billboard = 2
 alpha_cut = 3
 texture = ExtResource("5_we7ac")
@@ -146,6 +150,7 @@ debug_color = Color(0, 0.6, 0.69803923, 1)
 
 [node name="Sprite3D" type="Sprite3D" parent="Skeleton/Skeleton3D/CheekLAttach/AreaCheekL/CollisionShape3D" index="0" unique_id=1215994846]
 transform = Transform3D(0.001, 0, 0, 0, 0.001, 0, 0, 0, 0.001, 0, 0, 0)
+modulate = Color(1, 1, 1, 0.6862745)
 billboard = 2
 texture = ExtResource("5_we7ac")
 
@@ -167,6 +172,7 @@ debug_color = Color(0, 0.6, 0.69803923, 1)
 
 [node name="Sprite3D" type="Sprite3D" parent="Skeleton/Skeleton3D/CheekRAttach/AreaCheekR/CollisionShape3D" index="0" unique_id=676168211]
 transform = Transform3D(0.001, 0, 0, 0, 0.001, 0, 0, 0, 0.001, 0, 0, 0)
+modulate = Color(1, 1, 1, 0.6862745)
 billboard = 2
 texture = ExtResource("5_we7ac")
 
@@ -188,6 +194,7 @@ debug_color = Color(0, 0.6, 0.69803923, 1)
 
 [node name="Sprite3D" type="Sprite3D" parent="Skeleton/Skeleton3D/ChinAttach/AreaChin/CollisionShape3D" index="0" unique_id=1794868449]
 transform = Transform3D(0.001, 0, 0, 0, 0.001, 0, 0, 0, 0.001, 0, 0, 0)
+modulate = Color(1, 1, 1, 0.6862745)
 billboard = 2
 texture = ExtResource("5_we7ac")
 
@@ -209,6 +216,7 @@ debug_color = Color(0, 0.6, 0.69803923, 1)
 
 [node name="Sprite3D" type="Sprite3D" parent="Skeleton/Skeleton3D/NoseAttach/AreaNose/CollisionShape3D" index="0" unique_id=2594263]
 transform = Transform3D(0.001, 0, 0, 0, 0.001, 0, 0, 0, 0.001, 0, 0, 0)
+modulate = Color(1, 1, 1, 0.6862745)
 billboard = 2
 texture = ExtResource("5_we7ac")
 
@@ -230,6 +238,7 @@ debug_color = Color(0, 0.6, 0.69803923, 1)
 
 [node name="Sprite3D" type="Sprite3D" parent="Skeleton/Skeleton3D/CommissureLAttach/AreaCommissureL/CollisionShape3D" index="0" unique_id=1883764629]
 transform = Transform3D(0.001, 0, 0, 0, 0.001, 0, 0, 0, 0.001, 0, 0, 0)
+modulate = Color(1, 1, 1, 0.6862745)
 billboard = 2
 texture = ExtResource("5_we7ac")
 
@@ -251,6 +260,7 @@ debug_color = Color(0, 0.6, 0.69803923, 1)
 
 [node name="Sprite3D" type="Sprite3D" parent="Skeleton/Skeleton3D/CommissureRAttach/AreaCommissureR/CollisionShape3D" index="0" unique_id=523510864]
 transform = Transform3D(0.001, 0, 0, 0, 0.001, 0, 0, 0, 0.001, 0, 0, 0)
+modulate = Color(1, 1, 1, 0.6862745)
 billboard = 2
 texture = ExtResource("5_we7ac")
 
@@ -272,6 +282,7 @@ debug_color = Color(0, 0.6, 0.69803923, 1)
 
 [node name="Sprite3D" type="Sprite3D" parent="Skeleton/Skeleton3D/MouthAttach/AreaMouth/CollisionShape3D" index="0" unique_id=1049868126]
 transform = Transform3D(0.001, 0, 0, 0, 0.001, 0, 0, 0, 0.001, 0, 0, 0)
+modulate = Color(1, 1, 1, 0.6862745)
 billboard = 2
 alpha_cut = 2
 texture = ExtResource("5_we7ac")
