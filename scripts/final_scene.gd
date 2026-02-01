@@ -22,10 +22,10 @@ func on_enable() -> void:
 
 	var text := ""
 	match Global.LAST_WINNER:
-		"P1":
-			text = "¡Ha ganado el Jugador 1!"
-		"P2":
-			text = "¡Ha ganado el Jugador 2!"
+		"SUSI":
+			text = "¡Ha ganado SUSI!"
+		"HERMENEGILDO":
+			text = "¡Ha ganado HERMENEGILDO!"
 		"TIE":
 			text = "¡Empate!"
 		_:

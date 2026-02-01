@@ -7,6 +7,7 @@ signal on_transition_end
 signal on_enable(scene)
 signal on_disable(scene)
 signal on_game_end()
+signal on_cursor_click(event, cursor_pos, device_id)
 
 ## maquina de estados y variables de flujo
 var sm # state machine
@@ -23,6 +24,8 @@ var sound
 var coolDown = 0.5
 var startCoolDown = false
 var random = RandomNumberGenerator.new()
+
+@export var cursors: Array = [2]
 
 ## HUESOS
 enum Bones {

@@ -21,8 +21,11 @@ func _ready():
 		cam = get_tree().get_first_node_in_group("game_camera") as Camera3D
 		if cam == null:
 			print_debug("DraggableObject: no se encontró ninguna Camera3D en el grupo 'game_camera'")
-
 	dif = $"../".global_position - self.global_position
+	
+	#Global.on_cursor_click.connect(_cursor_click)
+	var err = Global.on_cursor_click.connect(_cursor_click)
+	print("Signal connect result:", err)
 	pass
 	
 # Update.
@@ -33,6 +36,7 @@ func _process(_delta):
 func raycast():
 	var spaceState = cam.get_world_3d().direct_space_state
 	var mousePos = cam.get_viewport().get_mouse_position()
+	print_debug(mousePos)
 	var origin = cam.project_ray_origin(mousePos)
 	var end = origin + cam.project_ray_normal(mousePos) * RAY_LENGTH
 	var query = PhysicsRayQueryParameters3D.create(origin, end)
@@ -41,6 +45,22 @@ func raycast():
 	result = result.get("collider")
 	#print(result)
 	return result
+	
+func raycast_cursor(cursor_pos):
+	var spaceState = cam.get_world_3d().direct_space_state
+	var origin = cam.project_ray_origin(cursor_pos)
+	var end = origin + cam.project_ray_normal(cursor_pos) * RAY_LENGTH
+	var query = PhysicsRayQueryParameters3D.create(origin, end)
+	query.collide_with_areas = true
+	var result = spaceState.intersect_ray(query)
+	result = result.get("collider")
+	print(result)
+	return result
+	
+func _cursor_click(e, cursor_pos, device_id):
+	print_debug("CURSOR CLICK ON DRAGGABLE?")
+	raycast_cursor(cursor_pos)
+	pass
 	
 func _input(event):
 
@@ -59,6 +79,7 @@ func _input(event):
 				
 	# CLICK IZQUIERDO
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT:
+	#if event is InputEventJoypadButton and event.button_index == JOY_BUTTON_A:
 		if event.pressed:
 			var collider = raycast()
 			if collider == self:

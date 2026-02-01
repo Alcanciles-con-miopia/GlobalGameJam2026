@@ -93,6 +93,6 @@ func _getBestMask(d1: float, d2: float) -> String:
 	if abs(d1 - d2) < eps:
 		return "TIE"
 	elif d1 < d2:
-		return "P1"
+		return "HERMENEGILDO"
 	else:
-		return "P2"
+		return "SUSI"
