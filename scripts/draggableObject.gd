@@ -12,7 +12,11 @@ var drag_start_mouse := Vector2.ZERO
 var drag_start_transform: Transform3D
 
 var current_bone = null
+var last_cursor_pos_p1 : Vector2
+var last_cursor_pos_p2 : Vector2
 var owned_by_player = 0 
+
+var asociated_cursor = null
 
 # Start.
 func _ready():
@@ -25,6 +29,7 @@ func _ready():
 	dif = $"../".global_position - self.global_position
 	
 	Global.on_cursor_click.connect(_cursor_click)
+	Global.on_cursor_move.connect(_cursor_move)
 	pass
 	
 # Update.
@@ -32,19 +37,10 @@ func _process(_delta):
 	pass
 
 
-func raycast():
-	var spaceState = cam.get_world_3d().direct_space_state
-	var mousePos = cam.get_viewport().get_mouse_position()
-	print_debug(mousePos)
-	var origin = cam.project_ray_origin(mousePos)
-	var end = origin + cam.project_ray_normal(mousePos) * RAY_LENGTH
-	var query = PhysicsRayQueryParameters3D.create(origin, end)
-	query.collide_with_areas = true
-	var result = spaceState.intersect_ray(query)
-	result = result.get("collider")
-	#print(result)
-	return result
-	
+
+
+
+# VERSIÓN MANDO:
 func raycast_cursor(cursor_pos):
 	var spaceState = cam.get_world_3d().direct_space_state
 	var origin = cam.project_ray_origin(cursor_pos)
@@ -57,12 +53,129 @@ func raycast_cursor(cursor_pos):
 	return result
 	
 func _cursor_click(e, cursor_pos, device_id):
-	print_debug("CURSOR CLICK ON DRAGGABLE?")
-	raycast_cursor(cursor_pos)
+	#print_debug("CURSOR CLICK ON DRAGGABLE?")
+	#raycast_cursor(cursor_pos)
+	
+	if e is InputEventJoypadButton and e.button_index == JOY_BUTTON_A:
+		if e.pressed:
+			var collider = raycast_cursor(cursor_pos)
+			if collider == self:
+				Global.draggingSomething = self
+				dragging = true
+				drag_start_mouse = cursor_pos
+				drag_start_transform = $"../".global_transform
+				print("Arrastrando:", self)
+				for c in Global.cursors:
+					if c.DeviceID == e.device:
+						asociated_cursor = c
+						return
+		else:# Soltar click
+			dragging = false
+			asociated_cursor = null
+			if Global.draggingSomething == self:
+				Global.draggingSomething = null
 	pass
 	
-func _input(event):
+func _cursor_move(cursor_pos, device_id):
+	match device_id:
+		0:
+			last_cursor_pos_p1 = cursor_pos
+		1:
+			last_cursor_pos_p2 = cursor_pos
+	pass
+	
+func _handle_cursor_drag(cursor_delta : Vector2):
+	var parent := $"../" as Node3D
+	if parent == null:
+		return
 
+	match mode:
+		1: # MOVER
+			parent.global_position += Vector3(
+				cursor_delta.x * 0.01,
+				-cursor_delta.y * 0.01,
+				0.0
+			)
+
+		2: # ROTAR
+			parent.rotate_y(cursor_delta.x * 0.01)
+
+		3: # ESCALAR
+			var factor := 1.0 + cursor_delta.y * 0.005
+			parent.scale *= Vector3.ONE * factor
+	
+func _input(event):
+	#if event is InputEventJoypadMotion:
+		#print_debug(Global.cursors[event.device])
+		
+	if event is InputEventJoypadButton and event.is_action_released("A"):
+		dragging = false
+		asociated_cursor = null
+		if Global.draggingSomething == self:
+			Global.draggingSomething = null
+			
+
+	pass
+
+func _physics_process(delta: float) -> void:
+	if not asociated_cursor or not dragging: return
+	#SNAPEANDO POSICION
+	var parent := $"../" as Node3D
+	if parent == null:
+		return
+	#print_debug(asociated_cursor)
+	var origin = cam.project_ray_origin(asociated_cursor.position)
+	var end = origin + cam.project_ray_normal(asociated_cursor.position) * RAY_LENGTH
+	end.z = parent.global_position.z
+	parent.global_position = end
+	
+	print(parent.global_position)
+	#var delt = 0
+	#asociated_cursor.position - last_cursor_pos_p1
+	#else:
+		#delta = Global.cursors[1].position - last_cursor_pos_p2
+		#print_debug("DELTA: ", delta, " DEVICE: ", event.device)
+		#_handle_cursor_drag(delta)
+	
+	
+	## CALCULAR DELTA DEL CURSOR NO FUNCIONA
+	#var delta = 0
+	#if event.device == 0:
+		#delta = Global.cursors[0].position - last_cursor_pos_p1
+	#else:
+		#delta = Global.cursors[1].position - last_cursor_pos_p2
+	#print_debug("DELTA: ", delta, " DEVICE: ", event.device)
+	#_handle_cursor_drag(delta)
+
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+# VERSION RATÓN:
+func raycast():
+	var spaceState = cam.get_world_3d().direct_space_state
+	var mousePos = cam.get_viewport().get_mouse_position()
+	#print_debug(mousePos)
+	var origin = cam.project_ray_origin(mousePos)
+	var end = origin + cam.project_ray_normal(mousePos) * RAY_LENGTH
+	var query = PhysicsRayQueryParameters3D.create(origin, end)
+	query.collide_with_areas = true
+	var result = spaceState.intersect_ray(query)
+	result = result.get("collider")
+	#print(result)
+	return result
+
+func _input_raton(event): #renombrar para que se ejecute
 	# Cambiar modo (teclas)
 	if event is InputEventKey and event.pressed:
 		match event.keycode:
@@ -78,7 +191,6 @@ func _input(event):
 				
 	# CLICK IZQUIERDO
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT:
-	#if event is InputEventJoypadButton and event.button_index == JOY_BUTTON_A:
 		if event.pressed:
 			var collider = raycast()
 			if collider == self:
@@ -118,73 +230,3 @@ func _handle_mouse_drag(mouse_delta: Vector2):
 		3: # ESCALAR
 			var factor := 1.0 + mouse_delta.y * 0.005
 			parent.scale *= Vector3.ONE * factor
-
-
-
-#Input.
-#func _input(event):
-	#
-	#if event is InputEventKey and event.pressed :
-		#match event.keycode:
-			#KEY_1:
-				#mode = 1
-				#print("MODO: MOVER")
-			#KEY_2:
-				#mode = 2
-				#print("MODO: ROTAR")
-			#KEY_3:
-				#mode = 3
-				#print("MODO: ESCALAR")
-		#
-	#if Input.is_action_pressed("left_click"):
-		#var collider = raycast()
-		#if collider != null:
-			#Global.draggingSomething = collider
-			#print("Arrastrando:", Global.draggingSomething)
-			#
-	#if Global.draggingSomething == self and Global.draggingSomething != null:
-		#if event is InputEventKey and event.pressed:
-			#var parent_node := $"../" as Node3D
-			#if parent_node == null:
-				#return
-				#
-			#match event.keycode:
-				#KEY_A:
-					#if mode == 1:
-						#parent_node.global_position += Vector3(-0.1, 0.0, 0.0)
-					#elif mode == 2:
-						#parent_node.transform = parent_node.transform.rotated(Vector3(0.0, 1.0, 0.0), -0.1)
-				#KEY_D:
-					#if mode == 1:
-						#parent_node.global_position += Vector3(0.1, 0.0, 0.0)
-					#elif mode == 2:
-						#parent_node.transform = parent_node.transform.rotated(Vector3(0.0, 1.0, 0.0), 0.1)
-				#KEY_W:
-					#if mode == 1:
-						#parent_node.global_position += Vector3(0.0, 0.1, 0.0)
-					#elif mode == 3:
-						#parent_node.transform = parent_node.transform.scaled(Vector3(1.1, 1.1, 1.1))
-				#KEY_S:
-					#if mode == 1:
-						#parent_node.global_position += Vector3(0.0, -0.1, 0.0)
-					#elif mode == 3:
-						#parent_node.transform = parent_node.transform.scaled(Vector3(0.9, 0.9, 0.9))
-	#
-	## Quitar el click.
-	#if Input.is_action_pressed("right_click") and Global.draggingSomething != self:
-		#Global.draggingSomething = null
-	#
-	 ## Si hay raycast y evento de click izquierdo (posicion).
-	##if cam.raycast() != null and Input.is_action_pressed("left_click"):
-		##Global.draggingSomething = cam.raycast() # Cogemos
-		##if (Global.draggingSomething == self or Global.draggingSomething == null):
-			##var mousePos = get_viewport().get_mouse_position()
-			##var origin = cam.project_ray_origin(mousePos)
-			##var end = cam.project_ray_normal(mousePos)
-			##var finalPosition = origin + end - dif
-		#
-			##$"../".global_position = finalPosition
-	## Quitar el click.
-	##if Input.is_action_just_released("left_click") and Global.draggingSomething == self:
-		##Global.draggingSomething = null
-	#pass
