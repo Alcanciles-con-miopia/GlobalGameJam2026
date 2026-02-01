@@ -62,7 +62,7 @@ shape = SubResource("SphereShape3D_86iu0")
 debug_color = Color(0, 0.6, 0.69803923, 1)
 
 [node name="Sprite3D" type="Sprite3D" parent="Skeleton/Skeleton3D/EyeLAttach/AreaEyeL/CollisionShape3D" index="0" unique_id=877976464]
-transform = Transform3D(0.001, 0, 0, 0, 0.001, -2.910383e-11, 0, 2.910383e-11, 0.001, 0.0023858168, 0.008543503, 0.006569894)
+transform = Transform3D(0.0009999999, 0, 0, 0, 0.0009999999, -8.731149e-11, 1.4551915e-11, 2.910383e-11, 0.0009999999, 0.0023259942, 0.007972553, 0.007334081)
 billboard = 2
 alpha_cut = 2
 texture = ExtResource("5_86iu0")
@@ -84,7 +84,7 @@ shape = SubResource("SphereShape3D_86iu0")
 debug_color = Color(0, 0.6, 0.69803923, 1)
 
 [node name="Sprite3D" type="Sprite3D" parent="Skeleton/Skeleton3D/EyeRAttach/AreaEyeR/CollisionShape3D" index="0" unique_id=897558953]
-transform = Transform3D(0.001, 1.4551915e-11, 1.4551914e-11, -1.4551915e-11, 0.001, -5.820766e-11, -1.4551915e-11, 5.820766e-11, 0.001, -0.00248606, 0.008902474, 0.0068459404)
+transform = Transform3D(0.0009999998, 0, 2.910383e-11, -2.910383e-11, 0.0009999999, -1.1641532e-10, 0, 8.731149e-11, 0.0009999999, -0.0028930022, 0.008507548, 0.0072117224)
 billboard = 2
 alpha_cut = 2
 texture = ExtResource("5_86iu0")
