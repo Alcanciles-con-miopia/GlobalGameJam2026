@@ -46,9 +46,14 @@ func _handle_mask_click(player: int, mouse_pos: Vector2) -> void:
 	var collider := result["collider"] as Node
 	if collider == null:
 		return
-
+	
+	
 	var mask_node := collider.get_parent() as Node3D
 	if mask_node == null:
+		return
+	
+	if not is_instance_of(mask_node, SelectableMask):
+		_on_Button_pressed()
 		return
 
 	var mask_id: StringName = mask_node.mask_id
@@ -223,6 +228,11 @@ func _reset_selection_state() -> void:
 	_update_ui()
 
 func _on_Button_pressed() -> void:
+	
+	if (player1_choice == "" or player2_choice == ""): return
+	
+	print("OOOOOOOOOOO")
+	
 	Global.player1_mask_id = player1_choice
 	Global.player2_mask_id = player2_choice
 	
