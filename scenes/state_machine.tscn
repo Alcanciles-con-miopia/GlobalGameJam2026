@@ -8,7 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://cpbv42xhe4um5" path="res://scenes/game_scene.tscn" id="4_okvjo"]
 [ext_resource type="PackedScene" uid="uid://2ohsnn4cebqs" path="res://scenes/selectMask_scene.tscn" id="5_okvjo"]
 [ext_resource type="PackedScene" uid="uid://bsth51shqxg7x" path="res://objects/canvas/fade.tscn" id="5_yux3b"]
-[ext_resource type="PackedScene" path="res://scenes/final_scene.tscn" id="6_yux3b"]
+[ext_resource type="PackedScene" uid="uid://xxn1qi3somob" path="res://scenes/final_scene.tscn" id="6_yux3b"]
 [ext_resource type="Script" uid="uid://cdy06es2yfjyw" path="res://scripts/sound_manager.gd" id="7_s46hd"]
 
 [node name="State Machine" type="Node" unique_id=2056614218 node_paths=PackedStringArray("scenes")]
