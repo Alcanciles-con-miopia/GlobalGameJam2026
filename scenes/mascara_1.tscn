@@ -93,12 +93,12 @@ input_capture_on_drag = true
 script = ExtResource("4_mgn7o")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Skeleton/Skeleton3D/ForeheadLAttach/AreaForeheadL" index="0" unique_id=1385058739]
-transform = Transform3D(1.5, 0, 0, 0, 1.5, 2.9057264e-07, 0, -2.9057264e-07, 1.5, -1.0767719e-05, -0.001072594, -0.0010596467)
+transform = Transform3D(1.5, 6.3329935e-08, -2.9802322e-08, 1.4901161e-08, 1.5000002, 2.9802322e-07, 2.9802322e-08, -3.5762787e-07, 1.5, -0.0011535278, 0.00068333093, -0.0016570012)
 shape = SubResource("SphereShape3D_fsaqe")
 debug_color = Color(0, 0.6, 0.69803923, 1)
 
 [node name="Sprite3D" type="Sprite3D" parent="Skeleton/Skeleton3D/ForeheadLAttach/AreaForeheadL/CollisionShape3D" index="0" unique_id=2081877122]
-transform = Transform3D(0.001, 6.548362e-11, 1.4551915e-11, -7.275958e-12, 0.0009999999, 2.910383e-11, 0, 0, 0.0009999999, -0.0014981772, 0.0029390594, 0.007101518)
+transform = Transform3D(0.0010000002, 3.637979e-12, 2.910383e-11, 2.910383e-11, 0.0009999999, 0, 1.4551915e-11, 0, 0.0009999999, -0.0011378957, 0.0014206301, 0.007529931)
 billboard = 2
 alpha_cut = 2
 texture = ExtResource("5_fsaqe")
