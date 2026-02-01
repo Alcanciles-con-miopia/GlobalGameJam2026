@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://egnjwnli68vd"]
+[gd_scene format=3 uid="uid://u6p18g3qb332"]
 
 [ext_resource type="Script" uid="uid://hhld457rk38u" path="res://scripts/final_scene.gd" id="1_4bkdv"]
 [ext_resource type="Texture2D" uid="uid://b8mr508h2rejn" path="res://assets/ui/replayButton.png" id="2_qifxa"]
