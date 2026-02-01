@@ -12,6 +12,14 @@ grow_vertical = 2
 mouse_filter = 2
 script = ExtResource("1_xmg1o")
 
+[node name="ColorRect" type="ColorRect" parent="." unique_id=2094397672]
+layout_mode = 0
+offset_left = -22.0
+offset_top = -23.0
+offset_right = 1289.0
+offset_bottom = 741.0
+color = Color(0.61960787, 0.88235295, 0.9529412, 1)
+
 [node name="Label" type="Label" parent="." unique_id=2087144330]
 layout_mode = 1
 anchors_preset = 8

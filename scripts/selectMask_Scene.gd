@@ -10,7 +10,7 @@ const MASK_NODES := ["cara1", "cara2"]
 @onready var herm : AnimatedSprite3D = $cara1/Pj
 @onready var susi : AnimatedSprite3D = $cara2/Pj
 
-@onready var aviso = $UI/Aviso
+@onready var aviso = $Aviso
 var mostrar_aviso : bool = true
 var counter = 0
 @export var contro_time : int
@@ -173,7 +173,7 @@ func _select_mask(player: int, mask_node: Node3D, mask_id: String) -> void:
 				Global.sound.set_sfx_volume_db(50)
 				Global.sound.play_sfx("select_hermi")
 				#...
-				#herm.play("selec")
+				herm.play("selec")
 				#...
 				pass
 				
@@ -233,6 +233,7 @@ func _select_mask(player: int, mask_node: Node3D, mask_id: String) -> void:
 				Global.HERMENEGILDO_PLAYER = player
 				Global.sound.set_sfx_volume_db(50)
 				Global.sound.play_sfx("select_hermi")
+				herm.play("selec")
 				pass
 				
 			# si quiero seleccionar a Susi
