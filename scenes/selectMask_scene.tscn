@@ -479,10 +479,10 @@ transform = Transform3D(0.84493756, 0, 0, 0, 0.8837036, 0, 0, 0, 1, -1.8457849, 
 script = ExtResource("3_t3dyg")
 mask_id = &"Hermenegildo"
 
-[node name="Armature" parent="cara1" index="0" unique_id=238825806]
+[node name="Armature" parent="cara1" index="0" unique_id=417538917]
 transform = Transform3D(100, 0, 0, 0, -1.1920929e-05, 99.99999, 0, -99.99999, -1.1920929e-05, -1.4288809, 0, 0)
 
-[node name="Skeleton3D" parent="cara1/Armature" index="0" unique_id=705312858]
+[node name="Skeleton3D" parent="cara1/Armature" index="0" unique_id=1641692067]
 bones/1/rotation = Quaternion(0.3096804, -0.3197692, -0.65235215, 0.61341864)
 bones/1/scale = Vector3(0.99999994, 0.9999999, 0.9999999)
 bones/3/rotation = Quaternion(0.15685815, 0.042271618, -0.23383817, 0.9586075)
@@ -499,7 +499,7 @@ bones/13/rotation = Quaternion(0.5129954, -0.48665777, -0.5129953, 0.48665774)
 bones/13/scale = Vector3(0.99999994, 1.0000001, 1.0000001)
 bones/15/rotation = Quaternion(0.49226826, -0.50761396, -0.49226823, 0.507614)
 
-[node name="mascaraPrueba" parent="cara1/Armature/Skeleton3D" index="0" unique_id=267894587]
+[node name="mascaraPrueba" parent="cara1/Armature/Skeleton3D" index="0" unique_id=208551896]
 visible = false
 
 [node name="ojoDch" type="BoneAttachment3D" parent="cara1/Armature/Skeleton3D" index="1" unique_id=824032332]
@@ -534,10 +534,10 @@ transform = Transform3D(0.8354266, 0, 0, 0, 0.9085699, 0, 0, 0, 1, 4.269534, 0.6
 script = ExtResource("3_t3dyg")
 mask_id = &"Susi"
 
-[node name="Armature" parent="cara2" index="0" unique_id=238825806]
+[node name="Armature" parent="cara2" index="0" unique_id=417538917]
 transform = Transform3D(100, 0, 0, 0, -1.1920929e-05, 99.99999, 0, -99.99999, -1.1920929e-05, -1.4288809, 0, 0)
 
-[node name="Skeleton3D" parent="cara2/Armature" index="0" unique_id=705312858]
+[node name="Skeleton3D" parent="cara2/Armature" index="0" unique_id=1641692067]
 bones/1/rotation = Quaternion(0.3096803, -0.3197692, -0.65235215, 0.61341864)
 bones/1/scale = Vector3(1, 1.0000001, 0.99999994)
 bones/3/rotation = Quaternion(0.15685815, 0.042271618, -0.23383817, 0.9586075)
@@ -554,7 +554,7 @@ bones/13/rotation = Quaternion(0.5129954, -0.48665777, -0.5129953, 0.48665774)
 bones/13/scale = Vector3(0.99999994, 1.0000001, 1.0000001)
 bones/15/rotation = Quaternion(0.49226826, -0.50761396, -0.49226823, 0.507614)
 
-[node name="mascaraPrueba" parent="cara2/Armature/Skeleton3D" index="0" unique_id=267894587]
+[node name="mascaraPrueba" parent="cara2/Armature/Skeleton3D" index="0" unique_id=208551896]
 visible = false
 
 [node name="ojoDch" type="BoneAttachment3D" parent="cara2/Armature/Skeleton3D" index="1" unique_id=218842739]
@@ -609,8 +609,11 @@ layout_mode = 2
 
 [node name="ImgTitulo" type="TextureRect" parent="UI/Control" unique_id=1707482387]
 layout_mode = 0
-offset_right = 1280.0
-offset_bottom = 720.0
+offset_left = 287.0
+offset_top = 487.00003
+offset_right = 1567.0
+offset_bottom = 886.0
+scale = Vector2(0.5600002, 0.56)
 texture = ExtResource("7_sgrlf")
 
 [node name="Aviso" type="Control" parent="." unique_id=608631677]
