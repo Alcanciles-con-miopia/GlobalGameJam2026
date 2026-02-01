@@ -167,7 +167,9 @@ func _on_Button_pressed() -> void:
 	
 	Global.player1_character = _character_from_mask_id(player1_choice)
 	Global.player2_character = _character_from_mask_id(player2_choice)
-
+	
+	Global.sound.play_sfx("button_click")
+	
 	Global.change_scene(Global.Scenes.GAME)
 
 func _character_from_mask_id(mask_id: StringName) -> Global.Character:
