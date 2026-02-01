@@ -12,4 +12,7 @@ func _process(delta: float) -> void:
 		var hhmmss_string:String = "%05.2f" % [seconds]
 		TimerLabel.text = hhmmss_string
 	else:
+		if time<5:
+			for c in Global.cursors:
+				Input.start_joy_vibration(c.DeviceID, 5- time, 5- time,0.1)
 		TimerLabel.text = "00:00"

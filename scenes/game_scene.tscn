@@ -23,10 +23,10 @@ player_mask_scene_2 = ExtResource("3_tqxxy")
 player_mask_scene_3 = ExtResource("4_5ay1a")
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=1723684477 groups=["game_camera"]]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.5)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2.8624268)
 projection = 1
 size = 6.909
-near = 0.009
+near = 0.001
 script = ExtResource("2_y3j0m")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=784478348]
