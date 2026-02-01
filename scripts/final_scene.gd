@@ -71,6 +71,6 @@ func on_disable() -> void:
 
 func _on_ReplayButton_pressed() -> void:
 	Global.reset_round()
-	
+	Global.sound.set_sfx_volume_db(5.0)
 	Global.sound.play_sfx("button_click")
 	Global.change_scene(Global.Scenes.SELECTMASK)
