@@ -6,9 +6,9 @@
 [ext_resource type="PackedScene" uid="uid://cbfhh8nar1l8l" path="res://scenes/control_mapper.tscn" id="2_m6efm"]
 [ext_resource type="PackedScene" uid="uid://dhwq84dhhtp70" path="res://scenes/null_scene.tscn" id="3_s46hd"]
 [ext_resource type="PackedScene" uid="uid://cpbv42xhe4um5" path="res://scenes/game_scene.tscn" id="4_okvjo"]
-[ext_resource type="PackedScene" uid="uid://2ohsnn4cebqs" path="res://scenes/selectMask_scene.tscn" id="5_okvjo"]
+[ext_resource type="PackedScene" uid="uid://cugvtvbfh07ky" path="res://scenes/selectMask_scene.tscn" id="5_okvjo"]
 [ext_resource type="PackedScene" uid="uid://bsth51shqxg7x" path="res://objects/canvas/fade.tscn" id="5_yux3b"]
-[ext_resource type="PackedScene" uid="uid://xxn1qi3somob" path="res://scenes/final_scene.tscn" id="6_yux3b"]
+[ext_resource type="PackedScene" uid="uid://egnjwnli68vd" path="res://scenes/final_scene.tscn" id="6_yux3b"]
 [ext_resource type="Script" uid="uid://cdy06es2yfjyw" path="res://scripts/sound_manager.gd" id="7_s46hd"]
 
 [node name="State Machine" type="Node" unique_id=2056614218 node_paths=PackedStringArray("scenes")]
@@ -24,7 +24,7 @@ visible = false
 [node name="FinalScene" parent="Scenes" unique_id=1376563395 instance=ExtResource("6_yux3b")]
 visible = false
 
-[node name="GameScene" parent="Scenes" unique_id=2059163576 instance=ExtResource("4_okvjo")]
+[node name="GameScene" parent="Scenes" unique_id=558644974 instance=ExtResource("4_okvjo")]
 process_mode = 4
 visible = false
 
