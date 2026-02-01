@@ -35,7 +35,8 @@ func on_enable() -> void:
 
 	if ui_root:
 		ui_root.visible = true
-		
+	
+	$UI.visible = true
 	process_mode = Node.PROCESS_MODE_INHERIT
 	
 	var p1_mask := Global.player1_mask_id
@@ -70,6 +71,8 @@ func on_disable() -> void:
 
 	if ui_root:
 		ui_root.visible = false
+	
+	$UI.visible = false
 	
 	if timer_label:
 		timer_label.visible = false
