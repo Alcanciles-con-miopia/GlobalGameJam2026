@@ -26,7 +26,7 @@ func _input(event: InputEvent) -> void:
 		texture = MANO_CERRADA
 		# LANZAR RAYCAST ANDRES AQUI
 		#print_debug("CURSOR CLICK")
-		Global.on_cursor_click.emit(null, position, DeviceID)
+		Global.on_cursor_click.emit(event, position, DeviceID)
 		#Global.on_cursor_click.emit()
 
 	elif event is InputEventJoypadButton and event.is_action_released("A") and event.device == DeviceID:

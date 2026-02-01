@@ -58,7 +58,7 @@ func raycast_cursor(cursor_pos):
 	return result
 	
 func _cursor_click(e, cursor_pos, device_id):
-	print_debug("CURSOR CLICK")
+	print_debug("CURSOR CLICK ON DRAGGABLE?")
 	raycast_cursor(cursor_pos)
 	pass
 	
