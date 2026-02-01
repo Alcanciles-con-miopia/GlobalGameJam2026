@@ -1,7 +1,6 @@
 [gd_scene format=3 uid="uid://cpbv42xhe4um5"]
 
 [ext_resource type="Script" uid="uid://b1t1q20iiwg56" path="res://scripts/game_scene.gd" id="1_w5aja"]
-[ext_resource type="PackedScene" uid="uid://ddu4o7i0bx55w" path="res://assets/models/marco.fbx" id="2_onqr8"]
 [ext_resource type="PackedScene" uid="uid://dboue6235tw1q" path="res://scenes/mascara_1.tscn" id="2_rvs2r"]
 [ext_resource type="Script" uid="uid://cehkexy4d47mf" path="res://scripts/raycaster.gd" id="2_y3j0m"]
 [ext_resource type="Script" uid="uid://debobb8c84pgg" path="res://scripts/CompareMasks.gd" id="3_bw6k5"]
@@ -12,6 +11,9 @@
 [ext_resource type="PackedScene" uid="uid://hw6pigest48d" path="res://scenes/mascara_2_r.tscn" id="6_kk2rg"]
 [ext_resource type="PackedScene" uid="uid://c1qnb6ha78qxw" path="res://scenes/mascara_3_r.tscn" id="7_kk2rg"]
 [ext_resource type="Script" uid="uid://cay4w1ja8ica0" path="res://scripts/ClientMaskInfo.gd" id="7_utbpp"]
+[ext_resource type="Texture2D" uid="uid://g6yhep6oc61u" path="res://assets/images/marcoArriba.png" id="12_5ay1a"]
+[ext_resource type="Texture2D" uid="uid://csck8cqejkvc4" path="res://assets/images/marcoBajo.png" id="13_ldkr4"]
+[ext_resource type="Texture2D" uid="uid://dsxa18b2j2k77" path="res://assets/images/cortinas.png" id="14_liy57"]
 
 [node name="GameScene" type="Node3D" unique_id=1376563395]
 script = ExtResource("1_w5aja")
@@ -26,9 +28,6 @@ size = 6.909
 script = ExtResource("2_y3j0m")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=784478348]
-
-[node name="marco" parent="." unique_id=415101566 instance=ExtResource("2_onqr8")]
-transform = Transform3D(1.1614767, 0, 0, 0, 1.0436472, 0, 0, 0, 1, 0, 1.1782966, -3.8205395)
 
 [node name="CompareMasks" type="Node3D" parent="." unique_id=546272659]
 script = ExtResource("3_bw6k5")
@@ -104,6 +103,18 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.996, 1, -2)
 
 [node name="P2Spawn" type="Node3D" parent="." unique_id=1673260152]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 1, -2)
+
+[node name="MarcoArriba" type="Sprite3D" parent="." unique_id=535602770]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.4814842, 0)
+texture = ExtResource("12_5ay1a")
+
+[node name="MarcoAbajo" type="Sprite3D" parent="." unique_id=982404832]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.0781937, -5.0853333)
+texture = ExtResource("13_ldkr4")
+
+[node name="Cortinas" type="Sprite3D" parent="." unique_id=1915362604]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -7.8703704)
+texture = ExtResource("14_liy57")
 
 [connection signal="timeout" from="UI/Control/CountdownTimer" to="." method="_on_CountdownTimer_timeout"]
 
