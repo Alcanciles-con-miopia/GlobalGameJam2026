@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d1bx1s7kdpfvw"
-path="res://.godot/imported/0030.png-fd6a0bba1cbd334032f688a03baa8ad5.ctex"
+uid="uid://dvtnp13ictvgf"
+path="res://.godot/imported/0024.png-b432d24d6b9a483474cf38c29c31b605.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/images/animations/herme/perder/0030.png"
-dest_files=["res://.godot/imported/0030.png-fd6a0bba1cbd334032f688a03baa8ad5.ctex"]
+source_file="res://assets/images/animations/susi/perder/0024.png"
+dest_files=["res://.godot/imported/0024.png-b432d24d6b9a483474cf38c29c31b605.ctex"]
 
 [params]
 

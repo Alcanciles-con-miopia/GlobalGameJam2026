@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://djvutavwljas6"
-path="res://.godot/imported/0026.png-3b9c4426c322de8b43950e170774954b.ctex"
+uid="uid://cp2pxds07nskd"
+path="res://.godot/imported/portada.png-d5ff69915884d00f662863c3b9216fe7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/images/animations/herme/perder/0026.png"
-dest_files=["res://.godot/imported/0026.png-3b9c4426c322de8b43950e170774954b.ctex"]
+source_file="res://itchio/portada.png"
+dest_files=["res://.godot/imported/portada.png-d5ff69915884d00f662863c3b9216fe7.ctex"]
 
 [params]
 
