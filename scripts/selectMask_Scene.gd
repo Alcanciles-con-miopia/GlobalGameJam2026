@@ -6,7 +6,7 @@ const MASK_NODES := ["cara1", "cara2"]
 #@onready var play_button: Button = $UI/Control/Button
 @onready var label_p1: Label = $UI/Control/HBoxContainer/LabelP1
 @onready var label_p2: Label = $UI/Control/HBoxContainer/LabelP2
-
+@onready var jugar_spr3d : Sprite3D = $BotonJugar
 
 var ui_root: Control = null
 
@@ -27,9 +27,14 @@ func _ready() -> void:
 	
 
 func _input(event: InputEvent) -> void:
-	if not (event is InputEventJoypadButton):
+
+	if Global.cursors.size() >= 1 and event is InputEventJoypadMotion:
+		_handle_mask_hover(2, Global.cursors[1].position)
 		return
 
+	if not (event is InputEventJoypadButton):
+		return
+		
 	if not event.is_action_pressed("A"):
 		return
 		
@@ -72,6 +77,35 @@ func _handle_mask_click(player: int, mouse_pos: Vector2) -> void:
 
 	var mask_id: StringName = mask_node.mask_id
 	_select_mask(player, mask_node, mask_id)
+	
+func _handle_mask_hover(player: int, mouse_pos: Vector2) -> void:
+	print_debug("COJONES")
+	
+	var from: Vector3 = camera.project_ray_origin(mouse_pos)
+	var to: Vector3 = from + camera.project_ray_normal(mouse_pos) * 100.0
+
+	var space_state: PhysicsDirectSpaceState3D = camera.get_world_3d().direct_space_state
+	var query := PhysicsRayQueryParameters3D.create(from, to)
+	var result: Dictionary = space_state.intersect_ray(query)
+
+	if result.is_empty():
+		return
+
+	var collider := result["collider"] as Node
+	if collider == null:
+		return
+		
+	if collider.is_in_group("play_button_3d") \
+	or (collider.get_parent() and collider.get_parent().is_in_group("play_button_3d")):
+		print_debug("HOVER???")
+		#var sprite = collider.get_parent().get_parent()
+		#sprite.modulate = Color(0xa8ec34)
+		#if sprite is Sprite3D:
+			#sprite.modulate = Color.RED
+		jugar_spr3d.modulate = Color(0xa8ec34ff)
+	else:
+		jugar_spr3d.modulate = Color(0xffffffff)
+		return
 
 func _select_mask(player: int, mask_node: Node3D, mask_id: String) -> void:
 	if player == 1:
