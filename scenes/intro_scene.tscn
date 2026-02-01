@@ -16,10 +16,10 @@ script = ExtResource("1_xmg1o")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=2094397672]
 layout_mode = 0
-offset_left = -22.0
-offset_top = -23.0
-offset_right = 1289.0
-offset_bottom = 741.0
+offset_left = -268.0
+offset_top = -184.0
+offset_right = 1736.0
+offset_bottom = 1062.0
 color = Color(0.61960787, 0.88235295, 0.9529412, 1)
 
 [node name="Label" type="Label" parent="." unique_id=2087144330]

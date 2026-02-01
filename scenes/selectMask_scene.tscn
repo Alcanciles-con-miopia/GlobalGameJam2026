@@ -624,9 +624,11 @@ offset_bottom = 26.0
 
 [node name="ColorRect" type="ColorRect" parent="Aviso" unique_id=427742232]
 layout_mode = 0
-offset_left = -20.0
-offset_right = 1277.0
-offset_bottom = 719.0
+offset_left = -141.0
+offset_top = -90.99999
+offset_right = 1156.0
+offset_bottom = 628.0
+scale = Vector2(2.8, 4.92)
 color = Color(0.61850744, 0.8829651, 0.9511749, 1)
 
 [node name="TextureRect" type="TextureRect" parent="Aviso" unique_id=137704907]
