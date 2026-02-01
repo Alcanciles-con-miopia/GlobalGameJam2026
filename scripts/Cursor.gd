@@ -13,6 +13,7 @@ func _ready() -> void:
 	texture = MANO_ABIERTA
 	vibrate(0.2)
 
+
 func setColor(color):
 	set_modulate(color);
 
@@ -24,6 +25,10 @@ func _input(event: InputEvent) -> void:
 	if event is InputEventJoypadButton and event.is_action_pressed("A") and event.device == DeviceID:
 		texture = MANO_CERRADA
 		# LANZAR RAYCAST ANDRES AQUI
+		#print_debug("CURSOR CLICK")
+		Global.on_cursor_click.emit(null, position, DeviceID)
+		#Global.on_cursor_click.emit()
+
 	elif event is InputEventJoypadButton and event.is_action_released("A") and event.device == DeviceID:
 		texture = MANO_ABIERTA
 
@@ -34,6 +39,6 @@ func _physics_process(delta: float) -> void:
 	var y_ax = Input.get_joy_axis(DeviceID, JOY_AXIS_LEFT_Y)
 	y_ax = y_ax if abs(y_ax) >= 0.4 else 0
 	direction = Vector2(x_ax if position.x < get_viewport().size.x else -x_ax, y_ax if position.y < get_viewport().size.y else -y_ax )
-	print(get_viewport().size, " || ", position, " || ", direction)
+	#print(get_viewport().size, " || ", position, " || ", direction)
 	position += direction * vel * delta
 	#print("AA: ", DeviceID, " vector: ", direction)
