@@ -152,5 +152,7 @@ func _update_bgm_for_scene() -> void:
 		Global.Scenes.SELECTMASK:
 			# sample de prueba luego se cambia por el real
 			Global.sound.play_bgm("selectBGM")
+		Global.Scenes.FINALSCENE:
+			Global.sound.play_bgm("selectBGM")
 		Global.Scenes.NULL:
 			Global.sound.stop_bgm()
