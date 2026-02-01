@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://hhld457rk38u" path="res://scripts/final_scene.gd" id="1_4bkdv"]
 [ext_resource type="Texture2D" uid="uid://b8mr508h2rejn" path="res://assets/ui/replayButton.png" id="2_qifxa"]
+[ext_resource type="FontFile" uid="uid://b0g21t6xxd722" path="res://assets/font/Barrio-Regular.ttf" id="2_v2vgp"]
 [ext_resource type="Texture2D" uid="uid://g6yhep6oc61u" path="res://assets/images/marcoArriba.png" id="3_r78si"]
 [ext_resource type="Texture2D" uid="uid://csck8cqejkvc4" path="res://assets/images/marcoBajo.png" id="4_ytd0m"]
 [ext_resource type="Texture2D" uid="uid://dsxa18b2j2k77" path="res://assets/images/cortinas.png" id="5_iwokc"]
@@ -381,10 +382,8 @@ projection = 1
 size = 6.909
 
 [node name="UI" type="CanvasLayer" parent="." unique_id=2061880364]
-visible = false
 
 [node name="Control" type="Control" parent="UI" unique_id=1666543291]
-visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -400,16 +399,21 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -11.5
-offset_right = 20.0
-offset_bottom = 11.5
+offset_left = -120.0
+offset_top = 257.0
+offset_right = 120.0
+offset_bottom = 356.0
 grow_horizontal = 2
 grow_vertical = 2
-scale = Vector2(3, 3)
 pivot_offset = Vector2(20, 11.5)
+theme_override_colors/font_color = Color(0.827451, 0.14901961, 0.09803922, 1)
+theme_override_fonts/font = ExtResource("2_v2vgp")
+theme_override_font_sizes/font_size = 42
+text = "HA GANADO...
+"
 
 [node name="Button" type="Button" parent="UI/Control" unique_id=486838967]
+visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5

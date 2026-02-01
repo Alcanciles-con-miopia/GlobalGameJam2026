@@ -35,14 +35,14 @@ func on_enable() -> void:
 	match Global.LAST_WINNER:
 		"SUSI":
 			print_debug("SUSI")
-			text = "¡Ha ganado SUSI!"
+			text = "¡Ha ganado SUSI (J" + str(Global.SUSI_PLAYER) + ")!"
 			winSound = "win_susi"
 			herm.play("perder")
 			susi.play("ganar")
 			loseSound = "lose_hermi"
 		"HERMENEGILDO":
 			print_debug("HERM")
-			text = "¡Ha ganado HERMENEGILDO!"
+			text = "¡Ha ganado HERMENEGILDO (J" + str(Global.HERMENEGILDO_PLAYER) + ")!"
 			winSound = "win_hermi"
 			herm.play("ganar")
 			susi.play("perder")
