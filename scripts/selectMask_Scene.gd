@@ -359,6 +359,9 @@ func on_enable() -> void:
 	herm.play("idle")
 	jugar_spr3d.modulate = Color(0xffffffff)
 	
+	Global.bgm.clip = "selectBGM"
+	Global.bgm.play()
+	
 	_reset_selection_state()
 
 func on_disable() -> void:
@@ -370,6 +373,8 @@ func on_disable() -> void:
 
 	visible = false
 	process_mode = Node.PROCESS_MODE_DISABLED
+	
+	Global.bgm.stop()
 
 
 func _process(delta: float) -> void:
