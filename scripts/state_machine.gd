@@ -28,7 +28,7 @@ func _ready() -> void:
 	Global.on_game_end.connect(_on_game_end)
 	
 	## PRIMER CAMBIO DE ESCENA
-	Global.change_scene(Global.Scenes.SELECTMASK)
+	Global.change_scene(Global.Scenes.GAME)
 	#_wiiconnect()
 	pass 
 	
@@ -146,9 +146,11 @@ func _update_bgm_for_scene() -> void:
 			# Global.sound.play_bgm("intro_theme")
 			Global.sound.stop_bgm()
 		Global.Scenes.GAME:
+			pass
 			# sample de prueba luego se cambia por el real
 			# Global.sound.play_bgm("bgmusicSample")
-			Global.sound.stop_bgm()
+			#Global.sound.stop_bgm()
+			#Global.sound.play_bgm("selectBGM")
 		Global.Scenes.SELECTMASK:
 			# sample de prueba luego se cambia por el real
 			Global.sound.play_bgm("selectBGM")
