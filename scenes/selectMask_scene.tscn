@@ -9,8 +9,8 @@
 [ext_resource type="Texture2D" uid="uid://dyuogsynkwe5q" path="res://assets/images/CONTROLES.png" id="5_bfohn"]
 [ext_resource type="Texture2D" uid="uid://g6yhep6oc61u" path="res://assets/images/marcoArriba.png" id="6_448pe"]
 [ext_resource type="Texture2D" uid="uid://csck8cqejkvc4" path="res://assets/images/marcoBajo.png" id="7_obepn"]
+[ext_resource type="Texture2D" uid="uid://dpbl4q3c3lt06" path="res://assets/images/nombre_personatus.png" id="7_sgrlf"]
 [ext_resource type="Texture2D" uid="uid://dsxa18b2j2k77" path="res://assets/images/cortinas.png" id="8_obepn"]
-[ext_resource type="FontFile" uid="uid://bb5uir3t076qk" path="res://assets/font/ChelseaMarket-Regular.ttf" id="11_sgrlf"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_t3dyg"]
 size = Vector3(2.915039, 3.5263062, 1)
@@ -397,6 +397,12 @@ layout_mode = 2
 [node name="LabelP2" type="Label" parent="UI/Control/HBoxContainer" unique_id=1624335164]
 layout_mode = 2
 
+[node name="ImgTitulo" type="TextureRect" parent="UI/Control" unique_id=1707482387]
+layout_mode = 0
+offset_right = 1280.0
+offset_bottom = 720.0
+texture = ExtResource("7_sgrlf")
+
 [node name="Aviso" type="Control" parent="." unique_id=608631677]
 visible = false
 visibility_layer = 2
@@ -420,33 +426,6 @@ offset_top = 35.0
 offset_right = 1274.0
 offset_bottom = 755.0
 texture = ExtResource("5_bfohn")
-
-[node name="ImgTitulo" type="TextureRect" parent="." unique_id=1707482387]
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="Titulo" type="Control" parent="." unique_id=118667995]
-layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="TituloText" type="Label" parent="Titulo" unique_id=1332986414]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = 304.0
-offset_top = 576.0
-offset_right = 1107.0
-offset_bottom = 740.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_fonts/font = ExtResource("11_sgrlf")
-theme_override_font_sizes/font_size = 100
-text = "PERSONATUS"
 
 [node name="BotonJugar" type="Sprite3D" parent="." unique_id=1494169577]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.2922175, 0.36281872)
